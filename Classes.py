@@ -262,10 +262,9 @@ class FantasyFootballLeague:
         for i in range(rounds):
             for team in league.teams:
                 #add player to team
-                player_name = input("Player name")
-                player_position = input("Player position")
-                player_team = input("Player team")
-                player = league.Player(player_name, player_position, player_team)
+                for player in league.free_agents:
+                    print(player.name)
+                player = input(f"{team.team_name}, select a player: ")
                 team.add_player(player)
                 #remove player from free agents
                 league.free_agents.remove(player)
