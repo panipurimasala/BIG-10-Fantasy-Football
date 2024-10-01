@@ -4,6 +4,8 @@ class FantasyFootballLeague:
         self.teams = []
         self.teamLimit = 12
         self.free_agents = []
+        self.matchups = {}
+        self.week = 1
 
     def add_team(self, team_name):
         team = self.FantasyFootballRoster(team_name)
@@ -43,16 +45,43 @@ class FantasyFootballLeague:
 
     def score_week(self):
         for team in self.teams:
-            team.total_points = 0
-            if team.QB: team.total_points += team.QB.points
-            if team.RB1: team.total_points += team.RB1.points
-            if team.RB2: team.total_points += team.RB2.points
-            if team.WR1: team.total_points += team.WR1.points
-            if team.WR2: team.total_points += team.WR2.points
-            if team.TE: team.total_points += team.TE.points
-            if team.FLEX: team.total_points += team.FLEX.points
-            if team.K: team.total_points += team.K.points
-            if team.DEF: team.total_points += team.DEF.points
+            team.score_week()
+    
+    #assign matchups for each week
+    def assign_matchups(self):
+        for i in range(10): #10 weeks in a season
+            matchups = []
+            for j in range(self.teamLimit // 2):
+                if i % self.teamLimit == j:
+                    matchup = (self.teams[j], self.teams[(j + i + 1) % self.teamLimit])
+                else:
+                    matchup = (self.teams[self.teamLimit], self.teams[(j + i) % self.teamLimit])
+                matchups.append(matchup)
+            self.matchups[i] = matchups
+
+    #simulate a week of matchups
+    def score_league(self):
+        for matchup in self.matchups[self.week]:
+            team1, team2 = matchup
+            team1_score = team1.score_week()
+            team2_score = team2.score_week()
+            if team1_score > team2_score:
+                team1.wins += 1
+                team2.losses += 1
+            else:
+                team2.wins += 1
+                team1.losses += 1
+            team1.season_points_scored += team1_score
+            team2.season_points_scored += team2_score
+            team1.season_points_scored_against += team2_score
+            team2.season_points_scored_against += team1_score
+
+    def seed_playoffs(self):
+        self.teams.sort(key=lambda x: (x.wins, x.season_points_scored - x.season_points_scored_against), reverse=True)
+        return self.teams[:6]
+    
+    def advance_week(self):
+        self.week += 1
 
     class Player:
         def __init__(self, name, position, team):
@@ -78,7 +107,9 @@ class FantasyFootballLeague:
             self.targets = 0
             # Kicking stats
             self.field_goals_missed = 0
-            self.field_goals_made = 0
+            self.field_goals_made_0_39 = 0
+            self.field_goals_made_40_49 = 0
+            self.field_goals_made_50_plus = 0
             self.field_goals_attempted = 0
             self.extra_points_missed = 0
             self.extra_points_made = 0
@@ -96,12 +127,58 @@ class FantasyFootballLeague:
             # Total stats
             self.points = 0  # Fantasy points scored by this player
 
+        def calculate_points(self):
+            self.points = (
+                self.rushing_yards // 10 
+                + self.rushing_touchdowns * 6 
+                - self.fumbles_lost * 1
+                - self.fumbles * 1
+                + self.passing_yards // 25 
+                + self.passing_touchdowns * 4 
+                - self.interceptions_thrown * 2 
+                + self.receiving_yards // 10 
+                + self.receiving_touchdowns * 6 
+                + self.receptions * 1
+                - self.field_goals_missed * 1
+                + self.field_goals_made_0_39 * 3
+                + self.field_goals_made_40_49 * 4
+                + self.field_goals_made_50_plus * 5
+                - self.extra_points_missed * 1
+                + self.extra_points_made * 1
+                + self.sacks * 1
+                + self.interceptions * 2
+                + self.fumbles_forced * 1
+                + self.fumbles_recovered * 1
+                + self.touchdowns * 6
+                + self.special_teams_tds * 6
+                + self.safeties * 2
+                + self.blocked_kicks * 2
+            )
+            if self.points_allowed == 0:
+                self.points += 10
+            elif self.points_allowed <= 6:
+                self.points += 7
+            elif self.points_allowed <= 13:
+                self.points += 4
+            elif self.points_allowed <= 20:
+                self.points += 1
+            elif self.points_allowed <= 27:
+                self.points += 0
+            elif self.points_allowed <= 34:
+                self.points -= 1
+            else:
+                self.points -= 4
+
     class FantasyFootballRoster:
         def __init__(self, team_name):
             self.team_name = team_name
             self.total_points = 0
             self.rosterSize = 0
             self.rosterLimit = 15
+            self.wins = 0
+            self.losses = 0
+            self.season_points_scored = 0
+            self.season_points_scored_against = 0
             self.QB = None
             self.RB1 = None
             self.RB2 = None
@@ -167,6 +244,18 @@ class FantasyFootballLeague:
             if player in self.benchOverflow:
                 self.benchOverflow.remove(player)
                 self.rosterSize -= 1
+
+        def score_week(self):
+            self.total_points = 0
+            if self.QB: self.total_points += self.QB.calculate_points()
+            if self.RB1: self.total_points += self.RB1.calculate_points()
+            if self.RB2: self.total_points += self.RB2.calculate_points()
+            if self.WR1: self.total_points += self.WR1.calculate_points()
+            if self.WR2: self.total_points += self.WR2.calculate_points()
+            if self.TE: self.total_points += self.TE.calculate_points()
+            if self.FLEX: self.total_points += self.FLEX.calculate_points()
+            if self.K: self.total_points += self.K.calculate_points()
+            if self.DEF: self.total_points += self.DEF.calculate_points()
 
     #draft players
     def draft(league, rounds):
