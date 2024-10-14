@@ -1,12 +1,62 @@
+ <!-- Will Be Both Market & Draft -->
+ <!-- Drafting mode simply displays a drafting icon indicator & applies purchasing restrictions to the users in the order associated to their league  -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <head>
             <meta charset="UTF-8">
             <meta name="viewport"content="width=device-width, initial-scale=1.0">
-            <title></title>
+            <title>MarketPlace</title>
         </head>
     </head>
+    <div class="navbar">
+        <form action="" method="get">
+            <input id="userquery" name="query" type="text" placeholder="Player Name" value="">
+            <select name="category"> <!-- should this be static or dynamic-->
+                <option value="QB">QB</option>
+                <option value="WR">WR</option>
+                <option value="OLINE">O-LINE</option>
+                <option value="TE">TE</option>
+                <option value="RB">RB</option>\
+                <option value="SFT">SAFETY</option>
+                <option value="WR">D-LINE</option>
+                <option value="LB">LB</option>
+                <option value="CB">CB</option>
+                <option value="SPT">SPECIAL</option>
+            </select>
+            <input type="submit">
+        </form>
+    </div>
+    <!-- Will Be Dyn-Loaded Table of Player by Catergory-->
+    <!-- Major Filters: All / Potential --> 
+    <!-- Potential: All players that are not currently being sought after (Players can be "tested in the market" by their current owners) -->
+    <!-- When Clicked Brief Image/Stats/Option to either Trade/Draft/Purchase button displayed (depending on mode)-->
+    <!-- If drafted mode, "Draft" button (assoc. restrictions)-->
+    <!-- Else Trades / Confirm -->
+    <div class="market_table">
+        <table border="1">
+            <tr>
+                <th>QB</th>
+                <th>WR</th>
+                <th>O-LINE</th>
+                <th>TE</th>
+                <th>RB</th>
+                <th>SAFETY</th>
+                <th>D-LINE</th>
+                <th>LB</th>
+                <th>CB</th>
+                <th>SPECIAL TEAM</th>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+    </div>
     <body>
     </body>
 </html>
