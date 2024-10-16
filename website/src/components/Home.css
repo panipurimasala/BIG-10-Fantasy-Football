@@ -1,0 +1,61 @@
+.upper_part {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.home_left {
+    flex: 3;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.home_right {
+    margin-top: 20px;
+    flex: 2;
+    padding-left: 20px;
+    font-size: 1.5rem;
+}
+
+.top_players ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.top_players li {
+    margin-bottom: 5px;
+}
+
+.next_game {
+    margin-top: 20px;
+}
+
+.join_league {
+    margin-top: 30px;
+}
+
+.draft_boxes {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; /* Spread the boxes evenly */
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ensure they take full width */
+}
+
+.draft_boxes .dbox {
+    flex: 1; /* Allow the boxes to stretch equally */
+    margin-right: 1rem;
+    border: 1px solid black;
+    padding: 20px;
+    height: 100px;
+    text-align: center; /* Center the content */
+    background-color: #f5f5f5; /* Add a subtle background color */
+}
+
+/* Remove margin from the last box to avoid overflow */
+.draft_boxes .dbox:last-child {
+    margin-right: 0;
+}
