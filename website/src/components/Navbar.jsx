@@ -1,5 +1,6 @@
 import React from 'react'
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
   //Creating the navbar
@@ -25,6 +26,8 @@ const Navbar = () => {
           <li>
             <a href="/contact">Contact</a>
           </li>
+          <Link to="/draft_page">Draft</Link>
+  
         </ul>
       </div>
       {/*This is the right of the navbar*/}
