@@ -67,7 +67,7 @@ const DraftPage = () => {
     // Create a function to handle the submit
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent the default form submission
-        if (count % 2 === 1){
+        if (count % 2 === 0){
             let ret = draftPlayer(playerDict, inputText, team1, count);
             setDisplayText(ret); 
             if(ret !== "no player found"){
