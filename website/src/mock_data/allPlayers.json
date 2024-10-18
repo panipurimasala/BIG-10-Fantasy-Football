@@ -1,0 +1,3647 @@
+{
+    "Kaden Feagin": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Kirkland Michaux": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "ILL"
+    },
+    "Trey Petty": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Collin Dixon": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Jake Furtney": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Alexander Capka-Jones": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "ILL"
+    },
+    "Weston Adams": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Karson Kaiser": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Tysean Griffin": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Kenari Wilcher": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "David Olano": {
+        "position": "K",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Aidan Laughery": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Hank Beatty": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "ILL"
+    },
+    "Jake Petrow": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Carson Goda": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "ILL"
+    },
+    "Tanner Hollinger": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Ethan Moczulski": {
+        "position": "K",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Donovan Leary": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Morrison Giggetts": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Petey Olaleye": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Cole Rusk": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "ILL"
+    },
+    "Ashton Hollins": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Zakhari Franklin": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "ILL"
+    },
+    "Corey Rashad": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Jordan Anderson": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Henry Boyer": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Tanner Arkin": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "ILL"
+    },
+    "Clayton Leonard": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Tyson Rooks": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Cal Swanson": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Luke Altmyer": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "ILL"
+    },
+    "Carlos Orr-Gillespie": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Michael Bartolotta": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "ILL"
+    },
+    "Josh McCray": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "ILL"
+    },
+    "Ca'Lil Valentine": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Jacob Huber": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "ILL"
+    },
+    "Tyler McClure": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "ILL"
+    },
+    "Mario Sanders II": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Pat Bryant": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "ILL"
+    },
+    "Nick True": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Aaron Ball": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "ILL"
+    },
+    "Malik Elzy": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "ILL"
+    },
+    "Graham Friedrichsen": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "IOW"
+    },
+    "Addison Ostrenga": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "IOW"
+    },
+    "Michael Burt": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Kaleb Johnson": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "IOW"
+    },
+    "Jalyn Thompson": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Zach Ortwerth": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "IOW"
+    },
+    "Leshon Williams": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "IOW"
+    },
+    "Jackson Stratton": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "IOW"
+    },
+    "Cade McNamara": {
+        "position": "QB",
+        "eligibility": "GR",
+        "team": "IOW"
+    },
+    "James Resar": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Judah Mallette": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Gavin Hoffman": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Jarriett Buie": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Max White": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "IOW"
+    },
+    "Marco Lainez": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "KJ Parker": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Brevin Doll": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Jacob Gill": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "IOW"
+    },
+    "Reese Osgood": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "IOW"
+    },
+    "Johnny Pascuzzi": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "IOW"
+    },
+    "Luke Lachey": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "IOW"
+    },
+    "Kaleb Brown": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "IOW"
+    },
+    "Ayden Price": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Dayton Howard": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Seth Anderson": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "IOW"
+    },
+    "DJ Vonnahme": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Drew Stevens": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "IOW"
+    },
+    "Reece Vander Zee": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Alex Mota": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Alec Wick": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "IOW"
+    },
+    "Jaziun Patterson": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "IOW"
+    },
+    "Kyson Van Vugt": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "IOW"
+    },
+    "Andrew Lentsch": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "IOW"
+    },
+    "Terrell Washington Jr.": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Kamari Moulton": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Xavier Williams": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Alex Eichmann": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "IOW"
+    },
+    "Grant Glausser": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Grant Leeper": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Kaden Wetjen": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "IOW"
+    },
+    "Brendan Sullivan": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "IOW"
+    },
+    "Cole Marsh": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "IOW"
+    },
+    "Derek McCormick": {
+        "position": "K",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "Brody Kosin": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "IU"
+    },
+    "Quinn Warren": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "IU"
+    },
+    "Khobie Martin": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "IU"
+    },
+    "Charlie Becker": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "IU"
+    },
+    "Zach Horton": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "E.J. Williams Jr.": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "Miles Cross": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "Sam West": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "IU"
+    },
+    "Eli Jochem": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "IU"
+    },
+    "James Bomba": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "IU"
+    },
+    "Derin McCulley": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "Kaelon Black": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "IU"
+    },
+    "Myles Price": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "Elijah Sarratt": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "IU"
+    },
+    "Brady Simmons": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "IU"
+    },
+    "Kyler Kropp": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "IU"
+    },
+    "Roman Purcell": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "IU"
+    },
+    "Trey Walker": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "Nicolas Radicic": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "IU"
+    },
+    "Omar Cooper Jr.": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "IU"
+    },
+    "Elijah Green": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "IU"
+    },
+    "Justice Ellison": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "Daniel Weems": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "IU"
+    },
+    "Camden Jordan": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "IU"
+    },
+    "Kurtis Rourke": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "Ty Son Lawton": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "Tayven Jackson": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "IU"
+    },
+    "Alberto Mendoza": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "IU"
+    },
+    "Solomon Vanhorse": {
+        "position": "RB",
+        "eligibility": "GR",
+        "team": "IU"
+    },
+    "Brody Foley": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "IU"
+    },
+    "Josh Placzek": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "IU"
+    },
+    "Donaven McCulley": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "Jackson Wasserstrom": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "IU"
+    },
+    "Tyler Cherry": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "IU"
+    },
+    "Ke'Shawn Williams": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "Andison Coby": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "IU"
+    },
+    "DeJuan Williams": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Jahmari Powell-Wonson": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Octavian Smith Jr.": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "MAR"
+    },
+    "Ricardo Cooper Jr.": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Emerson Smith": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Nolan Ray": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Mekhai White": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Jaiden Fair": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Robert Smith": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "MAR"
+    },
+    "Josh Richards": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Braeden Wisloski": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "Eli Mason": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "Leron Husbands": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "AJ Szymanski": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "Ezekiel Avit": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Cameron Edge": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "Shaleak Knotts": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "MAR"
+    },
+    "Ryne Acheson": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "Maxwell Brown": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "MAR"
+    },
+    "MJ Morris": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "Billy Edwards Jr.": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "MAR"
+    },
+    "Alec Hughes": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Tai Felton": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "MAR"
+    },
+    "Champ Long": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Gavin Marshall": {
+        "position": "K",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "Parker Jones": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Khalid Jones": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "MAR"
+    },
+    "Roman Jensen": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Khristian Martin": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Thomas McCluskey": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Colby McDonald": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "MAR"
+    },
+    "Ryan Capriotti": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Jayden Sauray": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "Leon Haughton Jr.": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "Ryan Manning": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Kaden Prather": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "MAR"
+    },
+    "Josiah McLaurin": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Dylan Wade": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "Colin Reynolds": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Sean Williams": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MAR"
+    },
+    "Roman Hemby": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "MAR"
+    },
+    "Preston Howard": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MAR"
+    },
+    "Logan Forbes": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "MICH"
+    },
+    "Henry Donohue": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "MICH"
+    },
+    "Joe Taylor": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "MICH"
+    },
+    "Adam Samaha": {
+        "position": "K",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Colston Loveland": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "MICH"
+    },
+    "Zack Marshall": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Anthony Arnou": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "MICH"
+    },
+    "Peyton O'Leary": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "MICH"
+    },
+    "Jordan Marshall": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MICH"
+    },
+    "Grayson Dee": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Benjamin Hall": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Davis Warren": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "MICH"
+    },
+    "Amorion Walker": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "MICH"
+    },
+    "Cole Cabana": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Tyler Morris": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "MICH"
+    },
+    "Kaleb Schlecht": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Dominic Zvada": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "MICH"
+    },
+    "Max Bredeson": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "MICH"
+    },
+    "C.J. Charleston": {
+        "position": "WR",
+        "eligibility": "GR",
+        "team": "MICH"
+    },
+    "I'Marion Stewart": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MICH"
+    },
+    "Alex Orji": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "MICH"
+    },
+    "Deakon Tonielli": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Brady Prieskorn": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "MICH"
+    },
+    "Micah Ka'apana": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MICH"
+    },
+    "Noah Howes": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "MICH"
+    },
+    "Kendrick Bell": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Semaj Morgan": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Bryson Kuzdzal": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Jayden Denegal": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "MICH"
+    },
+    "Drew Hickmott": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MICH"
+    },
+    "Jadyn Davis": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "MICH"
+    },
+    "Tomas O'Meara": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MICH"
+    },
+    "Marlin Klein": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "MICH"
+    },
+    "Tavierre Dunlap": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "MICH"
+    },
+    "Bryce Wilcox": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "MICH"
+    },
+    "Channing Goodwin": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MICH"
+    },
+    "Jack Tuttle": {
+        "position": "QB",
+        "eligibility": "GR",
+        "team": "MICH"
+    },
+    "Hogan Hansen": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "MICH"
+    },
+    "Stuart Blake": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "MICH"
+    },
+    "Donovan Edwards": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "MICH"
+    },
+    "Jalen Hoffman": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Fredrick Moore": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "MICH"
+    },
+    "Kalel Mullings": {
+        "position": "RB",
+        "eligibility": "GR",
+        "team": "MICH"
+    },
+    "Leon Franklin": {
+        "position": "RB",
+        "eligibility": "GR",
+        "team": "MICH"
+    },
+    "Max Shikenjanski": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Frank Bierman": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "MIN"
+    },
+    "Drake Lindsey": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Donielle Hayes": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Sam Peters": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Nick Kallerup": {
+        "position": "TE",
+        "eligibility": "GR",
+        "team": "MIN"
+    },
+    "Cortez LeGrant": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Kaeden Johnson": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Jeremiah Finaly": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Tyler Williams": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Kenric Lanier II": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Dragan Kesich": {
+        "position": "K",
+        "eligibility": "GR",
+        "team": "MIN"
+    },
+    "Kristen Hoskins": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "MIN"
+    },
+    "Jordan Nubin": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "MIN"
+    },
+    "Pierce Walsh": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Dylan Wittke": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Zander Rockow": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Cristian Driver": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "MIN"
+    },
+    "T.J. McWilliams": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Daniel Jackson": {
+        "position": "WR",
+        "eligibility": "GR",
+        "team": "MIN"
+    },
+    "Jaydon Wright": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Julian Johnson": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Elijah Spencer": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "MIN"
+    },
+    "Sieh Bangura": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "MIN"
+    },
+    "Darius Taylor": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "MIN"
+    },
+    "Cade Conzemius": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "MIN"
+    },
+    "Max Brosmer": {
+        "position": "QB",
+        "eligibility": "GR",
+        "team": "MIN"
+    },
+    "Nathan Jones": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MIN"
+    },
+    "Jameson Geers": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "MIN"
+    },
+    "David Kemp": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "MIN"
+    },
+    "Fame Ijeboi": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Jaren Mangham": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "MIN"
+    },
+    "Jacob Simpson": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Marcus Major": {
+        "position": "RB",
+        "eligibility": "GR",
+        "team": "MIN"
+    },
+    "Le'Meke Brockington": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "MIN"
+    },
+    "Sam Henson": {
+        "position": "K",
+        "eligibility": "GR",
+        "team": "MIN"
+    },
+    "Jack DiSano": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MIN"
+    },
+    "Quentin Redding": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "MIN"
+    },
+    "Jalen Smith": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MIN"
+    },
+    "Michael Masunas": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MSU"
+    },
+    "Zach Gillespie": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "MSU"
+    },
+    "Martin Connington": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Brandon Tullis": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Dyson Sims": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Wyatt Hook": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Brennan Parachek": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "MSU"
+    },
+    "Antonio Gates Jr.": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "MSU"
+    },
+    "Jaxon McCaig": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Reeves Taylor": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Tommy Schuster": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "MSU"
+    },
+    "Nick Marsh": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Jack Velling": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "MSU"
+    },
+    "Jaron Glover": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "MSU"
+    },
+    "Shawn Foster": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "MSU"
+    },
+    "Jaylan Brown": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Makhi Frazier": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Tarik Ahmetbasic": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Charlie Baker": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Aidan Chiles": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "MSU"
+    },
+    "Jack Yanachik": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Chris Williams": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "MSU"
+    },
+    "Jonathan Kim": {
+        "position": "K",
+        "eligibility": "SR",
+        "team": "MSU"
+    },
+    "Kay'Ron Lynch-Adams": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "MSU"
+    },
+    "Tyneil Hopper": {
+        "position": "TE",
+        "eligibility": "GR",
+        "team": "MSU"
+    },
+    "Jaelen Smith": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Austin Clay": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Nate Carter": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "MSU"
+    },
+    "Alante Brown": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "MSU"
+    },
+    "Joseph Martinez": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "MSU"
+    },
+    "Ademola Faleye": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "MSU"
+    },
+    "Alessio Milivojevic": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Aziah Johnson": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Montorie Foster Jr.": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "MSU"
+    },
+    "Grant Calcagno": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Ryland Jessee": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "Atticus Carridine": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "MSU"
+    },
+    "DJ Singleton": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Heinrich Haarberg": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "NEB"
+    },
+    "Quinn Clark": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Thomas Fidone II": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "NEB"
+    },
+    "Kenneth Williams": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Jacory Barney Jr.": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Connor Schutt": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Cayden Echternach": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Ryker Evans": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Nate Boerkircher": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "NEB"
+    },
+    "Eric Ingwerson": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Isaiah Garcia-Castaneda": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "NEB"
+    },
+    "Alex Bullock": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "NEB"
+    },
+    "Bode Soukup": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "John Hohl": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Malachi Coleman": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Isaiah McMorris": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Keelan Smith": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Jalyn Gramstad": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "NEB"
+    },
+    "Dante Dowdell": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Trent Uhlir": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Mac Markway": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Roman Mangini": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Luke Longval": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Daniel Kaelin": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Rowdy Bauer": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Danny King": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Jahmal Banks": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "NEB"
+    },
+    "Tristan Alvano": {
+        "position": "K",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Ian Flynt": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Dae'vonn Hall": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Hayes Miller": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Jaylen Lloyd": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Luke Lindenmeyer": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Dylan Raiola": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Gabe Ervin Jr.": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "NEB"
+    },
+    "Janiran Bonner": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Elliott Brown": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "NEB"
+    },
+    "Cooper Hausmann": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Mekhi Nelson": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Rahmir Johnson": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "NEB"
+    },
+    "Demitrius Bell": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Emmett Johnson": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "NEB"
+    },
+    "Isaiah Neyor": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "NEB"
+    },
+    "Maurice Mazzccua Jr.": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "NEB"
+    },
+    "Izaac Dickey": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "AJ Rollins": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "NEB"
+    },
+    "Kwinten Ives": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Nico Ottomanelli": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Carter Nelson": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NEB"
+    },
+    "Sean Winton": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "A.J. Henning": {
+        "position": "WR",
+        "eligibility": "GR",
+        "team": "NW"
+    },
+    "Cam Porter": {
+        "position": "RB",
+        "eligibility": "GR",
+        "team": "NW"
+    },
+    "Hayden Eligon II": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Lawson Albright": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "NW"
+    },
+    "Reggie Fleurima": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "NW"
+    },
+    "Dashun Reeder": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Blake Van Buren": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "NW"
+    },
+    "Bryce Kirtz": {
+        "position": "WR",
+        "eligibility": "GR",
+        "team": "NW"
+    },
+    "Joseph Himon II": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "NW"
+    },
+    "Calvin Johnson II": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "NW"
+    },
+    "Ryan Hilinski": {
+        "position": "QB",
+        "eligibility": "GR",
+        "team": "NW"
+    },
+    "Aidan Gray": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Hunter Welcing": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "NW"
+    },
+    "Mike Wright": {
+        "position": "QB",
+        "eligibility": "GR",
+        "team": "NW"
+    },
+    "Grissim Anderson": {
+        "position": "RB",
+        "eligibility": "GR",
+        "team": "NW"
+    },
+    "Jack Lausch": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "NW"
+    },
+    "Marshall Lang": {
+        "position": "TE",
+        "eligibility": "GR",
+        "team": "NW"
+    },
+    "Jack Olsen": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "NW"
+    },
+    "Donnie Gray": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "NW"
+    },
+    "Cam Russell": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Tate Crane": {
+        "position": "WR",
+        "eligibility": "GR",
+        "team": "NW"
+    },
+    "Jake Arthurs": {
+        "position": "RB",
+        "eligibility": "GR",
+        "team": "NW"
+    },
+    "Duke Olges": {
+        "position": "TE",
+        "eligibility": "GR",
+        "team": "NW"
+    },
+    "Drew Wagner": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Carson Grove": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Chris Petrucci": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "NW"
+    },
+    "Camp Magee": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Albert Kunickis III": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "NW"
+    },
+    "Caleb Komolafe": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Henry Helms": {
+        "position": "K",
+        "eligibility": "SO",
+        "team": "NW"
+    },
+    "Ryan Boe": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Jacob Tabibian": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "NW"
+    },
+    "Thomas Gordon": {
+        "position": "TE",
+        "eligibility": "GR",
+        "team": "NW"
+    },
+    "Ricky Ahumaraeze": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Frank Covey IV": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Patrick Schaller": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "NW"
+    },
+    "Luke Moga": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Traeshon Holden": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "ORE"
+    },
+    "Jeremiah McClellan": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Gary Bryant Jr.": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "ORE"
+    },
+    "Ryan Pellum": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Kenyon Sadiq": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "ORE"
+    },
+    "Zach Grace": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Atticus Sappington": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "ORE"
+    },
+    "Jayden Limar": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "ORE"
+    },
+    "A.J. Pugliano": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Ellis Bynum": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "ORE"
+    },
+    "Noah Whittington": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "ORE"
+    },
+    "Andrew Boyle": {
+        "position": "K",
+        "eligibility": "SR",
+        "team": "ORE"
+    },
+    "Ryder Hayes": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Grant Meadors": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Brock Thomas": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Gage Hurych": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Dillon Gabriel": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "ORE"
+    },
+    "Roger Saleapaga": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Tez Johnson": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "ORE"
+    },
+    "Jurrion Dickey": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Preston Alford": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "ORE"
+    },
+    "Brady Bidwell": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Dante Moore": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "ORE"
+    },
+    "Jack Ressler": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Da'Jaun Riggs": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Brison Cobbins": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "ORE"
+    },
+    "Kyler Kasper": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "ORE"
+    },
+    "Justius Lowe": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "ORE"
+    },
+    "Dillon Gresham": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Darrian Anderson": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "ORE"
+    },
+    "Terrance Ferguson": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "ORE"
+    },
+    "Jordan James": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "ORE"
+    },
+    "Austin Novosad": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Patrick Herbert": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "ORE"
+    },
+    "Jalen Saint Paul": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Jay Harris": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "ORE"
+    },
+    "Kade Caton": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Kilohana Haasenritter": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "ORE"
+    },
+    "Travis Brashear": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "ORE"
+    },
+    "Evan Stewart": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "ORE"
+    },
+    "Gee Scott Jr.": {
+        "position": "TE",
+        "eligibility": "GR",
+        "team": "OSU"
+    },
+    "Joop Mitchell": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "OSU"
+    },
+    "Jayden Ballard": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "OSU"
+    },
+    "Brandon Inniss": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "OSU"
+    },
+    "Devin Brown": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "OSU"
+    },
+    "Damarion Witten": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "OSU"
+    },
+    "TreVeyon Henderson": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "OSU"
+    },
+    "Chad Ray": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "OSU"
+    },
+    "Shawn Lodge": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "OSU"
+    },
+    "Bryson Rodgers": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "OSU"
+    },
+    "David Adolph": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "OSU"
+    },
+    "Maxence LeBlanc": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "OSU"
+    },
+    "Bennett Christian": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "OSU"
+    },
+    "Air Noland": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "OSU"
+    },
+    "James Peoples": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "OSU"
+    },
+    "Will Howard": {
+        "position": "QB",
+        "eligibility": "GR",
+        "team": "OSU"
+    },
+    "Jace Middleton": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "OSU"
+    },
+    "Mason Maggs": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "OSU"
+    },
+    "Dorian Williams": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "OSU"
+    },
+    "Nolan Baudo": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "OSU"
+    },
+    "Patrick Gurd": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "OSU"
+    },
+    "Casey Magyar": {
+        "position": "K",
+        "eligibility": "SR",
+        "team": "OSU"
+    },
+    "Julian Sayin": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "OSU"
+    },
+    "Carnell Tate": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "OSU"
+    },
+    "Jelani Thurman": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "OSU"
+    },
+    "Chase Brecht": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "OSU"
+    },
+    "Quinshon Judkins": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "OSU"
+    },
+    "Jayden Fielding": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "OSU"
+    },
+    "Sam Williams-Dixon": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "OSU"
+    },
+    "Reis Stocksdale": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "OSU"
+    },
+    "Rashid SeSay": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "OSU"
+    },
+    "TC Caffey": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "OSU"
+    },
+    "Brennen Schramm": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "OSU"
+    },
+    "Mylan Graham": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "OSU"
+    },
+    "Will Kacmarek": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "OSU"
+    },
+    "Emeka Egbuka": {
+        "position": "WR",
+        "eligibility": "GR",
+        "team": "OSU"
+    },
+    "Zak Herbstreit": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "OSU"
+    },
+    "Kojo Antwi": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "OSU"
+    },
+    "Jeremiah Smith": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "OSU"
+    },
+    "Lincoln Kienholz": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "OSU"
+    },
+    "Austin Snyder": {
+        "position": "K",
+        "eligibility": "SR",
+        "team": "OSU"
+    },
+    "Khalil Dinkins": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Harrison Wallace III": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Julian Fleming": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "PSU"
+    },
+    "Jerry Cross": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "PSU"
+    },
+    "Amiel Davis": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Tyler Warren": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "PSU"
+    },
+    "Joey Schlaffer": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Jaxon Smolik": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Finn Furmanek": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Nicholas Singleton": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Josiah Brown": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Jason Estrella": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Drew Allar": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Luke Reynolds": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Cam Wallace": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Chase Meyer": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Peter Gonzalez": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Ryan Barker": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Anthony Ivey": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "PSU"
+    },
+    "Kaytron Allen": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Jake Spencer": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "PSU"
+    },
+    "Tyler Holzworth": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Aaron Enterline": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Andrew Rappleyea": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Jack Lambert": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Ethan Black": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Tyseer Denmark": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Sander Sahaydak": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Corey Smith": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Beau Pribula": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "PSU"
+    },
+    "Tyler Johnson": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "PSU"
+    },
+    "Omari Evans": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Ethan Grunkemeyer": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Kaden Saunders": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "PSU"
+    },
+    "Feyisayo Oluleye": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "PSU"
+    },
+    "Mehki Flowers": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "PSU"
+    },
+    "Liam Clifford": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "PSU"
+    },
+    "Logan Cunningham": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "PSU"
+    },
+    "Quinton Martin Jr.": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "PSU"
+    },
+    "Arhmad Branch": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "George Burhenn": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "PUR"
+    },
+    "Hudson Card": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "PUR"
+    },
+    "Jahmal Edrine": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "PUR"
+    },
+    "Luke Jones": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Max Klare": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "PUR"
+    },
+    "Kam Brown": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "PUR"
+    },
+    "Donovan Hamilton": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Tra'Mar Harris": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Luke Klare": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Leland Smith": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "PUR"
+    },
+    "Ben Freehill": {
+        "position": "K",
+        "eligibility": "SR",
+        "team": "PUR"
+    },
+    "Marcos Davila": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Reggie Love III": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "PUR"
+    },
+    "James Hardy": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Devin Mockobee": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "PUR"
+    },
+    "CJ Smith": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "PUR"
+    },
+    "Drew Biber": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "PUR"
+    },
+    "De'Nylon Morrissette": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "PUR"
+    },
+    "Shamar Rigby": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "RJ Lopez": {
+        "position": "K",
+        "eligibility": "SR",
+        "team": "PUR"
+    },
+    "Jesse Watson": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Addai Lewellen": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "PUR"
+    },
+    "Carson Kitchel": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Ryan Browne": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Nolan Buckman": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Tayvion Galloway": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Jaheim Merriweather": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Jake Wilson": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Jaron Tibbs": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "PUR"
+    },
+    "Bennett Meredith": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "PUR"
+    },
+    "Ryne Shackelford": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Jayden Dixon-Veal": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "PUR"
+    },
+    "Andrew Sowinski": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "PUR"
+    },
+    "Adam Kidder": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Antonio Harris": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Elijah Jackson": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Andrew Adkison": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Spencer Porath": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "PUR"
+    },
+    "Christian Gelov": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "PUR"
+    },
+    "Ja'shon Benjamin": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "RUT"
+    },
+    "Jordan Smikle": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "RUT"
+    },
+    "Trent Osborn": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Logan Blake": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "RUT"
+    },
+    "Jordan Kinsler": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "RUT"
+    },
+    "Gunnison Bloodgood": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "RUT"
+    },
+    "Athan Kaliakmanis": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "RUT"
+    },
+    "Deondre Johnson": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "RUT"
+    },
+    "KJ Duff": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Edd Guerrier": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Gabe Winowich": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Kenny Fletcher": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "RUT"
+    },
+    "Famah Toure": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "RUT"
+    },
+    "Monte Keener": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Ben Black": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Mike Higgins": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "RUT"
+    },
+    "Naseim Brantley": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "RUT"
+    },
+    "Ben Rosenblatt": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "RUT"
+    },
+    "Rocco Rainone": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Chris Long": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "RUT"
+    },
+    "Dylan Braithwaite": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "RUT"
+    },
+    "Riley McCann": {
+        "position": "K",
+        "eligibility": "SO",
+        "team": "RUT"
+    },
+    "Antwan Raymond": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Donovan Delaney Jr.": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "RUT"
+    },
+    "Dane Pizzaro": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Ajani Sheppard": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "RUT"
+    },
+    "Jackson Gister": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Matthew Ogunniyi": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Jai Patel": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "RUT"
+    },
+    "Victor Konopka": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "RUT"
+    },
+    "Jack Scullion": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Dymere Miller": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "RUT"
+    },
+    "Nasir Montgomery": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "RUT"
+    },
+    "AJ Surace": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Ian Strong": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "RUT"
+    },
+    "Dino Kaliakmanis": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "RUT"
+    },
+    "Christian Dremel": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "RUT"
+    },
+    "Liam Kilcomons": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "RUT"
+    },
+    "Kyle Monangai": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "RUT"
+    },
+    "Colin O'Sullivan": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "RUT"
+    },
+    "Samuel Brown V": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "RUT"
+    },
+    "David Dellenbach": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Jalen Berger": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Michael Churich": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Ethan Garbers": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Sam Summa": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "UCLA"
+    },
+    "Kwazi Gilmer": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Chase Griffin": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Logan Loya": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Titus Mokiao-Atimalala": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "UCLA"
+    },
+    "Grant Gray": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Carter Shaw": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Karson Gordon": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Blake Glessner": {
+        "position": "K",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Bryce Pierre": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Keegan Jones": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "T.J. Harden": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "UCLA"
+    },
+    "Isaiah Carlson": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Ezavier Staples": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "UCLA"
+    },
+    "Anthony Frias II": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "UCLA"
+    },
+    "Anthony Adkins": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Devanti Dillard": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Justyn Martin": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "UCLA"
+    },
+    "Moliki Matavao": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Dermaricus Davis": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Troy Leigber": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Rico Flores Jr.": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "UCLA"
+    },
+    "Deshun Murrell": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "UCLA"
+    },
+    "Jack Pedersen": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "UCLA"
+    },
+    "Luke Duncan": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Russell Weir": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Joseph Firebaugh Jr.": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "UCLA"
+    },
+    "Hudson Habermehl": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Peter Bario": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Nick Billoups": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "UCLA"
+    },
+    "Cameron Jones": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "Leo Kemp": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "UCLA"
+    },
+    "Mateen Bhaghani": {
+        "position": "K",
+        "eligibility": "SO",
+        "team": "UCLA"
+    },
+    "Braden Pegan": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "UCLA"
+    },
+    "Henry Hasselbeck": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "UCLA"
+    },
+    "J.Michael Sturdivant": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "UCLA"
+    },
+    "Gage Roy": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "USC"
+    },
+    "Walter Matthews": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Kyle Ford": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "USC"
+    },
+    "Garth White": {
+        "position": "K",
+        "eligibility": "SR",
+        "team": "USC"
+    },
+    "Denis Lynch": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "USC"
+    },
+    "Joey Olsen": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Lake McRee": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "USC"
+    },
+    "Michael Lantz": {
+        "position": "K",
+        "eligibility": "SR",
+        "team": "USC"
+    },
+    "CJ Woods": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "USC"
+    },
+    "Woody Marks": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "USC"
+    },
+    "Xavier Jordan": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Brady Jung": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Miller Moss": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "USC"
+    },
+    "Asante Das": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "USC"
+    },
+    "Ja'Kobi Lane": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "USC"
+    },
+    "Jack Stupin": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "A'Marion Peterson": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Seth Zamora": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Kade Eldridge": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Dylan Gebbia": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Quinten Joyner": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Tyler Robles": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Donovan Wood": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "USC"
+    },
+    "Ryon Sayeri": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Cian McKelvey": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "USC"
+    },
+    "Jay Fair": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "USC"
+    },
+    "Makai Lemon": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "USC"
+    },
+    "Jayden Maiava": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "USC"
+    },
+    "Carson Tabaracci": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "USC"
+    },
+    "Zachariah Branch": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "USC"
+    },
+    "Kyron Hudson": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "USC"
+    },
+    "Walker Lyons": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "King Miller": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Duce Robinson": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "USC"
+    },
+    "Bryan Jackson": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Jake Jensen": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "USC"
+    },
+    "Collin Fasse": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "USC"
+    },
+    "Jaden Richardson": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "USC"
+    },
+    "Corey Nerhus": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "USC"
+    },
+    "Charles Ross": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "USC"
+    },
+    "Josiah Zamora": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "USC"
+    },
+    "Adam Mohammed": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Rashid Williams": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Decker DeGraaf": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Giles Jackson": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "WAS"
+    },
+    "Demond Williams Jr.": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Wilson Schwartz": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "WAS"
+    },
+    "Sam Adams II": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "WAS"
+    },
+    "Daniyel Ngata": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "WAS"
+    },
+    "Will Rogers": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "WAS"
+    },
+    "Jace Burton": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Audric Harris": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Ryan Otton": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "WAS"
+    },
+    "Sam Finnegan": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Luke Luchini": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Jeremiah Hunter": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "WAS"
+    },
+    "Keleki Latu": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "WAS"
+    },
+    "Kevin Green Jr.": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "WAS"
+    },
+    "Shea Kuykendall": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "WAS"
+    },
+    "Jackson Girouard": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "WAS"
+    },
+    "Charlie Crowell": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Justice Williams": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Luke Gayton": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Camden Sirmon": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "WAS"
+    },
+    "Grady Gross": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "WAS"
+    },
+    "Denzel Boston": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "WAS"
+    },
+    "Jason Robinson Jr.": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Teddy Purcell": {
+        "position": "QB",
+        "eligibility": "JR",
+        "team": "WAS"
+    },
+    "Owen Coutts": {
+        "position": "TE",
+        "eligibility": "JR",
+        "team": "WAS"
+    },
+    "Jordan Washington": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Cameron Davis": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "WAS"
+    },
+    "Ryder Bumgarner": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Keith Reynolds": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WAS"
+    },
+    "Quentin Moore": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "WAS"
+    },
+    "Jonah Coleman": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "WAS"
+    },
+    "Zach Gloudeman": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "WIS"
+    },
+    "Tawee Walker": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "WIS"
+    },
+    "Cole LaCrue": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Chris Brooks Jr.": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "WIS"
+    },
+    "Grover Bortolotti": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "WIS"
+    },
+    "Langdon Nordgaard": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Kyan Berry-Johnson": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "C.J. Williams": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "WIS"
+    },
+    "JT Seagreaves": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "WIS"
+    },
+    "Gavin Lahm": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "WIS"
+    },
+    "Rob Booker II": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Sean West": {
+        "position": "K",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Davion Thomas-Kumpula": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Riley Nowakowski": {
+        "position": "TE",
+        "eligibility": "SR",
+        "team": "WIS"
+    },
+    "Nate White": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Tyler Van Dyke": {
+        "position": "QB",
+        "eligibility": "SR",
+        "team": "WIS"
+    },
+    "Jackson McGohan": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "WIS"
+    },
+    "Gideon Ituka": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Quincy Burroughs": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "WIS"
+    },
+    "Gianni Smith": {
+        "position": "K",
+        "eligibility": "SR",
+        "team": "WIS"
+    },
+    "Cam Fane": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "WIS"
+    },
+    "Dilin Jones": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Braedyn Locke": {
+        "position": "QB",
+        "eligibility": "SO",
+        "team": "WIS"
+    },
+    "Tyrell Henry": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "WIS"
+    },
+    "Milos Spasojevic": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Cade Yacamelli": {
+        "position": "RB",
+        "eligibility": "SO",
+        "team": "WIS"
+    },
+    "Alex Moeller": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "WIS"
+    },
+    "Mabrey Mettauer": {
+        "position": "QB",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Tucker Ashcraft": {
+        "position": "TE",
+        "eligibility": "SO",
+        "team": "WIS"
+    },
+    "Jackson Acker": {
+        "position": "RB",
+        "eligibility": "JR",
+        "team": "WIS"
+    },
+    "Trech Kekahuna": {
+        "position": "WR",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Bryson Green": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "WIS"
+    },
+    "Nathanial Vakos": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "WIS"
+    },
+    "Grant Stec": {
+        "position": "TE",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Joseph Griffin Jr.": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "WIS"
+    },
+    "Chez Mellusi": {
+        "position": "RB",
+        "eligibility": "SR",
+        "team": "WIS"
+    },
+    "Will Pauling": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "WIS"
+    },
+    "Haakon Anderson": {
+        "position": "WR",
+        "eligibility": "SR",
+        "team": "WIS"
+    },
+    "Darrion Dupree": {
+        "position": "RB",
+        "eligibility": "FR",
+        "team": "WIS"
+    },
+    "Nate Van Zelst": {
+        "position": "K",
+        "eligibility": "JR",
+        "team": "WIS"
+    },
+    "Vinny Anthony II": {
+        "position": "WR",
+        "eligibility": "JR",
+        "team": "WIS"
+    },
+    "Grady O'Neill": {
+        "position": "WR",
+        "eligibility": "SO",
+        "team": "WIS"
+    }
+}

@@ -1,0 +1,967 @@
+[
+    {
+        "id": "1fd25005-b3cf-4c7b-9674-715ad411d79e",
+        "status": "closed",
+        "scheduled": "2023-11-18T17:00:00+00:00",
+        "attendance": 23291,
+        "entry_mode": "LDE",
+        "coverage": "full",
+        "sr_id": "sr:match:41339867",
+        "game_type": "regular",
+        "conference_game": true,
+        "duration": "2:34",
+        "venue": {
+            "id": "c8886fd1-a206-4643-85ca-1aa345c6493e",
+            "name": "Ryan Field",
+            "city": "Evanston",
+            "state": "IL",
+            "country": "USA",
+            "zip": "60201",
+            "address": "1501 Central Street",
+            "capacity": 47130,
+            "surface": "turf",
+            "roof_type": "outdoor",
+            "location": {
+                "lat": "42.0654",
+                "lng": "-87.6925"
+            }
+        },
+        "home": {
+            "id": "8c345b64-d751-44aa-852f-8c30db72ffdc",
+            "name": "Northwestern Wildcats",
+            "alias": "NW",
+            "game_number": 11
+        },
+        "away": {
+            "id": "485dd62f-108c-4e32-b171-27f5d493552d",
+            "name": "Purdue Boilermakers",
+            "alias": "PUR",
+            "game_number": 11
+        },
+        "broadcast": {
+            "network": "BTN",
+            "satellite": "610"
+        },
+        "time_zones": {
+            "venue": "US/Central",
+            "home": "US/Central",
+            "away": "US/Eastern"
+        },
+        "weather": {
+            "condition": "Sunny",
+            "humidity": 35,
+            "temp": 45,
+            "wind": {
+                "speed": 13,
+                "direction": "W"
+            }
+        },
+        "scoring": {
+            "home_points": 23,
+            "away_points": 15,
+            "periods": [
+                {
+                    "period_type": "quarter",
+                    "id": "a98a11b9-aa51-4829-8523-923fbb73b361",
+                    "number": 1,
+                    "sequence": 1,
+                    "home_points": 6,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "202578eb-dfd9-46a8-8f8f-e30c8b7ca32d",
+                    "number": 2,
+                    "sequence": 2,
+                    "home_points": 0,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "d34a3795-4e5b-4029-ac6e-b489157b549e",
+                    "number": 3,
+                    "sequence": 3,
+                    "home_points": 10,
+                    "away_points": 7
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "01a6274d-1282-4a37-baf3-c8a9b3a620f4",
+                    "number": 4,
+                    "sequence": 4,
+                    "home_points": 7,
+                    "away_points": 8
+                }
+            ]
+        }
+    },
+    {
+        "id": "6c266be9-3c0d-45fe-80b5-8e0264da1928",
+        "status": "closed",
+        "scheduled": "2023-11-18T17:00:00+00:00",
+        "attendance": 40666,
+        "entry_mode": "LDE",
+        "coverage": "full",
+        "sr_id": "sr:match:41340067",
+        "game_type": "regular",
+        "conference_game": true,
+        "duration": "3:57",
+        "venue": {
+            "id": "36ac3e20-2bfe-4654-b15a-f6398037156b",
+            "name": "Memorial Stadium (Bloomington, IN)",
+            "city": "Bloomington",
+            "state": "IN",
+            "country": "USA",
+            "zip": "47408",
+            "address": "1001 E 17th Street",
+            "capacity": 52929,
+            "surface": "artificial",
+            "roof_type": "outdoor",
+            "sr_id": "sr:venue:20357",
+            "location": {
+                "lat": "39.1809",
+                "lng": "-86.5256"
+            }
+        },
+        "home": {
+            "id": "fa0eb091-8e35-49c7-b00f-269794a99a61",
+            "name": "Indiana Hoosiers",
+            "alias": "IU",
+            "game_number": 11
+        },
+        "away": {
+            "id": "1cdf66a2-f157-4b4f-ad37-bd31e268f0ae",
+            "name": "Michigan State Spartans",
+            "alias": "MSU",
+            "game_number": 11
+        },
+        "broadcast": {
+            "network": "BTN",
+            "satellite": "610"
+        },
+        "time_zones": {
+            "venue": "US/Eastern",
+            "home": "US/Eastern",
+            "away": "US/Eastern"
+        },
+        "weather": {
+            "condition": "Sunny",
+            "humidity": 63,
+            "temp": 45,
+            "wind": {
+                "speed": 2,
+                "direction": "NNE"
+            }
+        },
+        "scoring": {
+            "home_points": 21,
+            "away_points": 24,
+            "periods": [
+                {
+                    "period_type": "quarter",
+                    "id": "d61b594e-c1e4-4068-b3d3-86be232b1e2f",
+                    "number": 1,
+                    "sequence": 1,
+                    "home_points": 0,
+                    "away_points": 7
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "49ea35ca-f5bf-405e-8efe-ec0857e0ab49",
+                    "number": 2,
+                    "sequence": 2,
+                    "home_points": 7,
+                    "away_points": 7
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "92a8f2f4-4c55-416d-8409-4bc6b8a5f7f2",
+                    "number": 3,
+                    "sequence": 3,
+                    "home_points": 7,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "00e27fb1-8674-45fb-92bf-c7bc07a47348",
+                    "number": 4,
+                    "sequence": 4,
+                    "home_points": 7,
+                    "away_points": 10
+                }
+            ]
+        }
+    },
+    {
+        "id": "7efb85c2-ef78-4208-aeec-2683edde7791",
+        "status": "closed",
+        "scheduled": "2023-11-18T17:00:00+00:00",
+        "attendance": 49546,
+        "entry_mode": "LDE",
+        "coverage": "full",
+        "sr_id": "sr:match:41340163",
+        "game_type": "regular",
+        "conference_game": true,
+        "duration": "3:39",
+        "venue": {
+            "id": "910a54c9-d15f-4e40-a39e-ae20da947833",
+            "name": "SECU Stadium",
+            "city": "College Park",
+            "state": "MD",
+            "country": "USA",
+            "zip": "20742",
+            "address": "90 Stadium Drive",
+            "capacity": 51802,
+            "surface": "artificial",
+            "roof_type": "outdoor",
+            "location": {
+                "lat": "38.9903",
+                "lng": "-76.9472"
+            }
+        },
+        "home": {
+            "id": "e2a7ee48-c096-4aac-a7a2-4f1f35baa835",
+            "name": "Maryland Terrapins",
+            "alias": "MAR",
+            "game_number": 11
+        },
+        "away": {
+            "id": "d3e8c416-e643-4d5e-be9e-c598a150b234",
+            "name": "Michigan Wolverines",
+            "alias": "MICH",
+            "game_number": 11
+        },
+        "broadcast": {
+            "network": "FOX"
+        },
+        "time_zones": {
+            "venue": "US/Eastern",
+            "home": "US/Eastern",
+            "away": "US/Eastern"
+        },
+        "weather": {
+            "condition": "Partly cloudy",
+            "humidity": 57,
+            "temp": 55,
+            "wind": {
+                "speed": 11,
+                "direction": "NNW"
+            }
+        },
+        "scoring": {
+            "home_points": 24,
+            "away_points": 31,
+            "periods": [
+                {
+                    "period_type": "quarter",
+                    "id": "0cd6fe90-78ea-4f12-a649-670325ca45a6",
+                    "number": 1,
+                    "sequence": 1,
+                    "home_points": 3,
+                    "away_points": 16
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "ef043f97-212c-4479-b2c3-16d7fa0057bd",
+                    "number": 2,
+                    "sequence": 2,
+                    "home_points": 7,
+                    "away_points": 7
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "7671fd00-9da3-46db-a39a-dfec1e0f6cd5",
+                    "number": 3,
+                    "sequence": 3,
+                    "home_points": 14,
+                    "away_points": 6
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "0731f614-86e5-4bbe-b608-eb461182e5fd",
+                    "number": 4,
+                    "sequence": 4,
+                    "home_points": 0,
+                    "away_points": 2
+                }
+            ]
+        }
+    },
+    {
+        "id": "98c2c828-85e0-4926-a396-d152719f1cbd",
+        "status": "closed",
+        "scheduled": "2023-11-18T17:00:00+00:00",
+        "attendance": 105114,
+        "entry_mode": "LDE",
+        "coverage": "full",
+        "sr_id": "sr:match:41338771",
+        "game_type": "regular",
+        "conference_game": true,
+        "duration": "3:17",
+        "venue": {
+            "id": "ce739138-6c6a-48a7-a2ad-25a18f9c4139",
+            "name": "Beaver Stadium",
+            "city": "University Park",
+            "state": "PA",
+            "country": "USA",
+            "zip": "16802",
+            "address": "1 Beaver Stadium",
+            "capacity": 106572,
+            "surface": "turf",
+            "roof_type": "outdoor",
+            "location": {
+                "lat": "40.8113",
+                "lng": "-77.8550"
+            }
+        },
+        "home": {
+            "id": "eeb3ce19-6ddd-4c91-afab-811c6cc81974",
+            "name": "Penn State Nittany Lions",
+            "alias": "PSU",
+            "game_number": 11
+        },
+        "away": {
+            "id": "a60012f8-dc22-4c7d-9d1b-c00cdc3e9c97",
+            "name": "Rutgers Scarlet Knights",
+            "alias": "RUT",
+            "game_number": 11
+        },
+        "broadcast": {
+            "network": "Fox Sports 1",
+            "satellite": "219"
+        },
+        "time_zones": {
+            "venue": "US/Eastern",
+            "home": "US/Eastern",
+            "away": "US/Eastern"
+        },
+        "weather": {
+            "condition": "Partly cloudy",
+            "humidity": 61,
+            "temp": 41,
+            "wind": {
+                "speed": 9,
+                "direction": "N"
+            }
+        },
+        "scoring": {
+            "home_points": 27,
+            "away_points": 6,
+            "periods": [
+                {
+                    "period_type": "quarter",
+                    "id": "1e88d765-2bca-4a86-88b6-d48dcb364057",
+                    "number": 1,
+                    "sequence": 1,
+                    "home_points": 0,
+                    "away_points": 3
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "ea1fa644-1a1d-4bfd-b47c-0afe8ec3ea1d",
+                    "number": 2,
+                    "sequence": 2,
+                    "home_points": 10,
+                    "away_points": 3
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "3f053549-2cde-4e03-af26-798ba2f9c796",
+                    "number": 3,
+                    "sequence": 3,
+                    "home_points": 3,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "8db566c7-2129-4528-b43f-2e8aa814c1ee",
+                    "number": 4,
+                    "sequence": 4,
+                    "home_points": 14,
+                    "away_points": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "e15ca71c-bd2f-426f-91a5-9b85f9630802",
+        "status": "closed",
+        "scheduled": "2023-11-18T20:30:00+00:00",
+        "attendance": 69250,
+        "entry_mode": "LDE",
+        "coverage": "full",
+        "sr_id": "sr:match:41338303",
+        "game_type": "regular",
+        "conference_game": true,
+        "duration": "3:33",
+        "venue": {
+            "id": "967ef86b-d0de-49b7-8984-61f95104d30d",
+            "name": "Kinnick Stadium",
+            "city": "Iowa City",
+            "state": "IA",
+            "country": "USA",
+            "zip": "52242",
+            "address": "886 Stadium Drive",
+            "capacity": 69250,
+            "surface": "artificial",
+            "roof_type": "outdoor",
+            "location": {
+                "lat": "41.6587",
+                "lng": "-91.5511"
+            }
+        },
+        "home": {
+            "id": "a2ee495d-37c7-45ac-ac3d-d3a492a219c1",
+            "name": "Iowa Hawkeyes",
+            "alias": "IOW",
+            "game_number": 11
+        },
+        "away": {
+            "id": "2d824a5f-e706-45b8-9d20-434ed5dd5c2f",
+            "name": "Illinois Fighting Illini",
+            "alias": "ILL",
+            "game_number": 11
+        },
+        "broadcast": {
+            "network": "Fox Sports 1",
+            "satellite": "219"
+        },
+        "time_zones": {
+            "venue": "US/Central",
+            "home": "US/Central",
+            "away": "US/Central"
+        },
+        "weather": {
+            "condition": "Sunny",
+            "humidity": 36,
+            "temp": 58,
+            "wind": {
+                "speed": 12,
+                "direction": "W"
+            }
+        },
+        "scoring": {
+            "home_points": 15,
+            "away_points": 13,
+            "periods": [
+                {
+                    "period_type": "quarter",
+                    "id": "00513d2c-4fa6-4081-ae75-e02629da7ae8",
+                    "number": 1,
+                    "sequence": 1,
+                    "home_points": 2,
+                    "away_points": 3
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "10b4a59c-8aa2-40ac-a398-3c4bc3278726",
+                    "number": 2,
+                    "sequence": 2,
+                    "home_points": 7,
+                    "away_points": 7
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "2b120fbe-db25-4118-a639-c58613aecda7",
+                    "number": 3,
+                    "sequence": 3,
+                    "home_points": 0,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "edb3fd82-f88b-4b34-b202-d364f6c642bf",
+                    "number": 4,
+                    "sequence": 4,
+                    "home_points": 6,
+                    "away_points": 3
+                }
+            ]
+        }
+    },
+    {
+        "id": "fcc9fb19-1d60-4742-92c3-e8b3d9573105",
+        "status": "closed",
+        "scheduled": "2023-11-18T20:30:00+00:00",
+        "attendance": 72244,
+        "entry_mode": "LDE",
+        "coverage": "full",
+        "sr_id": "sr:match:41340571",
+        "game_type": "regular",
+        "conference_game": true,
+        "duration": "3:25",
+        "venue": {
+            "id": "8df5b87a-35b7-474b-afc0-fc2c17d033f0",
+            "name": "Los Angeles Memorial Coliseum",
+            "city": "Los Angeles",
+            "state": "CA",
+            "country": "USA",
+            "zip": "90037",
+            "address": "3911 South Figueroa Street",
+            "capacity": 77500,
+            "surface": "turf",
+            "roof_type": "outdoor",
+            "location": {
+                "lat": "34.0137",
+                "lng": "-118.2878"
+            }
+        },
+        "home": {
+            "id": "8f496f34-14e3-4ca7-958b-53f6da0b74d6",
+            "name": "USC Trojans",
+            "alias": "USC",
+            "game_number": 12
+        },
+        "away": {
+            "id": "398eda2b-ba77-469f-94df-18fd1d9087d8",
+            "name": "UCLA Bruins",
+            "alias": "UCLA",
+            "game_number": 11
+        },
+        "broadcast": {
+            "network": "ABC"
+        },
+        "time_zones": {
+            "venue": "US/Pacific",
+            "home": "US/Pacific",
+            "away": "US/Pacific"
+        },
+        "weather": {
+            "condition": "Overcast",
+            "humidity": 68,
+            "temp": 68,
+            "wind": {
+                "speed": 2,
+                "direction": "N"
+            }
+        },
+        "scoring": {
+            "home_points": 20,
+            "away_points": 38,
+            "periods": [
+                {
+                    "period_type": "quarter",
+                    "id": "7131864a-937f-418e-afc6-be37bc76beef",
+                    "number": 1,
+                    "sequence": 1,
+                    "home_points": 0,
+                    "away_points": 14
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "9ffc97fa-0f0a-4d22-abea-65688b9b6123",
+                    "number": 2,
+                    "sequence": 2,
+                    "home_points": 10,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "1ea2f08a-a408-4ac6-9ec1-2e2a965b2dc4",
+                    "number": 3,
+                    "sequence": 3,
+                    "home_points": 3,
+                    "away_points": 17
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "9e566477-b7ea-4d64-a6ea-3e4f0fb3c05b",
+                    "number": 4,
+                    "sequence": 4,
+                    "home_points": 7,
+                    "away_points": 7
+                }
+            ]
+        }
+    },
+    {
+        "id": "f9f594dd-a733-46e4-8a44-121fc78cb744",
+        "status": "closed",
+        "scheduled": "2023-11-18T21:00:00+00:00",
+        "attendance": 104019,
+        "entry_mode": "LDE",
+        "coverage": "full",
+        "sr_id": "sr:match:41338867",
+        "game_type": "regular",
+        "conference_game": true,
+        "duration": "2:55",
+        "venue": {
+            "id": "668dcdfb-06dd-4185-911d-d62891ab9143",
+            "name": "Ohio Stadium",
+            "city": "Columbus",
+            "state": "OH",
+            "country": "USA",
+            "zip": "43210",
+            "address": "411 Woody Hayes Drive",
+            "capacity": 102780,
+            "surface": "artificial",
+            "roof_type": "outdoor",
+            "location": {
+                "lat": "40.0022",
+                "lng": "-83.0197"
+            }
+        },
+        "home": {
+            "id": "9a6d6f3f-021e-4ddd-8fac-ac4766239d87",
+            "name": "Ohio State Buckeyes",
+            "alias": "OSU",
+            "game_number": 11
+        },
+        "away": {
+            "id": "709c25ab-2674-4d9f-9571-69c5ee9363b6",
+            "name": "Minnesota Golden Gophers",
+            "alias": "MIN",
+            "game_number": 11
+        },
+        "broadcast": {
+            "network": "BTN",
+            "satellite": "610"
+        },
+        "time_zones": {
+            "venue": "US/Eastern",
+            "home": "US/Eastern",
+            "away": "US/Central"
+        },
+        "weather": {
+            "condition": "Sunny",
+            "humidity": 52,
+            "temp": 49,
+            "wind": {
+                "speed": 4,
+                "direction": "WNW"
+            }
+        },
+        "scoring": {
+            "home_points": 37,
+            "away_points": 3,
+            "periods": [
+                {
+                    "period_type": "quarter",
+                    "id": "06dc63f9-c75d-4be5-a7af-ebb051f15554",
+                    "number": 1,
+                    "sequence": 1,
+                    "home_points": 7,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "4d699be3-26f6-41c7-a6c4-41bbaf434d46",
+                    "number": 2,
+                    "sequence": 2,
+                    "home_points": 6,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "21dd9301-b982-47bd-b8d1-c0ffe16ec2c9",
+                    "number": 3,
+                    "sequence": 3,
+                    "home_points": 17,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "4c19d221-c416-4710-b349-78163487c4a5",
+                    "number": 4,
+                    "sequence": 4,
+                    "home_points": 7,
+                    "away_points": 3
+                }
+            ]
+        }
+    },
+    {
+        "id": "fbcdff5c-68d0-4384-8027-7885b661c428",
+        "status": "closed",
+        "scheduled": "2023-11-18T21:00:00+00:00",
+        "attendance": 44741,
+        "entry_mode": "LDE",
+        "coverage": "full",
+        "sr_id": "sr:match:41339573",
+        "game_type": "regular",
+        "conference_game": true,
+        "duration": "3:20",
+        "venue": {
+            "id": "ae923f75-5f89-48ec-9447-9ee05028f0f0",
+            "name": "Mountain America Stadium",
+            "city": "Tempe",
+            "state": "AZ",
+            "country": "USA",
+            "zip": "85281",
+            "address": "500 East Veterans Way",
+            "capacity": 56232,
+            "surface": "turf",
+            "roof_type": "outdoor",
+            "location": {
+                "lat": "33.2535",
+                "lng": "-111.5557"
+            }
+        },
+        "home": {
+            "id": "00fd8418-0e62-4366-9a2a-d5f72850066c",
+            "name": "Arizona State Sun Devils",
+            "alias": "ASU",
+            "game_number": 11
+        },
+        "away": {
+            "id": "5c218a3b-a013-4037-97b6-603c9502b701",
+            "name": "Oregon Ducks",
+            "alias": "ORE",
+            "game_number": 11
+        },
+        "broadcast": {
+            "network": "FOX"
+        },
+        "time_zones": {
+            "venue": "US/Arizona",
+            "home": "US/Arizona",
+            "away": "US/Pacific"
+        },
+        "weather": {
+            "condition": "Partly cloudy",
+            "humidity": 59,
+            "temp": 71,
+            "wind": {
+                "speed": 4,
+                "direction": "W"
+            }
+        },
+        "scoring": {
+            "home_points": 13,
+            "away_points": 49,
+            "periods": [
+                {
+                    "period_type": "quarter",
+                    "id": "d3b6be25-0ca1-4e55-a0c5-0a944e2ef9d3",
+                    "number": 1,
+                    "sequence": 1,
+                    "home_points": 0,
+                    "away_points": 21
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "d55e7556-2598-4a0c-bb97-8129d540cfad",
+                    "number": 2,
+                    "sequence": 2,
+                    "home_points": 0,
+                    "away_points": 21
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "f23f48c5-0e61-449e-9c77-cb4319810031",
+                    "number": 3,
+                    "sequence": 3,
+                    "home_points": 3,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "1db08058-352e-49df-a51c-3dd44b705a9a",
+                    "number": 4,
+                    "sequence": 4,
+                    "home_points": 10,
+                    "away_points": 7
+                }
+            ]
+        }
+    },
+    {
+        "id": "0afcfa83-fc40-490f-956f-4ae9fc0200d2",
+        "status": "closed",
+        "scheduled": "2023-11-19T00:30:00+00:00",
+        "attendance": 72237,
+        "entry_mode": "LDE",
+        "coverage": "full",
+        "sr_id": "sr:match:41338539",
+        "game_type": "regular",
+        "conference_game": true,
+        "duration": "3:19",
+        "venue": {
+            "id": "9af4c614-c1c7-4397-af9f-45983d370fc9",
+            "name": "Camp Randall Stadium",
+            "city": "Madison",
+            "state": "WI",
+            "country": "USA",
+            "zip": "53711",
+            "address": "1440 Monroe Street",
+            "capacity": 80321,
+            "surface": "artificial",
+            "roof_type": "outdoor",
+            "location": {
+                "lat": "43.0699",
+                "lng": "-89.4127"
+            }
+        },
+        "home": {
+            "id": "7dbca160-b9d8-4da4-8176-2445cb4b34d2",
+            "name": "Wisconsin Badgers",
+            "alias": "WIS",
+            "game_number": 11
+        },
+        "away": {
+            "id": "98833e65-ab72-482d-b3c0-13f8656629c0",
+            "name": "Nebraska Cornhuskers",
+            "alias": "NEB",
+            "game_number": 11
+        },
+        "broadcast": {
+            "network": "NBC"
+        },
+        "time_zones": {
+            "venue": "US/Central",
+            "home": "US/Central",
+            "away": "US/Central"
+        },
+        "weather": {
+            "condition": "Clear",
+            "humidity": 55,
+            "temp": 44,
+            "wind": {
+                "speed": 2,
+                "direction": "N"
+            }
+        },
+        "scoring": {
+            "home_points": 24,
+            "away_points": 17,
+            "periods": [
+                {
+                    "period_type": "quarter",
+                    "id": "0bc975f0-0d05-4443-83e1-a360df03d39c",
+                    "number": 1,
+                    "sequence": 1,
+                    "home_points": 0,
+                    "away_points": 14
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "734b8ab3-086f-419c-b49d-c8bf79ede944",
+                    "number": 2,
+                    "sequence": 2,
+                    "home_points": 10,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "2a4587eb-fcf8-46cc-a84b-181cd30468b0",
+                    "number": 3,
+                    "sequence": 3,
+                    "home_points": 7,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "4bb87c91-ed02-408c-9671-c8cf93f774bb",
+                    "number": 4,
+                    "sequence": 4,
+                    "home_points": 0,
+                    "away_points": 3
+                },
+                {
+                    "period_type": "overtime",
+                    "id": "46845233-1f7d-4e35-9be7-642903225b58",
+                    "number": 1,
+                    "sequence": 5,
+                    "home_points": 7,
+                    "away_points": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "0d402655-5743-41c6-b28a-4eda05eb8623",
+        "status": "closed",
+        "scheduled": "2023-11-19T00:30:00+00:00",
+        "attendance": 38415,
+        "entry_mode": "LDE",
+        "coverage": "full",
+        "sr_id": "sr:match:41340211",
+        "game_type": "regular",
+        "conference_game": true,
+        "duration": "3:17",
+        "venue": {
+            "id": "08ebca26-40bd-4112-a917-69c509c7ec7a",
+            "name": "Reser Stadium",
+            "city": "Corvallis",
+            "state": "OR",
+            "country": "USA",
+            "zip": "97331",
+            "address": "660 SW 26th Street",
+            "capacity": 26407,
+            "surface": "artificial",
+            "roof_type": "outdoor",
+            "sr_id": "sr:venue:21334",
+            "location": {
+                "lat": "44.5595",
+                "lng": "-123.2814"
+            }
+        },
+        "home": {
+            "id": "6fddb136-b83b-4f5f-8574-54e5581aeaae",
+            "name": "Oregon State Beavers",
+            "alias": "ORS",
+            "game_number": 11
+        },
+        "away": {
+            "id": "7293edba-9810-444b-9df1-709c24d1c522",
+            "name": "Washington Huskies",
+            "alias": "WAS",
+            "game_number": 11
+        },
+        "broadcast": {
+            "network": "ABC"
+        },
+        "time_zones": {
+            "venue": "US/Pacific",
+            "home": "US/Pacific",
+            "away": "US/Pacific"
+        },
+        "weather": {
+            "condition": "Rain, Mist",
+            "humidity": 89,
+            "temp": 46,
+            "wind": {
+                "speed": 2,
+                "direction": "N"
+            }
+        },
+        "scoring": {
+            "home_points": 20,
+            "away_points": 22,
+            "periods": [
+                {
+                    "period_type": "quarter",
+                    "id": "eecdf782-4ac7-4ca1-a119-5425a851fcc4",
+                    "number": 1,
+                    "sequence": 1,
+                    "home_points": 7,
+                    "away_points": 9
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "c496cb45-963e-4d7e-9f66-5a1730fa134d",
+                    "number": 2,
+                    "sequence": 2,
+                    "home_points": 3,
+                    "away_points": 13
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "ad4b912f-f07a-4e78-b592-fc92294b9d06",
+                    "number": 3,
+                    "sequence": 3,
+                    "home_points": 7,
+                    "away_points": 0
+                },
+                {
+                    "period_type": "quarter",
+                    "id": "df8b69a4-c15d-4ba3-9b57-bbeefaecb844",
+                    "number": 4,
+                    "sequence": 4,
+                    "home_points": 3,
+                    "away_points": 0
+                }
+            ]
+        }
+    }
+]

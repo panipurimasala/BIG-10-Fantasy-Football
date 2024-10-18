@@ -1,0 +1,410 @@
+[
+    {
+        "home": {
+            "kicking": {
+                "field_goals": [
+                    {
+                        "id": "1700d3fa-4758-4345-9df0-f56160464d78",
+                        "name": "Tyler Loop",
+                        "jersey": "33",
+                        "position": "K",
+                        "attempts": 1,
+                        "made": 1,
+                        "blocked": 0,
+                        "yards": 30,
+                        "avg_yards": 30.0,
+                        "longest": 30,
+                        "missed": 0,
+                        "pct": 100.0,
+                        "attempts_19": 0,
+                        "attempts_29": 0,
+                        "attempts_39": 1,
+                        "attempts_49": 0,
+                        "attempts_50": 0,
+                        "made_19": 0,
+                        "made_29": 0,
+                        "made_39": 1,
+                        "made_49": 0,
+                        "made_50": 0
+                    }
+                ],
+                "pat": [
+                    {
+                        "id": "1700d3fa-4758-4345-9df0-f56160464d78",
+                        "name": "Tyler Loop",
+                        "jersey": "33",
+                        "position": "K",
+                        "attempts": 3,
+                        "blocked": 0,
+                        "made": 3,
+                        "missed": 0,
+                        "pct": 100.0
+                    }
+                ]
+            },
+            "defense_specteams": {
+                "defense_totals": {
+                    "tackles": 31,
+                    "assists": 36,
+                    "combined": 67,
+                    "sacks": 2.0,
+                    "sack_yards": 5.0,
+                    "interceptions": 0,
+                    "passes_defended": 0,
+                    "forced_fumbles": 2,
+                    "fumble_recoveries": 1,
+                    "qb_hits": 2,
+                    "tloss": 4.0,
+                    "tloss_yards": 19.0,
+                    "safeties": 0,
+                    "sp_tackles": 1,
+                    "sp_assists": 0,
+                    "sp_forced_fumbles": 0,
+                    "sp_fumble_recoveries": 0,
+                    "sp_blocks": 0,
+                    "misc_tackles": 1,
+                    "misc_assists": 0,
+                    "misc_forced_fumbles": 0,
+                    "misc_fumble_recoveries": 0
+                },
+                "touchdowns": 0
+            },
+            "overview": {
+                "id": "9e33183c-7e35-4738-9051-719dd7b32e9c",
+                "name": "Wildcats",
+                "market": "Arizona",
+                "alias": "ARI",
+                "used_timeouts": 3,
+                "remaining_timeouts": 0,
+                "points": 24,
+                "used_challenges": 0,
+                "remaining_challenges": 1,
+                "record": {
+                    "wins": 3,
+                    "losses": 2,
+                    "ties": 0
+                }
+            },
+            "rushing": [
+                {
+                    "id": "a12a1cc0-91e6-11ec-9587-0f8fa2cff168",
+                    "name": "Noah Fifita",
+                    "jersey": "11",
+                    "position": "QB",
+                    "first_downs": 0,
+                    "avg_yards": 3.167,
+                    "attempts": 6,
+                    "touchdowns": 0,
+                    "yards": 19,
+                    "longest": 8,
+                    "redzone_attempts": 1,
+                    "tlost": 0,
+                    "tlost_yards": 0
+                },
+                {
+                    "id": "7f5fe426-ca4c-49f3-aaa9-1db0b365bb18",
+                    "name": "DJ Williams",
+                    "jersey": "08",
+                    "position": "RB",
+                    "first_downs": 5,
+                    "avg_yards": 4.3,
+                    "attempts": 10,
+                    "touchdowns": 0,
+                    "yards": 43,
+                    "longest": 13,
+                    "redzone_attempts": 0,
+                    "tlost": 1,
+                    "tlost_yards": -1
+                },
+                {
+                    "id": "cf95bd60-91e8-11ec-9587-0f8fa2cff168",
+                    "name": "Rayshon Luke",
+                    "jersey": "21",
+                    "position": "RB",
+                    "first_downs": 0,
+                    "avg_yards": 1.333,
+                    "attempts": 3,
+                    "touchdowns": 0,
+                    "yards": 4,
+                    "longest": 3,
+                    "redzone_attempts": 0,
+                    "tlost": 0,
+                    "tlost_yards": 0
+                },
+                {
+                    "id": "fa469cc0-91e6-11ec-9587-0f8fa2cff168",
+                    "name": "Jonah Coleman",
+                    "jersey": "03",
+                    "position": "RB",
+                    "first_downs": 3,
+                    "avg_yards": 3.667,
+                    "attempts": 12,
+                    "touchdowns": 0,
+                    "yards": 44,
+                    "longest": 12,
+                    "redzone_attempts": 3,
+                    "tlost": 1,
+                    "tlost_yards": -3
+                }
+            ],
+            "passing": [
+                {
+                    "id": "a12a1cc0-91e6-11ec-9587-0f8fa2cff168",
+                    "name": "Noah Fifita",
+                    "jersey": "11",
+                    "position": "QB",
+                    "first_downs": 13,
+                    "attempts": 39,
+                    "completions": 27,
+                    "cmp_pct": 69.231,
+                    "yards": 232,
+                    "avg_yards": 5.949,
+                    "sacks": 1,
+                    "sack_yards": 3,
+                    "touchdowns": 3,
+                    "longest": 33,
+                    "interceptions": 1,
+                    "rating": 139.46,
+                    "longest_touchdown": 10,
+                    "redzone_attempts": 7,
+                    "int_touchdowns": 0
+                }
+            ],
+            "receiving": [
+                {
+                    "id": "a12a1cc0-91e6-11ec-9587-0f8fa2cff168",
+                    "name": "Noah Fifita",
+                    "jersey": "11",
+                    "position": "QB",
+                    "first_downs": 13,
+                    "attempts": 39,
+                    "completions": 27,
+                    "cmp_pct": 69.231,
+                    "yards": 232,
+                    "avg_yards": 5.949,
+                    "sacks": 1,
+                    "sack_yards": 3,
+                    "touchdowns": 3,
+                    "longest": 33,
+                    "interceptions": 1,
+                    "rating": 139.46,
+                    "longest_touchdown": 10,
+                    "redzone_attempts": 7,
+                    "int_touchdowns": 0
+                }
+            ],
+            "two_point_conv": []
+        },
+        "away": {
+            "kicking": {
+                "field_goals": [
+                    {
+                        "id": "bd0bfde0-1f5e-11ed-a14c-9bcddb7a0cb8",
+                        "name": "Grady Gross",
+                        "jersey": "95",
+                        "position": "K",
+                        "attempts": 1,
+                        "made": 1,
+                        "blocked": 0,
+                        "yards": 37,
+                        "avg_yards": 37.0,
+                        "longest": 37,
+                        "missed": 0,
+                        "pct": 100.0,
+                        "attempts_19": 0,
+                        "attempts_29": 0,
+                        "attempts_39": 1,
+                        "attempts_49": 0,
+                        "attempts_50": 0,
+                        "made_19": 0,
+                        "made_29": 0,
+                        "made_39": 1,
+                        "made_49": 0,
+                        "made_50": 0
+                    }
+                ],
+                "pat": [
+                    {
+                        "id": "bd0bfde0-1f5e-11ed-a14c-9bcddb7a0cb8",
+                        "name": "Grady Gross",
+                        "jersey": "95",
+                        "position": "K",
+                        "attempts": 4,
+                        "blocked": 0,
+                        "made": 4,
+                        "missed": 0,
+                        "pct": 100.0
+                    }
+                ]
+            },
+            "defense_specteams": {
+                "defense_totals": {
+                    "tackles": 34,
+                    "assists": 38,
+                    "combined": 72,
+                    "sacks": 1.0,
+                    "sack_yards": 3.0,
+                    "interceptions": 1,
+                    "passes_defended": 1,
+                    "forced_fumbles": 0,
+                    "fumble_recoveries": 0,
+                    "qb_hits": 1,
+                    "tloss": 5.0,
+                    "tloss_yards": 10.0,
+                    "safeties": 0,
+                    "sp_tackles": 0,
+                    "sp_assists": 2,
+                    "sp_forced_fumbles": 0,
+                    "sp_fumble_recoveries": 0,
+                    "sp_blocks": 0,
+                    "misc_tackles": 0,
+                    "misc_assists": 0,
+                    "misc_forced_fumbles": 0,
+                    "misc_fumble_recoveries": 0
+                },
+                "touchdowns": 0
+            },
+            "overview": {
+                "id": "7293edba-9810-444b-9df1-709c24d1c522",
+                "name": "Huskies",
+                "market": "Washington",
+                "alias": "WAS",
+                "used_timeouts": 1,
+                "remaining_timeouts": 2,
+                "points": 31,
+                "used_challenges": 0,
+                "remaining_challenges": 1,
+                "record": {
+                    "wins": 5,
+                    "losses": 0,
+                    "ties": 0
+                }
+            },
+            "rushing": [
+                {
+                    "id": "e14eaaf0-8e80-11ec-8d02-85ead82574a9",
+                    "name": "Germie Bernard",
+                    "jersey": "04",
+                    "position": "WR",
+                    "first_downs": 2,
+                    "avg_yards": 2.4,
+                    "attempts": 5,
+                    "touchdowns": 1,
+                    "yards": 12,
+                    "longest": 11,
+                    "longest_touchdown": 3,
+                    "redzone_attempts": 3,
+                    "tlost": 1,
+                    "tlost_yards": -8
+                },
+                {
+                    "id": "6a0a6511-0031-434f-b4fd-af0a4304d619",
+                    "name": "Michael Penix Jr.",
+                    "jersey": "09",
+                    "position": "QB",
+                    "first_downs": 0,
+                    "avg_yards": -2.5,
+                    "attempts": 2,
+                    "touchdowns": 0,
+                    "yards": -5,
+                    "longest": -1,
+                    "redzone_attempts": 1,
+                    "tlost": 0,
+                    "tlost_yards": 0
+                },
+                {
+                    "id": "84b7f100-a411-11ed-8a80-af86f9952d66",
+                    "name": "Tybo Rogers",
+                    "jersey": "20",
+                    "position": "RB",
+                    "first_downs": 0,
+                    "avg_yards": 5.0,
+                    "attempts": 1,
+                    "touchdowns": 0,
+                    "yards": 5,
+                    "longest": 5,
+                    "redzone_attempts": 0,
+                    "tlost": 0,
+                    "tlost_yards": 0
+                },
+                {
+                    "id": "3f1ade5c-5ce1-4d9e-9dcd-c5a533efbfdc",
+                    "name": "Will Nixon",
+                    "jersey": "08",
+                    "position": "RB",
+                    "first_downs": 0,
+                    "avg_yards": 4.0,
+                    "attempts": 2,
+                    "touchdowns": 1,
+                    "yards": 8,
+                    "longest": 5,
+                    "longest_touchdown": 5,
+                    "redzone_attempts": 2,
+                    "tlost": 0,
+                    "tlost_yards": 0
+                },
+                {
+                    "id": "e6a9a750-8bd2-4a02-8fc1-648ae7111dee",
+                    "name": "Dillon Johnson",
+                    "jersey": "07",
+                    "position": "RB",
+                    "first_downs": 6,
+                    "avg_yards": 5.688,
+                    "attempts": 16,
+                    "touchdowns": 2,
+                    "yards": 91,
+                    "longest": 28,
+                    "longest_touchdown": 4,
+                    "redzone_attempts": 5,
+                    "tlost": 1,
+                    "tlost_yards": -2
+                }
+            ],
+            "passing": [
+                {
+                    "id": "6a0a6511-0031-434f-b4fd-af0a4304d619",
+                    "name": "Michael Penix Jr.",
+                    "jersey": "09",
+                    "position": "QB",
+                    "first_downs": 17,
+                    "attempts": 40,
+                    "completions": 30,
+                    "cmp_pct": 75.0,
+                    "yards": 363,
+                    "avg_yards": 9.075,
+                    "sacks": 2,
+                    "sack_yards": 5,
+                    "touchdowns": 0,
+                    "longest": 57,
+                    "interceptions": 0,
+                    "rating": 151.23,
+                    "redzone_attempts": 7,
+                    "int_touchdowns": 0
+                }
+            ],
+            "receiving": [
+                {
+                    "id": "6a0a6511-0031-434f-b4fd-af0a4304d619",
+                    "name": "Michael Penix Jr.",
+                    "jersey": "09",
+                    "position": "QB",
+                    "first_downs": 17,
+                    "attempts": 40,
+                    "completions": 30,
+                    "cmp_pct": 75.0,
+                    "yards": 363,
+                    "avg_yards": 9.075,
+                    "sacks": 2,
+                    "sack_yards": 5,
+                    "touchdowns": 0,
+                    "longest": 57,
+                    "interceptions": 0,
+                    "rating": 151.23,
+                    "redzone_attempts": 7,
+                    "int_touchdowns": 0
+                }
+            ],
+            "two_point_conv": []
+        }
+    }
+]
