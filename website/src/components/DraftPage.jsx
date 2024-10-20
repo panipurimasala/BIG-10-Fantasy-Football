@@ -62,7 +62,20 @@ let team2 = {"QB":[], "RB":[], "WR":[], "TE":[], "K":[], "D/ST":[]};
 
 const DraftPage = () => {
     const [inputText, setInputText] = useState('');
+    const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [displayText, setDisplayText] = useState("Start Drafting! Team 1 pick");
+
+    const handleInputChange = (e) => {
+        const text = e.target.value;
+        setInputText(text);
+        const match =  Object.keys(playerDict).some(player => player.toLowerCase() === text.toLowerCase());// hide the dropdown if whole name is typed in
+        if (!match && text !== '') {
+        const filtered = Object.keys(playerDict).filter(player => 
+            player.toLowerCase().includes(text.toLowerCase())).slice(0, 6);
+        setFilteredPlayers(filtered); 
+    } else {
+        setFilteredPlayers([]);
+    }};
 
     // Create a function to handle the submit
     const handleSubmit = (e) => {
@@ -86,14 +99,36 @@ const DraftPage = () => {
             setDisplayText("Drafting Done:");
         }
         setInputText(''); // Clear the input field after submitting
+        setFilteredPlayers([]);
     };
 
     return (
 <div className="Draft">
     <div className="Home">
             <form action="" method="get">
-                <input id="userquery" name="query" type="text" placeholder="Player Name" value={inputText} 
-                onChange={(e) => setInputText(e.target.value)}/>
+            <input
+                        id="userquery"
+                        name="query"
+                        type="text"
+                        placeholder="Player Name"
+                        value={inputText}
+                        onChange={handleInputChange} // filtering names here
+                    />
+
+                    
+                    {filteredPlayers.length > 0 && (
+                        <ul style={{ border: '0.5px solid', listStyle: 'Arial', padding: 20}}>
+                            {filteredPlayers.map((player, index) => (
+                                <li key={index} style={{ padding: '1px', cursor: 'wait' }}
+                                    onClick={() => {
+                                        setInputText(player); 
+                                        setFilteredPlayers([]); 
+                                    }}>
+                                    {player}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 <select name="category"> {/* should this be static or dynamic */}
                     <option value="QB">QB</option>
                     <option value="WR">WR</option>
