@@ -1,0 +1,40 @@
+.injury-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+  }
+  
+  .player-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .injury-details {
+    flex-grow: 1;
+    padding-left: 10px;
+  }
+  
+  .injury-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .injury-status.Q {
+    background-color: #ffd700; /* Yellow for questionable */
+  }
+  
+  .injury-status.NA {
+    background-color: #ff4500; /* Red for not active */
+  }
+  
+  .injury-status.IR {
+    background-color: #808080; /* Gray for injured reserve */
+  }
