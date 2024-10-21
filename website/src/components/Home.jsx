@@ -79,7 +79,7 @@ const Home = () => {
                     injury={player.injury}
                 />
                 ))}
-                <a href="#">View more Injuries</a>
+                {/* <a href="#">View more Injuries</a> */}
             </div>
             {/*Creating the next game part of the webpage*/}
             <div className="next_game">
