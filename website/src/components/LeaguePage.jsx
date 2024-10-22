@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
-import publicTournamentsData from "../mock_data/publicTournaments.json";
 
+function getTournamentData() {
+    let allTournaments = require("../mock_data/privateTournaments.json");
+    let tournamentDict = {};
+    Object.keys(allTournaments).forEach(tournament => {
+            tournamentDict[tournament] = allTournaments[tournament];
+    })
+    return tournamentDict;
+}
+
+let tournamentDict = getTournamentData();
 
 function League() {
-    const [inputText, setInputText] = useState('');
     const [tourneyName, setTourneyName] = useState ('');
     const [password, setPassword] = useState('');
     /* const handlePublicSubmit = (e) => { // for now only can join by used ID and password
@@ -20,7 +28,8 @@ function League() {
     const handlejoinPrivateSubmit = (e) => {
         e.preventDefault();
         if (tourneyName && password) { // tourneyName means the ID in this function
-            const match = (publicTournamentsData).some(tournament => tournament.id === tourneyName && tournament.password === password);
+            const match =  Object.keys(tournamentDict).some(tournament => tournamentDict[tournament].id === tourneyName
+            && tournamentDict[tournament].password === password);
             if (match) {
                 alert ('joined private tournament');
             } else {
