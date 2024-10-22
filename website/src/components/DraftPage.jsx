@@ -93,16 +93,18 @@ const DraftPage = () => {
             setDisplayText(ret); 
             if(ret !== "no player found" && ret !== "player does not play this position"){
                 count += 1;
+                setDisplayText("Team 2 pick!");
             }
-            setDisplayText("Team 2 pick!");
+            
         }
         else{
             let ret = draftPlayer(playerDict, inputText, team2, selectedPosition);
             setDisplayText(ret);
             if(ret !== "no player found" && ret !== "player does not play this position"){
                 count += 1;
+                setDisplayText("Team 1 pick!");
             }
-            setDisplayText("Team 1 pick!");
+            
 
         }
         if (count === 4) {
