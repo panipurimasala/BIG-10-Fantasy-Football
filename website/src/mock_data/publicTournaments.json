@@ -1,0 +1,24 @@
+{
+    "tournament": [
+      {
+        "name": "Nathan's League",
+        "id": "012293",
+        "password": "champ2024"
+      },
+      {
+        "name": "Marcus's League",
+        "id": "32567",
+        "password": "premier21"
+      },
+      {
+        "name": "Drew's League",
+        "id": "66789",
+        "password": "worldcup22"
+      },
+      {
+        "name": "John's League",
+        "id": "88321",
+        "password": "allstars01"
+      }
+    ]
+  }

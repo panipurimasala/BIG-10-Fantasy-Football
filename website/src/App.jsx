@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DraftPage from './components/DraftPage';
+import League from './components/LeaguePage';
 function App() {
   return (
   <div>
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/draft_page" element={<DraftPage />} />
+        <Route path = "/league_page" element = {<League />} />
       </Routes>
     </BrowserRouter>
   </div>

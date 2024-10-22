@@ -18,7 +18,7 @@ const Navbar = () => {
             <a href="/players">Your Players</a>
           </li>
           <li>
-            <a href="/Leagues">Leagues</a>
+            <a href="/league_page">Leagues</a>
           </li>
           <li>
             <a href="/about">About Us</a>
