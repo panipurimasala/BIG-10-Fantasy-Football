@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { json } from "react-router-dom";
+import './DraftPage.css';
 
 function getRosterData(){
     let allPlayers = require("../mock_data/allPlayers.json");
@@ -42,13 +44,13 @@ const DisplayJson = ({jsonData1, jsonData2}) => {
             <div>
                 <h2>Team1 Roster</h2>
                 <ul>
-                    <p><strong>Players:</strong> {testPrintPlayers(team1)}</p>
+                    <p><strong>Players:</strong> {testPrintPlayers(jsonData1)}</p>
                 </ul>
             </div>
             <div>
                 <h2>Team2 Roster</h2>
                 <ul>
-                    <p><strong>Players:</strong> {testPrintPlayers(team2)}</p>
+                    <p><strong>Players:</strong> {testPrintPlayers(jsonData2)}</p>
                 </ul>
             </div>
         </div>
@@ -88,7 +90,7 @@ const DraftPage = () => {
     // Create a function to handle the submit
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent the default form submission
-        if (count % 2 === 0){
+        if (count % 2 === 0 && count < 4){
             let ret = draftPlayer(playerDict, inputText, team1, selectedPosition);
             setDisplayText(ret); 
             if(ret !== "no player found" && ret !== "player does not play this position"){
@@ -97,7 +99,7 @@ const DraftPage = () => {
             }
             
         }
-        else{
+        else if (count < 4){
             let ret = draftPlayer(playerDict, inputText, team2, selectedPosition);
             setDisplayText(ret);
             if(ret !== "no player found" && ret !== "player does not play this position"){
@@ -107,8 +109,11 @@ const DraftPage = () => {
             
 
         }
-        if (count === 4) {
-            setDisplayText("Drafting Done:");
+        if (count >= 4) {
+            setDisplayText("Drafting Done");
+            localStorage.setItem("team1", JSON.stringify(team1));
+            localStorage.setItem("team2", JSON.stringify(team2));
+            return;
         }
         setInputText(''); // Clear the input field after submitting
         setFilteredPlayers([]);
@@ -156,33 +161,93 @@ const DraftPage = () => {
                 <input type="submit" onClick={handleSubmit}/>
             </form>
         </div>
-    <div className="market_table">
-            <table border="1">
-                <tr>
-                    <th>QB</th>
-                    <th>WR</th>
-                    <th>O-LINE</th>
-                    <th>TE</th>
-                    <th>RB</th>
-                    <th>SAFETY</th>
-                    <th>D-LINE</th>
-                    <th>LB</th>
-                    <th>CB</th>
-                    <th>SPECIAL TEAM</th>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-            </table>
-    </div>
     <body>
         <p>{displayText}</p>
-        <p>{count === 4 && <DisplayJson jsonData1={team1} jsonData2={team2}/>}</p>
+        <div className="table-container">
+            <table border="1">
+                <thead>
+                    <th colSpan="2">Team1</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                    </tr>
+                    {team1["QB"].map((player, index) => (
+                        <tr key={index}>
+                            <td>{player.name}</td>
+                            <td>{player.position}</td>
+                        </tr>
+                    ))}
+                    {team1["WR"].map((player, index) => (
+                        <tr key={index}>
+                            <td>{player.name}</td>
+                            <td>{player.position}</td>
+                        </tr>
+                    ))}
+                    {team1["RB"].map((player, index) => (
+                        <tr key={index}>
+                            <td>{player.name}</td>
+                            <td>{player.position}</td>
+                        </tr>
+                    ))}
+                    {team1["TE"].map((player, index) => (
+                        <tr key={index}>
+                            <td>{player.name}</td>
+                            <td>{player.position}</td>
+                        </tr>
+                    ))}
+                    {team1["K"].map((player, index) => (
+                        <tr key={index}>
+                            <td>{player.name}</td>
+                            <td>{player.position}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            <table border="1">
+                <thead>
+                    <th colSpan="2">Team2</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                    </tr>
+                    {team2["QB"].map((player, index) => (
+                        <tr key={index}>
+                            <td>{player.name}</td>
+                            <td>{player.position}</td>
+                        </tr>
+                    ))}
+                    {team2["WR"].map((player, index) => (
+                        <tr key={index}>
+                            <td>{player.name}</td>
+                            <td>{player.position}</td>
+                        </tr>
+                    ))}
+                    {team2["RB"].map((player, index) => (
+                        <tr key={index}>
+                            <td>{player.name}</td>
+                            <td>{player.position}</td>
+                        </tr>
+                    ))}
+                    {team2["TE"].map((player, index) => (
+                        <tr key={index}>
+                            <td>{player.name}</td>
+                            <td>{player.position}</td>
+                        </tr>
+                    ))}
+                    {team2["K"].map((player, index) => (
+                        <tr key={index}>
+                            <td>{player.name}</td>
+                            <td>{player.position}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+    </div>
+        
         
     </body>
 </div>

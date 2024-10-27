@@ -4,6 +4,7 @@ import Home from './components/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DraftPage from './components/DraftPage';
 import League from './components/LeaguePage';
+import TeamPage from './components/Team'
 import { Auth0Provider } from '@auth0/auth0-react';
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/draft_page" element={<DraftPage />} />
             <Route path = "/league_page" element = {<League />} />
+            <Route path = "/team_page" element = {<TeamPage />} />
           </Routes>
         </BrowserRouter>
       </div>
