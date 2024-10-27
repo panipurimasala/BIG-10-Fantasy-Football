@@ -4,6 +4,11 @@ import { FaFootballBall } from "react-icons/fa";
 import injuriesData from "../assets/constants_file"
 import InjuryCard from  "./InjuryCard"
 import playersDat from '../assets/players_const';
+import { Link } from 'react-router-dom';
+
+function ButtonLink({ to, children }) {
+  return <Link to={to}><button>{children}</button></Link>;
+}
 const Home = () => {
   return (
   //Creating the home page
@@ -29,7 +34,7 @@ const Home = () => {
                                     Play in our public leagues to get experience and have fun!
                                 </li>                                
                             </ul>
-                            <button>Join league</button>
+                            <ButtonLink to="/League_Page">Join League</ButtonLink>
                         </div>
                     </li>
                     <li className = "dbox">
@@ -45,7 +50,7 @@ const Home = () => {
                                     Be a commissioner, set the rules you like and invite friends to play!
                                 </li>                                
                             </ul>
-                            <button>Create league</button>
+                            <ButtonLink to="/League_Page">Create League</ButtonLink>
                         </div>
                     </li>
                 </ul>

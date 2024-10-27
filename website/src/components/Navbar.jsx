@@ -1,6 +1,8 @@
 import React from 'react'
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import Profile_functionality from './Profile_functionality';
+
 const Navbar = () => {
   return (
   //Creating the navbar
@@ -32,9 +34,10 @@ const Navbar = () => {
       </div>
       {/*This is the right of the navbar*/}
       <div className="navbar-right">
-        <a href="/account" className="user-icon">
+        {/* <a href="/LoginButton" className="user-icon">
           <i className="fas fa-user">Profile</i>
-        </a>
+        </a> */}
+        <Profile_functionality />
       </div>
   </nav>
   )
