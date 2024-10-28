@@ -1,0 +1,36 @@
+/* PlayerSummaryPage CSS */
+
+.PlayerSummary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.player-details {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.player-details p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.player-details p strong {
+    color: #333;
+}

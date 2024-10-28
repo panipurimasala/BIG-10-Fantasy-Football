@@ -5,8 +5,8 @@ import Profile_functionality from './Profile_functionality';
 
 const Navbar = () => {
   return (
-  //Creating the navbar
-  <nav className="navbar">
+    //Creating the navbar
+    <nav className="navbar">
       {/*This is built for the left of the navbar*/}
       <div className="navbar-left">
         <a href="/" className="logo">
@@ -29,7 +29,10 @@ const Navbar = () => {
             <a href="/contact">Contact</a>
           </li>
           <Link to="/draft_page">Draft</Link>
-  
+          <li>
+            <a href="/FreeAgency">Free Agency</a>
+          </li>
+
         </ul>
       </div>
       {/*This is the right of the navbar*/}
@@ -39,7 +42,7 @@ const Navbar = () => {
         </a> */}
         <Profile_functionality />
       </div>
-  </nav>
+    </nav>
   )
 }
 
