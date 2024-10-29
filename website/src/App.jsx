@@ -28,7 +28,7 @@ function App() {
             <Route path="/league_page" element={<League />} />
             <Route path="/team_page" element={<TeamPage />} />
             <Route path="/FreeAgency" element={<FreeAgencyPage />} />
-            <Route path="/free_agency/player/:playerName" element={<PlayerSummaryPage />} />
+            <Route path="/free_agency/player/:playerId" element={<PlayerSummaryPage />} />
           </Routes>
         </BrowserRouter>
       </div>

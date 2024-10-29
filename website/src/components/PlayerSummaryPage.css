@@ -23,6 +23,7 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 600px;
+    margin-bottom: 30px;
 }
 
 .player-details p {
@@ -33,4 +34,69 @@ h1 {
 
 .player-details p strong {
     color: #333;
+}
+
+.weekly-stats {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.weekly-stats h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.WeeklyStatsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.WeeklyStatsTable th,
+.WeeklyStatsTable td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.WeeklyStatsTable th {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.WeeklyStatsTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.WeeklyStatsTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.WeeklyStatsTable td .player-stat {
+    display: inline;
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.back-to-agency {
+    margin-top: 20px;
+}
+
+.back-to-agency a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.back-to-agency a:hover {
+    text-decoration: underline;
+    color: #0056b3;
 }
