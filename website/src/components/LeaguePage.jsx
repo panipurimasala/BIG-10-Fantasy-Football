@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function getTournamentData() {
     let allTournaments = require("../mock_data/privateTournaments.json");
@@ -14,6 +15,7 @@ let tournamentDict = getTournamentData();
 function League() {
     const [tourneyName, setTourneyName] = useState ('');
     const [password, setPassword] = useState('');
+    const { isAuthenticated } = useAuth0();
     /* const handlePublicSubmit = (e) => { // for now only can join by used ID and password
         e.preventDefault();
         if (tourneyName) {
@@ -49,32 +51,37 @@ function League() {
         }
     }; */
 
-    return (<div>
-        <h1>Join a Private Tournament</h1>
-        <form onSubmit={handlejoinPrivateSubmit}>
-            <label>
-                Tournament ID:
-                <input
-                    type="text"
-                    value={tourneyName}
-                    onChange={(e) => setTourneyName(e.target.value)}
-                    required
-                />
-            </label>
-            <br />
-            <label>
-                Password:
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-            </label>
-            <br />
-            <button type="submit">Join Private Tournament</button>
-        </form>
-    </div>);
+    if (isAuthenticated) {
+        return (<div>
+            <h1>Join a Private League</h1>
+            <form onSubmit={handlejoinPrivateSubmit}>
+                <label>
+                    League ID:
+                    <input
+                        type="text"
+                        value={tourneyName}
+                        onChange={(e) => setTourneyName(e.target.value)}
+                        required
+                    />
+                </label>
+                <br />
+                <label>
+                    Password:
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </label>
+                <br />
+                <button type="submit">Join Private League</button>
+            </form>
+        </div>);
+    }
+    else {
+        return (<h1>Login To Get Started</h1>);
+    }
 
 
 }

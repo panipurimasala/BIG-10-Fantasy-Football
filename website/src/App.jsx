@@ -11,21 +11,9 @@ import PlayerSummaryPage from './components/PlayerSummaryPage';
 
 
 function App() {
-<<<<<<< HEAD
-  return ( // hi checkig dev
-  <div>
-      
-       
-      
-      <BrowserRouter>
-      <Navbar /> 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/draft_page" element={<DraftPage />} />
-      </Routes>
-    </BrowserRouter>
-  </div>
-=======
+
+
+
   return (
     <Auth0Provider
       domain={process.env.REACT_APP_DOMAIN}
@@ -48,7 +36,7 @@ function App() {
         </BrowserRouter>
       </div>
     </Auth0Provider>
->>>>>>> main
+
 
   );
 }
