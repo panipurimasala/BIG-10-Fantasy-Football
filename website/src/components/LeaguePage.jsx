@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import './LeaguePage.css';
 
 function getTournamentData() {
     let allTournaments = require("../mock_data/privateTournaments.json");
@@ -80,7 +81,7 @@ function League() {
         </div>);
     }
     else {
-        return (<h1>Login To Get Started</h1>);
+        return (<h1 className="header">Login To Get Started</h1>);
     }
 
 
