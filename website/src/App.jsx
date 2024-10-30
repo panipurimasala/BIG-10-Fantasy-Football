@@ -8,7 +8,10 @@ import TeamPage from './components/Team'
 import { Auth0Provider } from '@auth0/auth0-react';
 import FreeAgencyPage from './components/FreeAgencyPage';
 import PlayerSummaryPage from './components/PlayerSummaryPage';
-
+import { createClient } from '@supabase/supabase-js';
+const supabaseUrl = 'https://your-project.supabase.co';
+const supabaseKey = 'your-supabase-anon-key';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 function App() {
   return (
