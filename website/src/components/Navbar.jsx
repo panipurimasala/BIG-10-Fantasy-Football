@@ -1,10 +1,12 @@
 import React from 'react'
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import Profile_functionality from './Profile_functionality';
+
 const Navbar = () => {
   return (
-  //Creating the navbar
-  <nav className="navbar">
+    //Creating the navbar
+    <nav className="navbar">
       {/*This is built for the left of the navbar*/}
       <div className="navbar-left">
         <a href="/" className="logo">
@@ -15,10 +17,10 @@ const Navbar = () => {
       <div className="navbar-center">
         <ul className="nav-links">
           <li>
-            <a href="/players">Your Players</a>
+            <a href="/team_page">Your Team</a>
           </li>
           <li>
-            <a href="/Leagues">Leagues</a>
+            <a href="/league_page">Leagues</a>
           </li>
           <li>
             <a href="/about">About Us</a>
@@ -27,16 +29,20 @@ const Navbar = () => {
             <a href="/contact">Contact</a>
           </li>
           <Link to="/draft_page">Draft</Link>
-  
+          <li>
+            <a href="/FreeAgency">Free Agency</a>
+          </li>
+
         </ul>
       </div>
       {/*This is the right of the navbar*/}
       <div className="navbar-right">
-        <a href="/account" className="user-icon">
+        {/* <a href="/LoginButton" className="user-icon">
           <i className="fas fa-user">Profile</i>
-        </a>
+        </a> */}
+        <Profile_functionality />
       </div>
-  </nav>
+    </nav>
   )
 }
 

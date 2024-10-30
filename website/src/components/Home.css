@@ -1,3 +1,17 @@
+@media (max-width: 1000px) {
+    .draft_boxes {
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center; /* Center the boxes */
+    }
+
+    .draft_boxes .dbox {
+        margin-right: 0; /* Remove right margin when stacked */
+        width: 90%; /* Reduce the width of each box */
+        margin-bottom: 1rem; /* Add some space between stacked boxes */
+        height:300px; 
+        padding: 150px;
+    }
+}
 .upper_part {
     display: flex;
     align-items: flex-start;
@@ -50,12 +64,34 @@
     margin-right: 1rem;
     border: 1px solid black;
     padding: 20px;
-    height: 100px;
+    height: 150px;
     text-align: center; /* Center the content */
     background-color: #f5f5f5; /* Add a subtle background color */
+    display: flex;
+    border-radius: 25px;
 }
 
 /* Remove margin from the last box to avoid overflow */
 .draft_boxes .dbox:last-child {
     margin-right: 0;
+}
+.draft_boxes .dbox .right_box_side .rbox{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    text-align:left;
+}
+.draft_boxes .dbox .right_box_side button{
+    margin-top: 20px; /* Add some spacing between the text and the button */
+    padding: 10px 20px; /* Increase button padding for a better look */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Round corners */
+    cursor: pointer; /* Show pointer on hover */
+}
+.draft_boxes .dbox .right_box_side .rbox .draft_descr {
+    padding-top: 15px;
+    font-size: 1rem;
+    color: grey;
 }

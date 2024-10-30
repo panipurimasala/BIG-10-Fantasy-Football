@@ -1,6 +1,16 @@
 import React from 'react'
 import './Home.css';
+import { FaFootballBall } from "react-icons/fa";
+import injuriesData from "../assets/constants_file"
+import InjuryCard from  "./InjuryCard"
+import playersDat from '../assets/players_const';
+import { Link } from 'react-router-dom';
+
+function ButtonLink({ to, children }) {
+  return <Link to={to}><button>{children}</button></Link>;
+}
 const Home = () => {
+    localStorage.clear();
   return (
   //Creating the home page
 <div className="home">
@@ -11,11 +21,38 @@ const Home = () => {
             <h3> It isn't too late to play!</h3>
             <div>
                 <ul className="draft_boxes">
+                    
                     <li className = "dbox">
-                        One
+                        <div className="left_box_side">
+                            <FaFootballBall />
+                        </div>
+                        <div className="right_box_side">
+                            <ul className="rbox">
+                                <li>
+                                    Join a league
+                                </li>
+                                <li className="draft_descr">
+                                    Play in our public leagues to get experience and have fun!
+                                </li>                                
+                            </ul>
+                            <ButtonLink to="/League_Page">Join League</ButtonLink>
+                        </div>
                     </li>
                     <li className = "dbox">
-                        Two
+                    <div className="left_box_side">
+                            <FaFootballBall />
+                        </div>
+                        <div className="right_box_side">
+                            <ul className="rbox">
+                                <li>
+                                    Create a league
+                                </li>
+                                <li className="draft_descr">
+                                    Be a commissioner, set the rules you like and invite friends to play!
+                                </li>                                
+                            </ul>
+                            <ButtonLink to="/League_Page">Create League</ButtonLink>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -23,27 +60,38 @@ const Home = () => {
             <div className="top_players">
             <h2>Top Players</h2>
             <ul>
-                <li>Player 1 - 100 pts</li>
-                <li>Player 2 - 90 pts</li>
-                <li>Player 3 - 85 pts</li>
+                {playersDat.map((player,index) =>(
+                    <li>{index+1}. {player.name} - {player.points}</li>
+                ))}
             </ul>
+            </div>
+            <div className="news_header">Big Ten Fantasy News</div>
+            <hr></hr>
+            <div>Dummy_Data</div>
+        </div>
+
+        <div className="home_right">
+            <div className="home">
+            {/* Other code */}
+            <div className="injuries">
+                <h2>Injuries</h2>
+                {injuriesData.map((player, index) => (
+                <InjuryCard 
+                    playerImage={player.playerImage}
+                    name={player.name}
+                    team={player.team}
+                    position={player.position}
+                    status={player.status}
+                    injury={player.injury}
+                />
+                ))}
+                {/* <a href="#">View more Injuries</a> */}
             </div>
             {/*Creating the next game part of the webpage*/}
             <div className="next_game">
             <h2>Next Game</h2>
             <p>Michigan vs Ohio State - Oct 21, 2024</p>
             </div>
-        </div>
-
-        <div className="home_right">
-            <div className="news_header">Big Ten Fantasy News</div>
-            <hr></hr>
-            <div>Dummy_Data</div>
-            <div className="injuries">
-                <h2>Injuries</h2>
-                <hr></hr>
-                <h4>List of injured people</h4>
-                <a>View more Injuries</a>
             </div>
         </div>
     </div>
