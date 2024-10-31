@@ -1,0 +1,42 @@
+.profileName:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+
+  
+.dropdownContent {
+    position: absolute;
+    color: red;
+    width: 170px;
+    height: 150px;
+    margin-top: -10px; /* Space between clickable text and dropdown content */
+    border: 1px solid black; /* Border for dropdown */
+    padding: 10px; /* Padding for dropdown content */
+    background-color: #f9f9f9; /* Background color */
+    border-radius: 4px; /* Rounded corners */
+    z-index: 1000;
+  }
+/* Triangle pointing upwards */
+.dropdownContent::before {
+    content: '';
+    position: absolute;
+    top: -19px; /* Position above the dropdown */
+    left: 77px; /* Position it horizontally (adjust as needed) */
+    border-width: 10px; /* Size of the triangle */
+    border-style: solid;
+    border-color: transparent transparent white transparent; /* Triangle color */
+    z-index: 1000;
+}
+.dropdownText {
+    text-align: left;
+    color: black;
+}
+.logout {
+    color: black;
+    text-align: center;
+}
+.logout:hover {
+    cursor: pointer;
+    font-weight: bold;
+}

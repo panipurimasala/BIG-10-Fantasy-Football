@@ -162,7 +162,7 @@ const DraftPage = () => {
             </form>
         </div>
     <body>
-        <p>{displayText}</p>
+        <h1 className="draftText">{displayText}</h1>
         <div className="table-container">
             <table border="1">
                 <thead>

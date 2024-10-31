@@ -1,3 +1,28 @@
-.header {
+.headerNoLogin {
     text-align: center;
+}
+
+.headerLogin {
+    text-align: center;
+}
+
+form {
+    margin: 0 auto;
+    width: 200px;
+}
+
+.passwordText {
+    font-weight: bold;
+}
+
+.leagueButton {
+    background-color: #333; /* Primary color */
+  color: white;              /* Text color */
+  border: none;              /* Remove default border */
+  border-radius: 5px;       /* Rounded corners */
+  padding: 10px 20px;       /* Vertical and horizontal padding */
+  font-size: 16px;           /* Font size */
+  cursor: pointer;           /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+  margin-top: 20px;
 }

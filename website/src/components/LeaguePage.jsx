@@ -53,11 +53,11 @@ function League() {
     }; */
 
     if (isAuthenticated) {
-        return (<div>
+        return (<div className="headerLogin">
             <h1>Join a Private League</h1>
             <form onSubmit={handlejoinPrivateSubmit}>
                 <label>
-                    League ID:
+                    <p className='passwordText'>League ID:</p>
                     <input
                         type="text"
                         value={tourneyName}
@@ -67,21 +67,21 @@ function League() {
                 </label>
                 <br />
                 <label>
-                    Password:
+                    <p className='passwordText'>Password:</p>
                     <input
-                        type="password"
+                        type="text"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </label>
                 <br />
-                <button type="submit">Join Private League</button>
+                <button className='leagueButton' type="submit">Join Private League</button>
             </form>
         </div>);
     }
     else {
-        return (<h1 className="header">Login To Get Started</h1>);
+        return (<h1 className="headerNoLogin">Login To Get Started</h1>);
     }
 
 
