@@ -8,11 +8,8 @@ import TeamPage from './components/Team'
 import { Auth0Provider } from '@auth0/auth0-react';
 import FreeAgencyPage from './components/FreeAgencyPage';
 import PlayerSummaryPage from './components/PlayerSummaryPage';
-import { createClient } from '@supabase/supabase-js';
-const supabaseUrl = 'https://your-project.supabase.co';
-const supabaseKey = 'your-supabase-anon-key';
-const supabase = createClient(supabaseUrl, supabaseKey);
-
+import LoginPage from './components/LoginPage';
+import Profile from "./components/Profile"
 function App() {
   return (
     <Auth0Provider
@@ -31,7 +28,9 @@ function App() {
             <Route path="/league_page" element={<League />} />
             <Route path="/team_page" element={<TeamPage />} />
             <Route path="/FreeAgency" element={<FreeAgencyPage />} />
-            <Route path="/free_agency/player/:playerName" element={<PlayerSummaryPage />} />
+            <Route path="/free_agency/player/:playerId" element={<PlayerSummaryPage />} />
+            <Route path="/LoginPage" element={<LoginPage />}></Route>
+            <Route path="/Profile" element={<Profile />}></Route>
           </Routes>
         </BrowserRouter>
       </div>
