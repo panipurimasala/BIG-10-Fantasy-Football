@@ -13,7 +13,7 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     padding: 50px;
     text-align: center;
-    margin-right: 180px;
+    margin-right: 150px;
 }
 .createLeague {
     width: 350px;
@@ -23,7 +23,12 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     padding: 50px;
     text-align: center;
-    margin-left: 180px;
+    margin-left: 150px;
+    align-items: center;
+    justify-content: center;
+}
+.leagueHeaders {
+    margin-top: -20px;
 }
 
 .headerNoLogin {
@@ -39,8 +44,8 @@ form {
     font-weight: bold;
 }
 
-.leagueButton {
-    background-color: #333; /* Primary color */
+.joinLeagueButton {
+  background-color: #333; /* Primary color */
   color: white;              /* Text color */
   border: none;              /* Remove default border */
   border-radius: 5px;       /* Rounded corners */
@@ -48,7 +53,18 @@ form {
   font-size: 16px;           /* Font size */
   cursor: pointer;           /* Pointer cursor on hover */
   transition: background-color 0.3s ease; /* Smooth transition */
-  margin-top: 20px;
+  margin-top: 50px;
+}
+.createLeagueButton {
+    background-color: #333; /* Primary color */
+    color: white;              /* Text color */
+    border: none;              /* Remove default border */
+    border-radius: 5px;       /* Rounded corners */
+    padding: 10px 20px;       /* Vertical and horizontal padding */
+    font-size: 16px;           /* Font size */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    margin-top: 20px;
 }
 
 
@@ -82,8 +98,6 @@ form {
 .currentLeaguesContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin-top: 40px;
     text-align: center;
 }
@@ -100,5 +114,29 @@ form {
 }
 
 .currentLeaguesDisplay {
-    height: 300px;
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+}
+.leagueBlock {
+    height: 250px;
+    width: 400px;
+    margin: 35px;
+    text-align: center;
+    align-items: center;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+.leagueBlock:hover {
+    transform: scale(1.1);
+    box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.leagueBlock:hover .leagueName {
+    text-decoration: underline;
+}
+.numPlayers {
+    color: rgb(147, 145, 145);
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 65px;
 }

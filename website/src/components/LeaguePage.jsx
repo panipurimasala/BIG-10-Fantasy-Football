@@ -12,12 +12,15 @@ function getTournamentData() {
 }
 
 let tournamentDict = getTournamentData();
+let istestLeague = false;
+let testLeagueName = "";
 
 function League() {
     const [tourneyName, setTourneyName] = useState ('');
     const [password, setPassword] = useState('');
     const [createtourneyName, setCreateTourneyName] = useState ('');
     const [createPassword, setCreatePassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const { isAuthenticated } = useAuth0();
     /* const handlePublicSubmit = (e) => { // for now only can join by used ID and password
         e.preventDefault();
@@ -46,9 +49,13 @@ function League() {
     };
     const handleCreatePrivateSubmit = (e) => {
         e.preventDefault();
-        if (createtourneyName && createPassword) { // tourneyName means the ID in this function
-            
+        if (createPassword === confirmPassword) { 
+            istestLeague = true;
+            testLeagueName = createtourneyName;
         }
+        setCreateTourneyName('');
+        setCreatePassword('');
+        setConfirmPassword('');
     };
     /* const handlePrivateSubmit = (e) => {
         e.preventDefault();
@@ -69,13 +76,30 @@ function League() {
         );
     };
 
+    const leagueBlock = () => {
+        if (istestLeague) {
+            return (
+                <div className="leagueBlock">
+                    <h1 className="leagueName">{testLeagueName}</h1>
+                    <h2 className="numPlayers">0/10 players</h2>
+                </div>
+            );
+        }
+        else {
+            return (
+                <div>
+                    <h1>No Leagues Yet</h1>
+                </div>);
+        }
+    };
+
 
     if (isAuthenticated) {
         return (
         <div className='pageContainer'>
             <div className='leagueContainer'>
                 <div className="headerLogin">
-                    <h1>Join a League</h1>
+                    <h1 className="leagueHeaders">Join a League</h1>
                     <form onSubmit={handlejoinPrivateSubmit}>
                         <label>
                             <p className='passwordText'>League ID:</p>
@@ -97,12 +121,12 @@ function League() {
                             />
                         </label>
                         <br />
-                        <button className='leagueButton' type="submit">Join League</button>
+                        <button className='joinLeagueButton' type="submit">Join League</button>
                     </form>
                 </div>
                 <Divider />
                 <div className='createLeague'>
-                <h1>Create a League</h1>
+                    <h1 className="leagueHeaders">Create a League</h1>
                     <form onSubmit={handleCreatePrivateSubmit}>
                         <label>
                             <p className='passwordText'>League ID:</p>
@@ -122,18 +146,23 @@ function League() {
                                 onChange={(e) => setCreatePassword(e.target.value)}
                                 required
                             />
+                            <p className='passwordText'>Confirm Password:</p>
+                            <input
+                                type="text"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                required
+                            />
                         </label>
                         <br />
-                        <button className='leagueButton' type="submit">Join League</button>
+                        <button className='createLeagueButton' type="submit">Join League</button>
                     </form>
                 </div>
             </div>
             <div className='currentLeaguesContainer'>
                     <div className='currentHeader'><h1 className='currentLeaguesText'>Current Leagues</h1></div>
                     <div className='currentLeaguesDisplay'>
-                        <h1>You are not in any Leagues</h1>
-                        <br />
-                        <h1>Join or Create One to Get Started!</h1>
+                        {leagueBlock()}
                     </div>
             </div>
         </div>);
