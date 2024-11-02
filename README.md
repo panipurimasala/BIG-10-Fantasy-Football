@@ -12,6 +12,8 @@ In order to run the front-end written in react follow the following directions
 Use React.js (RESTapi for connecting front end and back end) for front-end
 
 For the env file go to the website directory and create a file called .env and then paste these contents:
+
+
 REACT_APP_DOMAIN= "dev-sf33l86o0rf758ae.us.auth0.com"
 REACT_APP_CLIENTID= "PVPOJcHgkAYgAhBsiTLcLKKEG8IrCkRn"
 REACT_SUPABASE_URL = "https://wkwaulwgblacatvcthvs.supabase.co"
