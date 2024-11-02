@@ -114,24 +114,46 @@ form {
 }
 
 .currentLeaguesDisplay {
-    height: 500px;
-    display: flex;
-    justify-content: flex-start;
+    height: 650px;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-auto-flow: row;
 }
-.leagueBlock {
+.noLeague {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.noLeagueHeader {
+    margin-bottom: 100px;
+}
+.noleagueHeader2 {
+    margin-top: 50px; /*dont know what im doing here*/
+}
+.leagueBlocks {
     height: 250px;
-    width: 400px;
-    margin: 35px;
+    width: 84%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 30px;
+    margin-bottom: 30px;
     text-align: center;
     align-items: center;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
-.leagueBlock:hover {
+.leagueName {
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+}
+
+.leagueBlocks:hover {
     transform: scale(1.1);
     box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
-.leagueBlock:hover .leagueName {
+.leagueBlocks:hover .leagueName {
     text-decoration: underline;
 }
 .numPlayers {

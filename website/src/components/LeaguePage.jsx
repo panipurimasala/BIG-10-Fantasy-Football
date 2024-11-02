@@ -15,6 +15,8 @@ let tournamentDict = getTournamentData();
 let istestLeague = false;
 let testLeagueName = "";
 
+let allLeagueNames = []
+
 function League() {
     const [tourneyName, setTourneyName] = useState ('');
     const [password, setPassword] = useState('');
@@ -39,7 +41,12 @@ function League() {
             const match =  Object.keys(tournamentDict).some(tournament => tournamentDict[tournament].id === tourneyName
             && tournamentDict[tournament].password === password);
             if (match) {
-                alert ('joined private tournament');
+                if (allLeagueNames.length === 5) {
+                    alert("max 5 leagues");
+                }
+                else {
+                    allLeagueNames.push(tourneyName);
+                }
             } else {
                 alert (' invalid ID or password');
             }
@@ -52,6 +59,15 @@ function League() {
         if (createPassword === confirmPassword) { 
             istestLeague = true;
             testLeagueName = createtourneyName;
+            if (allLeagueNames.length === 5) {
+                alert("max 5 leagues");
+            }
+            else {
+                allLeagueNames.push(testLeagueName);
+            }
+        }
+        else {
+            alert ("passwords don't match");
         }
         setCreateTourneyName('');
         setCreatePassword('');
@@ -79,16 +95,21 @@ function League() {
     const leagueBlock = () => {
         if (istestLeague) {
             return (
-                <div className="leagueBlock">
-                    <h1 className="leagueName">{testLeagueName}</h1>
-                    <h2 className="numPlayers">0/10 players</h2>
+                <div className="currentLeaguesDisplay">
+                    {allLeagueNames.map((leagueName, index) => (
+                        <div className="leagueBlocks" key={index} onClick={() => alert('League doesn’t exist')}>
+                            <h1 className="leagueName">{leagueName}</h1>
+                            <h2 className="numPlayers">1/10 players</h2>
+                        </div>
+                ))}
                 </div>
             );
         }
         else {
             return (
-                <div>
-                    <h1>No Leagues Yet</h1>
+                <div className="currentLeaguesDisplay noLeague">
+                    <h1 className="noLeagueHeader">No Leagues Yet</h1>
+                    <h1 className="noLeagueHeader2">Join or Create a League to Get Started!</h1>
                 </div>);
         }
     };
@@ -161,9 +182,7 @@ function League() {
             </div>
             <div className='currentLeaguesContainer'>
                     <div className='currentHeader'><h1 className='currentLeaguesText'>Current Leagues</h1></div>
-                    <div className='currentLeaguesDisplay'>
-                        {leagueBlock()}
-                    </div>
+                    {leagueBlock()}    
             </div>
         </div>);
     }
