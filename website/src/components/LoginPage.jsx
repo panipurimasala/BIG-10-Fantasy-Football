@@ -58,3 +58,58 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+
+
+
+
+// import React, { useState } from "react";
+// import supabase from '../supabaseClient'; // Ensure the path is correct
+
+// const LoginPage = () => {
+//     const [email, setEmail] = useState("");
+//     const [password, setPassword] = useState("");
+
+//     const handleSignUp = async (e) => {
+//         e.preventDefault();
+//         const { data, error } = await supabase.auth.signUp({
+//             email,
+//             password,
+//         });
+
+//         if (error) {
+//             console.error("Error signing up:", error.message);
+//             alert("Error signing up: " + error.message);
+//         } else {
+//             console.log("User signed up:", data);
+//         }
+//     };
+
+//     return (
+//         <div>
+//             <form onSubmit={handleSignUp}>
+//                 <label htmlFor="email">Email:</label><br/>
+//                 <input
+//                     type="email"
+//                     id="email"
+//                     value={email}
+//                     onChange={(e) => setEmail(e.target.value)}
+//                     required
+//                 /><br/>
+                
+//                 <label htmlFor="password">Password:</label><br/>
+//                 <input
+//                     type="password"
+//                     id="password"
+//                     value={password}
+//                     onChange={(e) => setPassword(e.target.value)}
+//                     required
+//                 /><br/>
+                
+//                 <input type="submit" value="Sign Up"/>
+//             </form>
+//         </div>
+//     );
+// };
+
+// export default LoginPage;

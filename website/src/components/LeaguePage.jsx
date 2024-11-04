@@ -198,16 +198,24 @@ function League() {
     const [createPassword, setCreatePassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [session, setSession] = useState(null);
+    const [utilizer, setUser] = useState('');
+    const [leaguess, setLeagues] = useState([]);
     useEffect(() => {
         const checkUser = async () => {
             const isLoggedIn = await getUser();
             setSession(isLoggedIn);
         };
         checkUser();
+        leagues();
     }, []);
+    const checkUser = async () => {
+        const isLoggedIn = await getUser();
+        setSession(isLoggedIn);
+    };
     const getUser = async () => {
         const {data: {user} } = await supabase.auth.getUser();
         setSession(user);
+        setUser(user);
 
         if(user === null || user===undefined){
             return false
@@ -249,10 +257,45 @@ function League() {
             setPassword('');
         }
     };
-    const leagues = async() => {
-        const {data, error } = await supabase
-        .from("user_leagues").select("league_id").eq("league_name", tourneyName).eq("password", password);
+    const leagues = async () => {
+        if (utilizer) {
+            try {
+                const { data: users_data, error: userError } = await supabase
+                    .from("user_leagues")
+                    .select("league_id")
+                    .eq("user_id", utilizer.id);
+                    console.log("users_data" + users_data);
+    
+                if (userError) {
+                    console.error("Error fetching user leagues:", userError);
+                    return;
+                }
+    
+                if (users_data && users_data.length > 0) {
+                    const userLeagueIds = users_data.map(item => item.league_id);
+    
+                    const { data: leagues_names, error: leagueError } = await supabase
+                        .from("leagues")
+                        .select("league_name")
+                        .in("leagueid", userLeagueIds);
+                    console.log("lnames" + users_data);
+                    if (leagueError) {
+                        console.error("Error fetching league names:", leagueError);
+                        setLeagues([]);  // Set to an empty array on error
+                    } else {
+                        setLeagues(leagues_names || []);  // Default to an empty array if `leagues_names` is null/undefined
+                    }
+                } else {
+                    setLeagues([]);  // No leagues found
+                }
+            } catch (err) {
+                console.error("Unexpected error fetching leagues:", err);
+                setLeagues([]);  // Set to an empty array on unexpected errors
+            }
+        }
     };
+
+
     const handleCreatePrivateSubmit = async(e) => {
         e.preventDefault();
         if (createPassword === confirmPassword) { 
@@ -293,13 +336,33 @@ function League() {
     };
 
     const leagueBlock = () => {
-            return (
-                <div className="currentLeaguesDisplay noLeague">
-                    <h1 className="noLeagueHeader">No Leagues Yet</h1>
-                    leagues();
-                    <h1 className="noLeagueHeader2">Join or Create a League to Get Started!</h1>
-                </div>);
+        if(utilizer){
+            checkUser();
+        }
+        if(leaguess){
+            leagues();
+        }
+        return (
+            <div className="currentLeaguesDisplay noLeague">
+                <h2>Leagues:</h2>
+                {leaguess.length > 0 ? (
+                    <table>
+                        <tbody>
+                            {leaguess.map((player, index) => (
+                                <tr key={index}>
+                                    <td>{player.league_name}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                ) : (
+                    <p>No leagues joined yet.</p>
+                )}
+                <h1 className="noLeagueHeader2">Join or Create a League to Get Started!</h1>
+            </div>
+        );
     };
+    
 
 
     if (session) {
