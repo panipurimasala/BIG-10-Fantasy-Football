@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import './Team.css';
 
 
 function testPrintPlayers(team){
@@ -41,19 +42,6 @@ const DisplayJson = ({jsonData1, jsonData2}) => {
     
 };
 
-
-/*let starters1 = {"QB":team1["QB"][0]["name"] + ", " + team1["QB"][0]["position"], 
-    "RB":[team1["RB"][0]["name"] + ", " + team1["RB"][0]["position"], team1["RB"][1]["name"] + ", " + team1["RB"][1]["position"]],
-    "WR":[team1["WR"][0]["name"] + ", " + team1["WR"][0]["position"], team1["WR"][1]["name"] + ", " + team1["WR"][1]["position"]],
-    "TE":team1["TE"][0]["name"] + ", " + team1["TE"][0]["position"],
-    "K":team1["K"][0]["name"] + ", " + team1["K"][0]["position"]}
-
-let starters2 = {"QB":team2["QB"][0]["name"] + ", " + team2["QB"][0]["position"], 
-    "RB":[team2["RB"][0]["name"] + ", " + team2["RB"][0]["position"], team2["RB"][1]["name"] + ", " + team2["RB"][1]["position"]],
-    "WR":[team2["WR"][0]["name"] + ", " + team2["WR"][0]["position"], team2["WR"][1]["name"] + ", " + team2["WR"][1]["position"]],
-    "TE":team2["TE"][0]["name"] + ", " + team2["TE"][0]["position"],
-    "K":team2["K"][0]["name"] + ", " + team2["K"][0]["position"]}*/
-
 function sortStarters(team) {
     team["bench"] = [];
     Object.keys(team).forEach((pos, index) => {
@@ -72,22 +60,84 @@ function addToTable(team, position) {
     }
     else {
         const player = team[position][0];
-        return player["name"] + ", " + player["position"];
+        return player["name"];
     }
 }
-function addBenchPlayers(team) {
-    let playersString = "";
-    team["bench"].forEach((player) => {
-        playersString += player["name"] + ", " + player["position"] + ";";
-    });
-    return playersString;
-}
 
+
+const teamTable = (team) => {
+    return (
+        <body>
+            <div className="table-container">
+            <table className="table">
+            <tbody>
+                <tr>
+                    <td className = "position">QB</td>
+                    <td className="player">{addToTable(team, "QB")}</td>
+                </tr>
+                <tr>
+                    <td className = "position">RB</td>
+                    <td className="player">{addToTable(team, "RB")}</td>
+                </tr>
+                <tr>
+                    <td className = "position">RB</td>
+                    <td className="player">{addToTable(team, "RB")}</td>
+                </tr>
+                <tr>
+                    <td className = "position">WR</td>
+                    <td className="player">{addToTable(team, "WR")}</td>
+                </tr>
+                <tr>
+                    <td className = "position">WR</td>
+                    <td className="player">{addToTable(team, "WR")}</td>
+                </tr>
+                <tr>
+                    <td className = "position">TE</td>
+                    <td className="player">{addToTable(team, "TE")}</td>
+                </tr>
+                <tr>
+                    <td className = "position">FLEX</td>
+                    <td className="player">{addToTable(team, "TE")}</td>
+                </tr>
+                <tr>
+                    <td className = "position">K</td>
+                    <td className="player">{addToTable(team, "K")}</td>
+                </tr>
+                {/*<th colSpan="2">Bench</th>
+                <tr colSpan="2">{addBenchPlayers(team1)}</tr>*/}
+            </tbody>
+        </table>
+        <table className="benchTable">
+            <thead>
+                <th className="benchTitle">Bench</th>
+            </thead>
+            <tbody>
+                {team["bench"].map((player, index) => (
+                    <tr key={index}>
+                        <td className="benchRow"><span style={{ fontWeight: "bold"}}>{player.name} - </span> 
+                        <span style={{fontStyle: "italic", color: "gray"}}>{player.position}</span></td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+
+            </div>
+        </body>
+    );
+}
 
 
 const TeamPage = () => {
     let team1 = JSON.parse(localStorage.getItem("team1"));
     let team2 = JSON.parse(localStorage.getItem("team2"));
+
+    let teamToDisplay;
+    const[titleTeam, setTitleTeam] = useState("Your Team");
+    const handleTeamChange = (e) => {
+        teamToDisplay = titleTeam;
+        setTitleTeam(e.target.value);
+    }
+
     if (team1 == null) {
         return(
             <div>
@@ -100,86 +150,17 @@ const TeamPage = () => {
     else{
         team1 = sortStarters(team1);
         team2 = sortStarters(team2);
-        console.log(team1);
+        //console.log(team1);
         return (
             <div>
-                <p>{<DisplayJson jsonData1={JSON.parse(localStorage.getItem("team1"))} jsonData2={JSON.parse(localStorage.getItem("team2"))}/>}</p>
-                <body>
-                    <div className="table-container">
-                    <table border="1">
-                    <thead>
-                        <th colSpan="2">Team1</th>
-                    </thead>
-                    <tbody>
-                        <th colSpan="2">Starters</th>
-                        <tr>
-                            <th>Player</th>
-                            <th>Position</th>
-                        </tr>
-                        <tr>
-                            <td>{addToTable(team1, "QB")}</td>
-                            <td>QB</td>
-                        </tr>
-                        <tr>
-                            <td>{addToTable(team1, "RB") + "; " + addToTable(team1, "RB")}</td>
-                            <td>RB</td>
-                        </tr>
-                        <tr>
-                            <td>{addToTable(team1, "WR") + "; " + addToTable(team1, "WR")}</td>
-                            <td>WR</td>
-                        </tr>
-                        <tr>
-                            <td>{addToTable(team1, "TE")}</td>
-                            <td>TE</td>
-                        </tr>
-                        <tr>
-                            <td>{addToTable(team1, "K")}</td>
-                            <td>K</td>
-                        </tr>
-                        <th colSpan="2">Bench</th>
-                        <tr colSpan="2">{addBenchPlayers(team1)}</tr>
-
-                    </tbody>
-                </table>
-                <table border="1">
-                    <thead>
-                        <th colSpan="2">Team2</th>
-                    </thead>
-                    <tbody>
-                        <th colSpan="2">Starters</th>
-                        <tr>
-                            <th>Player</th>
-                            <th>Position</th>
-                        </tr>
-                        <tr>
-                            <td>{addToTable(team2, "QB")}</td>
-                            <td>QB</td>
-                        </tr>
-                        <tr>
-                            <td>{addToTable(team2, "RB") + "; " + addToTable(team2, "RB")}</td>
-                            <td>RB</td>
-                        </tr>
-                        <tr>
-                            <td>{addToTable(team2, "WR") + "; " + addToTable(team2, "WR")}</td>
-                            <td>WR</td>
-                        </tr>
-                        <tr>
-                            <td>{addToTable(team2, "TE")}</td>
-                            <td>TE</td>
-                        </tr>
-                        <tr>
-                            <td>{addToTable(team2, "K")}</td>
-                            <td>K</td>
-                        </tr>
-                        <th colSpan="2">Bench</th>
-                        <tr colSpan="2">{addBenchPlayers(team2)}</tr>
-
-                    </tbody>
-                </table>
-    
-                    </div>
-                </body>
-                
+                <div className="pageHeader">
+                    <h1 className="title">{titleTeam}</h1>
+                    <select name="teamSelect" id="teamSelect" onChange={handleTeamChange}>
+                        <option value="Team1">Your Team</option>
+                        <option value="Team2">Other Team</option>
+                    </select>
+                </div>
+                {teamTable(team1)}
             </div>
     
     );
