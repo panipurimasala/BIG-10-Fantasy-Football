@@ -138,22 +138,22 @@ function League() {
     );
 
     const leagueBlock = () => {
-        {leaguess.length > 0 ? (
-            <table>
-                <tbody>
-                    {leaguess.map((league, index) => (
-                        <tr key={index}>
-                            <td>{league.league_name}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        ) : (
-            <div className="currentLeaguesDisplay noLeague">
+        if(leaguess.length > 0) { return (
+            <div className="currentLeaguesDisplay">
+                {leaguess.map((league, index) => (
+                        <div className="leagueBlocks" key={index} onClick={() => alert('League doesn’t exist')}>
+                            <h1 className="leagueName">{league.league_name}</h1>
+                            <h2 className="numPlayers">1/10 players</h2>
+                        </div>
+                ))}
+            </div>
+        )} else {
+            return(
+                <div className="currentLeaguesDisplay noLeague">
                     <h1 className="noLeagueHeader">No Leagues Yet</h1>
                     <h1 className="noLeagueHeader2">Join or Create a League to Get Started!</h1>
-            </div>);
-        }
+                </div>)}
+        
     };
 
     return session ? (
@@ -228,20 +228,7 @@ function League() {
                     <h1 className='currentLeaguesText'>Current Leagues</h1>
                 </div>
                 <div className="currentLeaguesDisplay noLeague">
-                    {leaguess.length > 0 ? (
-                        <table>
-                            <tbody>
-                                {leaguess.map((league, index) => (
-                                    <tr key={index}>
-                                        <td>{league.league_name}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    ) : (
-                        <p>No Leagues yet</p>
-                    )}
-                    
+                    {leagueBlock()}
                 </div>
             </div>
         </div>
