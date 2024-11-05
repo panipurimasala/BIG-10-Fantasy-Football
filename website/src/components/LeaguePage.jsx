@@ -137,6 +137,25 @@ function League() {
         </div>
     );
 
+    const leagueBlock = () => {
+        {leaguess.length > 0 ? (
+            <table>
+                <tbody>
+                    {leaguess.map((league, index) => (
+                        <tr key={index}>
+                            <td>{league.league_name}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        ) : (
+            <div className="currentLeaguesDisplay noLeague">
+                    <h1 className="noLeagueHeader">No Leagues Yet</h1>
+                    <h1 className="noLeagueHeader2">Join or Create a League to Get Started!</h1>
+            </div>);
+        }
+    };
+
     return session ? (
         <div className='pageContainer'>
             <div className='leagueContainer'>
@@ -220,7 +239,7 @@ function League() {
                             </tbody>
                         </table>
                     ) : (
-                        <p></p>
+                        <p>No Leagues yet</p>
                     )}
                     
                 </div>
