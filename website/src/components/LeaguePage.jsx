@@ -209,7 +209,6 @@ function League() {
                     <h1 className='currentLeaguesText'>Current Leagues</h1>
                 </div>
                 <div className="currentLeaguesDisplay noLeague">
-                    <h2>Leagues:</h2>
                     {leaguess.length > 0 ? (
                         <table>
                             <tbody>
@@ -221,9 +220,9 @@ function League() {
                             </tbody>
                         </table>
                     ) : (
-                        <p>No leagues joined yet.</p>
+                        <p></p>
                     )}
-                    <h1 className="noLeagueHeader2">Join or Create a League to Get Started!</h1>
+                    
                 </div>
             </div>
         </div>
