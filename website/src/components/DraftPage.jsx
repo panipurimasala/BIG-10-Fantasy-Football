@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { json } from "react-router-dom";
 import './DraftPage.css';
+import Confetti from 'react-confetti';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function getRosterData(){
     let allPlayers = require("../mock_data/allPlayers.json");
@@ -15,11 +17,18 @@ function getRosterData(){
 }
 
 function draftPlayer(playerDict, player, team, position){
-    if(!Object.keys(playerDict).includes(player)){
-        return "no player found";
+    if (!playerDict[player]) {
+        return "No player found";
+    }
+    if(Object.values(team).some(posArray => 
+        posArray.some(pickedPlayer => pickedPlayer.name === player))) {
+        return "Player has already been picked"
     }
     if (playerDict[player].position !== position) {
         return "player does not play this position"
+    } 
+    if(!Object.keys(playerDict).includes(player)){
+        return "no player found";
     }
     let playerToAdd = playerDict[player];
     playerToAdd["name"] = player;
@@ -38,38 +47,18 @@ function testPrintPlayers(team){
     })
     return retarr;
 }
-const DisplayJson = ({jsonData1, jsonData2}) => {
-    return (
-        <div>
-            <div>
-                <h2>Team1 Roster</h2>
-                <ul>
-                    <p><strong>Players:</strong> {testPrintPlayers(jsonData1)}</p>
-                </ul>
-            </div>
-            <div>
-                <h2>Team2 Roster</h2>
-                <ul>
-                    <p><strong>Players:</strong> {testPrintPlayers(jsonData2)}</p>
-                </ul>
-            </div>
-        </div>
-    );
-};
-
-
-
-
 let count = 0;
-let playerDict = getRosterData();
-let team1 = {"QB":[], "RB":[], "WR":[], "TE":[], "K":[], "D/ST":[]};
-let team2 = {"QB":[], "RB":[], "WR":[], "TE":[], "K":[], "D/ST":[]};
+const userTeam = { "QB": [], "RB": [], "WR": [], "TE": [], "K": [] };
+const playerDict = getRosterData();
 
 const DraftPage = () => {
     const [inputText, setInputText] = useState('');
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [selectedPosition, setSelectedPosition] = useState("QB");
-    const [displayText, setDisplayText] = useState("Start Drafting! Team 1 pick");
+    const [displayText, setDisplayText] = useState("Start Drafting!");
+    const [showConfetti, setShowConfetti] = useState(false);
+    const [pickedPlayers, setPickedPlayers] = useState([]);
+
 
     const handleInputChange = (e) => { // filter a list of 6 players based on selected position and names
         const text = e.target.value;
@@ -90,38 +79,33 @@ const DraftPage = () => {
     // Create a function to handle the submit
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent the default form submission
-        if (count % 2 === 0 && count < 4){
-            let ret = draftPlayer(playerDict, inputText, team1, selectedPosition);
-            setDisplayText(ret); 
-            if(ret !== "no player found" && ret !== "player does not play this position"){
-                count += 1;
-                setDisplayText("Team 2 pick!");
-            }
-            
-        }
-        else if (count < 4){
-            let ret = draftPlayer(playerDict, inputText, team2, selectedPosition);
+        if (count < 4) {
+            // Try to draft the player
+            let ret = draftPlayer(playerDict, inputText, userTeam, selectedPosition);
             setDisplayText(ret);
-            if(ret !== "no player found" && ret !== "player does not play this position"){
-                count += 1;
-                setDisplayText("Team 1 pick!");
+            // Check if the player was successfully added
+            if (ret === `${inputText} picked`) {
+                const pickedPlayer = { name: inputText, position: selectedPosition };
+                setPickedPlayers([...pickedPlayers, pickedPlayer]);
+                count++;
             }
             
-
+            // Check if we've reached the limit after adding the player
+            if (count === 4) {
+                setDisplayText("Drafting complete!");
+                setShowConfetti(true);
+                setTimeout(() => setShowConfetti(false), 30000);
+            }
+            setInputText('');
+            setFilteredPlayers([]);
         }
-        if (count >= 4) {
-            setDisplayText("Drafting Done");
-            localStorage.setItem("team1", JSON.stringify(team1));
-            localStorage.setItem("team2", JSON.stringify(team2));
-            return;
-        }
-        setInputText(''); // Clear the input field after submitting
-        setFilteredPlayers([]);
-    };
+    }
+    ;
 
     return (
 <div className="Draft">
     <div className="Home">
+    {showConfetti && <Confetti />}
             <form action="" method="get">
             <input
                         id="userquery"
@@ -134,9 +118,9 @@ const DraftPage = () => {
 
                     
                     {filteredPlayers.length > 0 && (
-                        <ul style={{ border: '0.5px solid', listStyle: 'Arial',  padding: 20}}>
+                        <ul className="filteredlist" style={{ border: '0.5px solid', listStyle: 'Arial',  padding: 20}}>
                             {filteredPlayers.map((player, index) => (
-                                <li key={index} style={{ padding: '1px', cursor: 'grab', fontWeight: 'bold'}}
+                                <li className="names" key={index} style={{ padding: '1px', cursor: 'grab', fontWeight: 'bold'}}
                                     onClick={() => {
                                         setInputText(player); 
                                         setFilteredPlayers([]); 
@@ -158,93 +142,32 @@ const DraftPage = () => {
                     <option value="CB">CB</option>
                     <option value="SPT">SPECIAL</option>
                 </select>
-                <input type="submit" onClick={handleSubmit}/>
+                <input type="submit" value = "Draft Player" onClick={handleSubmit}/>
             </form>
         </div>
     <body>
-        <p>{displayText}</p>
+        <p className="display-text">{displayText}</p>
         <div className="table-container">
             <table border="1">
                 <thead>
-                    <th colSpan="2">Team1</th>
+                    <th colSpan="2">Your team</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                    </tr>
-                    {team1["QB"].map((player, index) => (
-                        <tr key={index}>
-                            <td>{player.name}</td>
-                            <td>{player.position}</td>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
                         </tr>
-                    ))}
-                    {team1["WR"].map((player, index) => (
-                        <tr key={index}>
-                            <td>{player.name}</td>
-                            <td>{player.position}</td>
-                        </tr>
-                    ))}
-                    {team1["RB"].map((player, index) => (
-                        <tr key={index}>
-                            <td>{player.name}</td>
-                            <td>{player.position}</td>
-                        </tr>
-                    ))}
-                    {team1["TE"].map((player, index) => (
-                        <tr key={index}>
-                            <td>{player.name}</td>
-                            <td>{player.position}</td>
-                        </tr>
-                    ))}
-                    {team1["K"].map((player, index) => (
-                        <tr key={index}>
-                            <td>{player.name}</td>
-                            <td>{player.position}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-            <table border="1">
-                <thead>
-                    <th colSpan="2">Team2</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                    </tr>
-                    {team2["QB"].map((player, index) => (
-                        <tr key={index}>
-                            <td>{player.name}</td>
-                            <td>{player.position}</td>
-                        </tr>
-                    ))}
-                    {team2["WR"].map((player, index) => (
-                        <tr key={index}>
-                            <td>{player.name}</td>
-                            <td>{player.position}</td>
-                        </tr>
-                    ))}
-                    {team2["RB"].map((player, index) => (
-                        <tr key={index}>
-                            <td>{player.name}</td>
-                            <td>{player.position}</td>
-                        </tr>
-                    ))}
-                    {team2["TE"].map((player, index) => (
-                        <tr key={index}>
-                            <td>{player.name}</td>
-                            <td>{player.position}</td>
-                        </tr>
-                    ))}
-                    {team2["K"].map((player, index) => (
-                        <tr key={index}>
-                            <td>{player.name}</td>
-                            <td>{player.position}</td>
-                        </tr>
-                    ))}
-                </tbody>
+                        <TransitionGroup component={null}>
+                            {pickedPlayers.map((player, index) => (
+                                <CSSTransition key={index} timeout={500} classNames="fade">
+                                    <tr>
+                                        <td>{player.name}</td>
+                                        <td>{player.position}</td>
+                                    </tr>
+                                </CSSTransition>
+                            ))}
+                        </TransitionGroup>
+                    </tbody>
             </table>
     </div>
         
