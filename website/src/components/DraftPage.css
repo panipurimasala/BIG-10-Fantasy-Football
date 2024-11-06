@@ -1,5 +1,5 @@
 /* General Styling */
-body, .Draft {
+.Draft {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
