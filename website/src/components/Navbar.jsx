@@ -17,9 +17,6 @@ const Navbar = () => {
       <div className="navbar-center">
         <ul className="nav-links">
           <li>
-            <a href="/team_page">Your Team</a>
-          </li>
-          <li>
             <a href="/league_page">Leagues</a>
           </li>
           <li>
@@ -28,7 +25,9 @@ const Navbar = () => {
           <li>
             <a href="/contact">Contact</a>
           </li>
-          <Link to="/draft_page">Draft</Link>
+          <li>
+            <a href="/draft_page">Mock Draft</a>
+          </li>
           <li>
             <a href="/FreeAgency">Free Agency</a>
           </li>
@@ -40,7 +39,7 @@ const Navbar = () => {
         {/* <a href="/LoginButton" className="user-icon">
           <i className="fas fa-user">Profile</i>
         </a> */}
-        <Profile_functionality />
+        <Profile_functionality className='Profile_functionality'/>
       </div>
     </nav>
   )
