@@ -2,14 +2,14 @@ import logo from './logo.svg';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import DraftPage from './components/DraftPage';
+import DraftPage from './components/MockDraft';
 import League from './components/LeaguePage';
 import TeamPage from './components/Team'
 import { Auth0Provider } from '@auth0/auth0-react';
 import FreeAgencyPage from './components/FreeAgencyPage';
 import PlayerSummaryPage from './components/PlayerSummaryPage';
 import LoginPage from './components/LoginPage';
-import Profile from "./components/Profile"
+import Profile from "./components/Profile";
 function App() {
   return (
     <Auth0Provider
