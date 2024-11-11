@@ -11,12 +11,12 @@ from supabase import create_client, Client
 logging.basicConfig(level=logging.INFO)
 
 # Supabase connection parameters
-url = 'https://wkwaulwgblacatvcthvs.supabase.co'
-key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indrd2F1bHdnYmxhY2F0dmN0aHZzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyOTU1NTA4NCwiZXhwIjoyMDQ1MTMxMDg0fQ.wiT8TU9Y1EI8R64AJPeEdXJZ7VxbpYGqro-FC7eQKG0'  # Replace with your Supabase service role key
+url = os.getenv('SUPABASE_URL')
+key = os.getenv('SUPABASE_KEY')
 supabase: Client = create_client(url, key)
 
 # Your API token
-RSC_token = 'a2339a2c87db11ef'
+RSC_token = os.getenv('RSC_TOKEN')
 
 # API details
 schedule_api_url = 'http://rest.datafeeds.rolling-insights.com/api/v1/schedule-season/2024/NCAAFB'
