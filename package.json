@@ -2,11 +2,6 @@
   "name": "big-10-fantasy-football-backend",
   "version": "1.0.0",
   "main": "main.js",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "heroku-postbuild": "cd website && npm install && npm run build"
-  },
   "devDependencies": {
     "tailwindcss": "^3.4.14"
   },
