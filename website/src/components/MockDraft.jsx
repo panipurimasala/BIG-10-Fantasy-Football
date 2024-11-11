@@ -51,7 +51,7 @@ let count = 0;
 const userTeam = { "QB": [], "RB": [], "WR": [], "TE": [], "K": [] };
 const playerDict = getRosterData();
 
-const DraftPage = () => {
+const MockDraft = () => {
     const [inputText, setInputText] = useState('');
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [selectedPosition, setSelectedPosition] = useState("QB");
@@ -176,4 +176,4 @@ const DraftPage = () => {
 </div>
 )
 }
-export default DraftPage;
+export default MockDraft;

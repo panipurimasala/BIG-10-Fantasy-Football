@@ -26,7 +26,7 @@ const Navbar = () => {
             <a href="/contact">Contact</a>
           </li>
           <li>
-            <a href="/draft_page">Mock Draft</a>
+            <a href="/mock_draft">Mock Draft</a>
           </li>
           <li>
             <a href="/FreeAgency">Free Agency</a>

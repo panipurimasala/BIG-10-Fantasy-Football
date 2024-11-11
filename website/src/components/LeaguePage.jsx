@@ -140,15 +140,15 @@ function League() {
         </div>
     );
     
-    const navigateToDraftPage = () => {
-        navigate('/draft_page');
+    const navigateToDraftPage = (name) => {
+        navigate(`/draft_page/${name}`);
     }
 
-    const leagueBlock = () => { //REMEMBER TO CHANGE URL AS LOCALHOST WILL NOT BE USED!!!
+    const leagueBlock = () => {
         if(leaguess.length > 0) { return (
             <div className="currentLeaguesDisplay">
                 {leaguess.map((league, index) => (
-                        <div className="leagueBlocks" key={index} onClick={() => navigateToDraftPage()}> 
+                        <div className="leagueBlocks" key={index} onClick={() => navigateToDraftPage(league.league_name)}> 
                             <h1 className="leagueName">{league.league_name}</h1>
                             <h2 className="numPlayers">1/10 players</h2>
                         </div>
