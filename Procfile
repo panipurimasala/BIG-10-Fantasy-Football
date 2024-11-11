@@ -1,2 +1,3 @@
-web: npm start
+web: cd website && serve -s build
+
 
