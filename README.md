@@ -19,3 +19,5 @@ REACT_APP_CLIENTID= "PVPOJcHgkAYgAhBsiTLcLKKEG8IrCkRn"
 REACT_SUPABASE_URL = "https://wkwaulwgblacatvcthvs.supabase.co"
 REACT_SUPABASE_API = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indrd2F1bHdnYmxhY2F0dmN0aHZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1NTUwODQsImV4cCI6MjA0NTEzMTA4NH0.joZqYEsKDTsodMIajplUCIzDo9ZpVS2ltXt7ovrDUGE"
 
+Website URL: https://big-10-fantasy-football-dev-e991c0bb040a.herokuapp.com/
+
