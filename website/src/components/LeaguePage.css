@@ -35,11 +35,6 @@
     text-align: center;
 }
 
-form {
-    margin: 0 auto;
-    width: 200px;
-}
-
 .passwordText {
     font-weight: bold;
 }
@@ -161,4 +156,30 @@ form {
     font-style: italic;
     font-size: 20px;
     margin-top: 65px;
+}
+
+input[type="text"].inputLeagueFields,
+input[type="password"].inputLeagueFields,
+input[type="text"].inputCreateLeagueFields,
+input[type="password"].inputCreateLeagueFields {
+    all: unset;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: .5px;
+    border-color: black;
+    padding: 1px;
+    width: 200px;
+    height: 40px;
+}
+
+input[type="text"].inputCreateLeagueFields,
+input[type="password"].inputCreateLeagueFields {
+    margin-top: 2px;
+}
+
+input[type="text"].inputLeagueFields,
+input[type="password"].inputLeagueFields,
+input[type="text"].inputCreateLeagueFields,
+input[type="password"].inputCreateLeagueFields:hover {
+    cursor: text;
 }

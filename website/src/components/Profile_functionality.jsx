@@ -1,18 +1,25 @@
-import { useAuth0 } from '@auth0/auth0-react';
+import React, { useState, useEffect } from 'react';
+import supabase from '../supabaseClient';
 import Profile from './Profile';
 import LoginButton from "./LoginButton";
-function Profile_functionality() {
-  const { isAuthenticated, isLoading, user } = useAuth0();
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+const ProfileFunctionality = () => {
+    const [session, setSession] = useState(null);
 
-  return (
-    <div>
-      {isAuthenticated ? <Profile /> : <LoginButton />}
-    </div>
-  );
-}
+    useEffect(() => {
+        const getUser = async () => {
+            const { data, error } = await supabase.auth.getUser();
+            const { user, err } = await supabase.auth.getSession();
+            setSession(data & user);
+            console.log(data);
+        };
+        getUser();
+    }, []);
+    return (
+        <div>
+            {session ? <Profile/> : <LoginButton />}
+        </div>
+    );
+};
 
-export default Profile_functionality
+export default ProfileFunctionality;
