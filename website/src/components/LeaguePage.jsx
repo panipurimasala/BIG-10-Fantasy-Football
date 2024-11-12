@@ -80,6 +80,7 @@ function League() {
 
             const leagueId = data[0].leagueid;
             const userId = utilizer.id;
+            
 
             const { error: joinError } = await supabase
                 .from("user_leagues")

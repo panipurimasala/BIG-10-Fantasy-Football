@@ -133,14 +133,10 @@ const MockDraft = () => {
                 <select name="category" onChange={handlePositionChange}> {/* should this be static or dynamic */}
                     <option value="QB">QB</option>
                     <option value="WR">WR</option>
-                    <option value="OLINE">O-LINE</option>
                     <option value="TE">TE</option>
                     <option value="RB">RB</option>\
-                    <option value="SFT">SAFETY</option>
-                    <option value="WR">D-LINE</option>
-                    <option value="LB">LB</option>
-                    <option value="CB">CB</option>
-                    <option value="SPT">SPECIAL</option>
+                    <option value="D/ST">Defense/Special Teams</option>
+                    
                 </select>
                 <input type="submit" value = "Draft Player" onClick={handleSubmit}/>
             </form>
