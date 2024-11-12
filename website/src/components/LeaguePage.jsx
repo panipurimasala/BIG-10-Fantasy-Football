@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 function League() {
     const [tourneyName, setTourneyName] = useState('');
     const [password, setPassword] = useState('');
+    const [teamName, setTeamName] = useState('');
     const [createtourneyName, setCreateTourneyName] = useState('');
     const [createPassword, setCreatePassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -82,7 +83,7 @@ function League() {
 
             const { error: joinError } = await supabase
                 .from("user_leagues")
-                .insert({ user_id: userId, league_id: leagueId });
+                .insert({ user_id: userId, league_id: leagueId, team_name: teamName});
 
             if (joinError) {
                 console.error("Error joining league:", joinError);
@@ -93,6 +94,7 @@ function League() {
             }
             setTourneyName('');
             setPassword('');
+            setTeamName('');
         }
     };
 
@@ -114,9 +116,10 @@ function League() {
         }
 
         if (utilizer) {
+
             const { error: userError } = await supabase
                 .from("user_leagues")
-                .insert({ user_id: utilizer.id, league_id: newLeagueId });
+                .insert({ user_id: utilizer.id, league_id: newLeagueId});
 
             if (userError) {
                 alert("Unable to add you to the league.");
@@ -185,6 +188,16 @@ function League() {
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </label>
+                        <br />
+                        <label>
+                            <p className='passwordText'>Team Name:</p>
+                            <input className='inputLeagueFields'
+                                type='text'
+                                value={teamName}
+                                onChange={(e) => setTeamName(e.target.value)}
                                 required
                             />
                         </label>
