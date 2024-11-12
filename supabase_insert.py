@@ -6,6 +6,7 @@ import pytz
 import threading
 import time
 from supabase import create_client, Client
+import os
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
