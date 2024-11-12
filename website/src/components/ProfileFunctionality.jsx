@@ -6,14 +6,13 @@ function ProfileFunctionality() {
   const { authenticated, isAuthenticated } = useState(0);
 
   useEffect(() => {
-    const fetchUser= async() =>{
-      const { data: { user }} = await supabase.auth.getUser();
-      if(user){
-        isAuthenticated(1);
-      }
+    const getUser = async () => {
+        const { data, error } = await supabase.auth.getUser();
+        const { user, err } = await supabase.auth.getSession();
+        isAuthenticated(data & user);
     };
-    fetchUser();
-  },[]);
+    getUser();
+}, []);
   return (
     <div>
       {authenticated ? <Profile /> : <LoginButton />}

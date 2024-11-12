@@ -25,15 +25,18 @@ const LoginPage = () => {
             } else if (event === "SIGNED_IN") {
                 alert("Signed in successfully.");
                 
-                // Only attempt to insert user data after sign-in
-                const { data, error } = await supabase.auth.getSession()
-                if (data) {
-                    const { data: { user } } = await supabase.auth.getUser()
+                // Only attempt to insert user data if the user exists
+                const { data: { user } } = await supabase.auth.getUser();
+                if (user) {
                     const { error } = await supabase.from("Users").insert({
                         userid: user.id,
-                        user_email: user.email
+                        user_email: user.email,
                     });
-                    if (error) console.error("Error inserting user:", error.message);
+                    if (error) {
+                        console.error("Error inserting user:", error.message);
+                    }
+                } else {
+                    console.error("No user found after signing in.");
                 }
 
                 navigate("/profile");
@@ -58,6 +61,7 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
 
 
 

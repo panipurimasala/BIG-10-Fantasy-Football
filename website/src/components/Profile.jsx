@@ -29,11 +29,8 @@ function Profile() {
       {/* Uncomment this if user has a picture */}
       {/* <img src={utilizer.picture} alt={utilizer.name} /> */}
       <div>
-        {utilizer!=null ? <p>{utilizer.email}</p> : <p>Log in again</p>}
+        {<button onClick={() => logout({ returnTo: window.location.origin })}>Log Out</button>}
       </div>
-      <button onClick={() => logout({ returnTo: window.location.origin })}>
-        Log Out
-      </button>
     </div>
   );
 }
