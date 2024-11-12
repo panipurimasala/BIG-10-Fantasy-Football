@@ -10,7 +10,6 @@ function ButtonLink({ to, children }) {
   return <Link to={to}><button>{children}</button></Link>;
 }
 const Home = () => {
-    localStorage.clear();
   return (
   //Creating the home page
 <div className="home">
