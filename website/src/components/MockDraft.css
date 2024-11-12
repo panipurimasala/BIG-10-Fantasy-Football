@@ -70,7 +70,6 @@ input[type="submit"]:hover {
 .filteredlist li:hover {
     background-color: #f1f1f1;
     color: rgb(0, 162, 255);
-    transition-behavior: ;
 }
 
 /* Team Table */

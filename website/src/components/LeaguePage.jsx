@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import supabase from "../supabaseClient";
 import './LeaguePage.css';
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function League() {
     const [tourneyName, setTourneyName] = useState('');
@@ -12,6 +14,7 @@ function League() {
     const [session, setSession] = useState(null);
     const [utilizer, setUser] = useState(null);
     const [leaguess, setLeagues] = useState([]);
+    const navigate = useNavigate();
 
     // Get the current user and leagues on component mount
     useEffect(() => {
@@ -136,12 +139,16 @@ function League() {
             <div className="divider-line" />
         </div>
     );
+    
+    const navigateToDraftPage = (name) => {
+        navigate(`/draft_page/${name}`);
+    }
 
     const leagueBlock = () => {
         if(leaguess.length > 0) { return (
             <div className="currentLeaguesDisplay">
                 {leaguess.map((league, index) => (
-                        <div className="leagueBlocks" key={index} onClick={() => alert('League doesn’t exist')}>
+                        <div className="leagueBlocks" key={index} onClick={() => navigateToDraftPage(league.league_name)}> 
                             <h1 className="leagueName">{league.league_name}</h1>
                             <h2 className="numPlayers">1/10 players</h2>
                         </div>
@@ -164,7 +171,7 @@ function League() {
                     <form onSubmit={handleJoinPrivateSubmit}>
                         <label>
                             <p className='passwordText'>League ID:</p>
-                            <input
+                            <input className='inputLeagueFields'
                                 type="text"
                                 value={tourneyName}
                                 onChange={(e) => setTourneyName(e.target.value)}
@@ -174,7 +181,7 @@ function League() {
                         <br />
                         <label>
                             <p className='passwordText'>Password:</p>
-                            <input
+                            <input className='inputLeagueFields'
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
@@ -191,7 +198,7 @@ function League() {
                     <form onSubmit={handleCreatePrivateSubmit}>
                         <label>
                             <p className='passwordText'>League Name:</p>
-                            <input
+                            <input className='inputCreateLeagueFields'
                                 type="text"
                                 value={createtourneyName}
                                 onChange={(e) => setCreateTourneyName(e.target.value)}
@@ -201,7 +208,7 @@ function League() {
                         <br />
                         <label>
                             <p className='passwordText'>Password:</p>
-                            <input
+                            <input className='inputCreateLeagueFields'
                                 type="password"
                                 value={createPassword}
                                 onChange={(e) => setCreatePassword(e.target.value)}
@@ -211,7 +218,7 @@ function League() {
                         <br />
                         <label>
                             <p className='passwordText'>Confirm Password:</p>
-                            <input
+                            <input className='inputCreateLeagueFields'
                                 type="password"
                                 value={confirmPassword}
                                 onChange={(e) => setConfirmPassword(e.target.value)}
