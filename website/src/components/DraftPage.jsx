@@ -38,7 +38,7 @@ function testPrintPlayers(team){
     })
     return retarr;
 }
-const DisplayJson = ({jsonData1, jsonData2}) => {
+/*const DisplayJson = ({jsonData1, jsonData2}) => {
     return (
         <div>
             <div>
@@ -55,7 +55,7 @@ const DisplayJson = ({jsonData1, jsonData2}) => {
             </div>
         </div>
     );
-};
+};*/
 
 
 
