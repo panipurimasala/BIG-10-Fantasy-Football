@@ -1,18 +1,7 @@
 import React, { useState } from "react";
-import { json } from "react-router-dom";
 import './DraftPage.css';
+import supabase from '../supabaseClient';
 
-function getRosterData(){
-    let allPlayers = require("../mock_data/allPlayers.json");
-    let playerDict = {};
-    const pos_arr = ["QB", "RB", "WR", "TE", "K"];
-    Object.keys(allPlayers).forEach(player => {
-        if (pos_arr.indexOf(allPlayers[player].position) !== -1){
-            playerDict[player] = allPlayers[player];
-        }
-    })
-    return playerDict;
-}
 
 function draftPlayer(playerDict, player, team, position){
     if(!Object.keys(playerDict).includes(player)){
@@ -61,15 +50,39 @@ function testPrintPlayers(team){
 
 
 let count = 0;
-let playerDict = getRosterData();
 let team1 = {"QB":[], "RB":[], "WR":[], "TE":[], "K":[], "D/ST":[]};
-let team2 = {"QB":[], "RB":[], "WR":[], "TE":[], "K":[], "D/ST":[]};
 
 const DraftPage = () => {
     const [inputText, setInputText] = useState('');
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [selectedPosition, setSelectedPosition] = useState("QB");
     const [displayText, setDisplayText] = useState("Start Drafting! Team 1 pick");
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchPlayers = async () => {
+            try {
+                const { data: playersData, error } = await supabase
+                    .from('players')
+                    .select('*');
+
+                if (error) throw error;
+
+                const playerMap = {};
+                playersData.forEach(player => {
+                    playerMap[player.name] = player;
+                });
+
+                setPlayerDict(playerMap);
+            } catch (err) {
+                console.error("Error fetching players:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPlayers();
+    }, []);
 
     const handleInputChange = (e) => { // filter a list of 6 players based on selected position and names
         const text = e.target.value;
@@ -118,6 +131,10 @@ const DraftPage = () => {
         setInputText(''); // Clear the input field after submitting
         setFilteredPlayers([]);
     };
+
+    if (loading) {
+        return <p>Loading players...</p>;
+    }
 
     return (
 <div className="Draft">

@@ -1,20 +1,9 @@
-import React, { useState } from "react";
-import { json } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import './MockDraft.css';
+import supabase from '../supabaseClient';
 import Confetti from 'react-confetti';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-function getRosterData(){
-    let allPlayers = require("../mock_data/allPlayers.json");
-    let playerDict = {};
-    const pos_arr = ["QB", "RB", "WR", "TE", "K"];
-    Object.keys(allPlayers).forEach(player => {
-        if (pos_arr.indexOf(allPlayers[player].position) !== -1){
-            playerDict[player] = allPlayers[player];
-        }
-    })
-    return playerDict;
-}
 
 function draftPlayer(playerDict, player, team, position){
     if (!playerDict[player]) {
@@ -49,17 +38,42 @@ function testPrintPlayers(team){
 }
 let count = 0;
 const userTeam = { "QB": [], "RB": [], "WR": [], "TE": [], "K": [] };
-const playerDict = getRosterData();
 
 const MockDraft = () => {
+    const [playerDict, setPlayerDict] = useState({});
     const [inputText, setInputText] = useState('');
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [selectedPosition, setSelectedPosition] = useState("QB");
     const [displayText, setDisplayText] = useState("Start Drafting!");
     const [showConfetti, setShowConfetti] = useState(false);
     const [pickedPlayers, setPickedPlayers] = useState([]);
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        const fetchPlayers = async () => {
+            try {
+                const { data: playersData, error } = await supabase
+                    .from('players')
+                    .select('*');
 
+                if (error) throw error;
+
+                const playerMap = {};
+                playersData.forEach(player => {
+                    playerMap[player.name] = player;
+                });
+
+                setPlayerDict(playerMap);
+            } catch (err) {
+                console.error("Error fetching players:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPlayers();
+    }, []);
+     
     const handleInputChange = (e) => { // filter a list of 6 players based on selected position and names
         const text = e.target.value;
         setInputText(text);
@@ -101,6 +115,9 @@ const MockDraft = () => {
         }
     }
     ;
+    if (loading) {
+        return <p>Loading players...</p>;
+    }
 
     return (
 <div className="Draft">

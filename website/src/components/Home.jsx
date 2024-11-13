@@ -7,19 +7,22 @@ import playersDat from '../assets/players_const';
 import { Link } from 'react-router-dom';
 
 function ButtonLink({ to, children }) {
-  return <Link to={to}><button>{children}</button></Link>;
+  return <Link to={to}><button className="btn-5">{children}</button></Link>;
 }
 const Home = () => {
   return (
   //Creating the home page
 <div className="home">
+    <div className="container">
+        <div className="background"></div>
+
     <div className="upper_part">
         {/*This is the left part of the home page where we should put the draft boxes, news info*/}
-        <div className="home_left">
-            <h1>BIG Ten Fantasy Football 2024</h1>
-            <h3> It isn't too late to play!</h3>
+        <div> 
+            <h1 className =  "Title">BIG Ten Fantasy Football 2024</h1>
+            <h2 className = "subtitle"> It isn't too late to play!</h2>
             <div>
-                <ul className="draft_boxes">
+                <ul className="draft_boxes"> 
                     
                     <li className = "dbox">
                         <div className="left_box_side">
@@ -27,7 +30,7 @@ const Home = () => {
                         </div>
                         <div className="right_box_side">
                             <ul className="rbox">
-                                <li>
+                                <li className = "boxheaders">
                                     Join a league
                                 </li>
                                 <li className="draft_descr">
@@ -43,7 +46,7 @@ const Home = () => {
                         </div>
                         <div className="right_box_side">
                             <ul className="rbox">
-                                <li>
+                                <li className="boxheaders">
                                     Create a league
                                 </li>
                                 <li className="draft_descr">
@@ -57,10 +60,10 @@ const Home = () => {
             </div>
             {/* Adding some appealing content */}
             <div className="top_players">
-            <h2>Top Players</h2>
+            <h2 className="top_playersheading">Top Players</h2>
             <ul>
                 {playersDat.map((player,index) =>(
-                    <li>{index+1}. {player.name} - {player.points}</li>
+                    <li className="playernames" >{index+1}. {player.name} - {player.points}</li>
                 ))}
             </ul>
             </div>
@@ -92,6 +95,7 @@ const Home = () => {
             <p>Michigan vs Ohio State - Oct 21, 2024</p>
             </div>
             </div>
+        </div>
         </div>
     </div>
     <div className="middle_part">
