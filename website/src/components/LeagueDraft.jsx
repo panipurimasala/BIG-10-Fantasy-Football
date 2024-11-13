@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { json, useParams } from "react-router-dom";
 import './MockDraft.css';
-import Confetti from 'react-confetti';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import supabase from "../supabaseClient";
 import './LeagueDraft.css';
 import MockDraft from "./MockDraft";
@@ -12,6 +10,7 @@ const LeagueDraft = () => {
     const [teamName, setTeamName] = useState(null); // State to store the team name
     const [loading, setLoading] = useState(true);  // Loading state to show a loading indicator
     const [error, setError] = useState(null);      // Error state to catch any errors
+
 
     const getTeamName = async () => {
         // Get the authenticated user
@@ -47,18 +46,18 @@ const LeagueDraft = () => {
     useEffect(() => {
         const fetchTeamName = async () => {
         try {
-            const teamNameFromApi = await getTeamName(); // Assuming getTeamName is your async function
-            setTeamName(teamNameFromApi); // Set the resolved value in the state
+            const teamNameFetched = await getTeamName(); 
+            setTeamName(teamNameFetched); 
         } catch (err) {
-            setError('Error fetching team name');
+            setError('Error getting team name');
             console.error(err);
         } finally {
-            setLoading(false); // Set loading to false after the async operation is complete
+            setLoading(false); // set loading to false after getting team name
         }
         };
 
         fetchTeamName();
-    }, []); // Empty dependency array ensures this runs once after component mounts
+    }, []); 
 
     
 
