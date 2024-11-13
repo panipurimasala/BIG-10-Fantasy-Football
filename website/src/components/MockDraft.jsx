@@ -37,7 +37,7 @@ function testPrintPlayers(team){
     return retarr;
 }
 let count = 0;
-const userTeam = { "QB": [], "RB": [], "WR": [], "TE": [], "K": [] };
+const userTeam = { "QB": [], "RB": [], "WR": [], "TE": [], "D/ST": [] };
 
 const MockDraft = () => {
     const [playerDict, setPlayerDict] = useState({});
