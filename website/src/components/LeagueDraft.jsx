@@ -10,8 +10,7 @@ const LeagueDraft = () => {
     const [teamName, setTeamName] = useState(null); // State to store the team name
     const [loading, setLoading] = useState(true);  // Loading state to show a loading indicator
     const [error, setError] = useState(null);      // Error state to catch any errors
-
-
+    const [users, setUsers] = useState(null);
     const getTeamName = async () => {
         // Get the authenticated user
         const { data: { user }, error: authError } = await supabase.auth.getUser();
@@ -55,28 +54,70 @@ const LeagueDraft = () => {
             setLoading(false); // set loading to false after getting team name
         }
         };
-
+        const getUsers = async () => {
+            try {
+                const leagueid= await supabase.from("leagues").select("leagueid").eq("league_name", name);
+                const l = leagueid.data[0]["leagueid"]
+                const userss = await supabase.from("user_leagues").select("team_name").eq("league_id", l);
+                setUsers(userss.data);
+            } catch (err) {
+                setError('Error fetching team name');
+                console.error(err);
+            }
+        };
+        getUsers();
         fetchTeamName();
     }, []); 
 
+    const mapUsers = async() =>{
+        return (
+            <div className="userList">
+            <h2>Teams in League</h2>
+            {users.length > 0 ? (
+                <ul>
+                    {users.map((user, index) => (
+                        <li key={index} className="teamItem">
+                            {user.team_name}
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <p>No teams found in this league.</p>
+            )}
+        </div>
+        )
+    }
     
 
     return (
         <div>
             <div className="leagueDraftTitleContainer">
-                <h1 className="leagueDraftTitle">
-                    {name} Draft Page
-                </h1>
+                <h1 className="leagueDraftTitle">{name} Draft Page</h1>
                 <p className="team-title">{teamName}</p>
             </div>
             <div className="draftContainer">
                 <div className="draftFunction"><MockDraft /></div>
                 <div className="draftOrder">
                     <h2>Draft Order</h2>
-                    <p>No draft scheduled right now, <br/>but feel free to play around with the mock draft</p>
+                    <p>No draft scheduled right now, <br />but feel free to play around with the mock draft</p>
                 </div>
             </div>
+            <div className="userList">
+                <h2>Teams in League</h2>
+                {users && users.length > 0 ? (
+                    <ul>
+                        {users.map((user, index) => (
+                            <li key={index} className="teamItem">
+                                {user.team_name}
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No teams found in this league.</p>
+                )}
+            </div>
         </div>
-    )
+    );
 }
+
 export default LeagueDraft;
