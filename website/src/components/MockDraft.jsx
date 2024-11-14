@@ -39,7 +39,7 @@ function testPrintPlayers(team){
 let count = 0;
 const userTeam = { "QB": [], "RB": [], "WR": [], "TE": [], "D/ST": [] };
 
-const MockDraft = () => {
+const MockDraft = (props) => {
     const [playerDict, setPlayerDict] = useState({});
     const [inputText, setInputText] = useState('');
     const [filteredPlayers, setFilteredPlayers] = useState([]);
@@ -48,7 +48,7 @@ const MockDraft = () => {
     const [showConfetti, setShowConfetti] = useState(false);
     const [pickedPlayers, setPickedPlayers] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    const [teamtogo, setTeamGoing] = useState(0);
     useEffect(() => {
         const fetchPlayers = async () => {
             try {
@@ -113,6 +113,9 @@ const MockDraft = () => {
             setInputText('');
             setFilteredPlayers([]);
         }
+        //increments which team should go
+        setTeamGoing(teamtogo+1);
+        props.onChangesInCount(teamtogo+1);
     }
     ;
     if (loading) {

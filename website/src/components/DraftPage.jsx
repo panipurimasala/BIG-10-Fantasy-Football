@@ -58,7 +58,7 @@ const DraftPage = () => {
     const [selectedPosition, setSelectedPosition] = useState("QB");
     const [displayText, setDisplayText] = useState("Start Drafting! Team 1 pick");
     const [loading, setLoading] = useState(true);
-
+    
     useEffect(() => {
         const fetchPlayers = async () => {
             try {
