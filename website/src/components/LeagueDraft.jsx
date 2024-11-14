@@ -94,7 +94,7 @@ const LeagueDraft = () => {
         <div>
             <div className="leagueDraftTitleContainer">
                 <h1 className="leagueDraftTitle">{name} Draft Page</h1>
-                <p className="team-title">{users && indOfPlayer < users.length && draftStarted ? users[indOfPlayer].team_name : "Waiting for draft to start..."}</p>
+                <p className="team-title">Your team: {teamName}</p>
             </div>
             <div className="draftContainer">
                 <div className="draftFunction"><MockDraft onChangesInCount = {setCountInPage}/></div>
@@ -103,7 +103,7 @@ const LeagueDraft = () => {
                     {draftStarted ? "Draft going on" : <button onClick={startDraft}>Start Draft</button>} {/* Button to start the draft */}
                     {draftStarted && (
                         <div>
-                            <h3>Current Team: {teamName}</h3> {/* Show the current team name at the top */}
+                            <h3>your team: {teamName}</h3> {/* Show the current team name at the top */}
                             {users && users.length > 0 ? (
                                 <ul>
                                     {users.map((user, index) => (
