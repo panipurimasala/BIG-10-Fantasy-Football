@@ -11,6 +11,9 @@ const LeagueDraft = () => {
     const [loading, setLoading] = useState(true);  // Loading state to show a loading indicator
     const [error, setError] = useState(null);      // Error state to catch any errors
     const [users, setUsers] = useState(null);
+    
+
+    
     const getTeamName = async () => {
         // Get the authenticated user
         const { data: { user }, error: authError } = await supabase.auth.getUser();
@@ -21,15 +24,23 @@ const LeagueDraft = () => {
             return 'No user found'; // Return a default string if there's an auth error
         }
     
-        // Query the user_leagues table to get the team_name for the given user_id
-        const { data: userLeagues, error: userError } = await supabase
+        
+        const {data: leagueNames, error: userError1 } = await supabase
+            .from("leagues")
+            .select("leagueid")
+            .eq("league_name",name);
+        if (userError1) {
+            console.error('Error fetching user leagues:', userError1);
+        }
+        const league_id = leagueNames[0].leagueid;
+
+        const { data: userLeagues, error: userError2 } = await supabase
             .from("user_leagues")
             .select("team_name")
-            .eq("user_id", user.id);
-    
-        // Handle any errors in the query
-        if (userError) {
-            console.error('Error fetching user leagues:', userError);
+            .eq("user_id", user.id)
+            .eq("league_id", league_id);
+        if (userError2) {
+            console.error('Error fetching user leagues:', userError2);
             return 'Error fetching team name'; // Return a default string if there's an error
         }
     

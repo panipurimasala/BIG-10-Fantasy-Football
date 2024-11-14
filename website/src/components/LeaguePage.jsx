@@ -14,8 +14,28 @@ function League() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [session, setSession] = useState(null);
     const [utilizer, setUser] = useState(null);
-    const [leaguess, setLeagues] = useState([]);
+    const [leagues, setLeagues] = useState([]);
     const navigate = useNavigate();
+    const [users, setUsers] = useState(null); 
+    const [error, setError] = useState('');
+    const [usersData, setUsersData] = useState({});
+    const [leaguess, setLeaguess] = useState([]);
+
+    /*useEffect(() => {
+        const getNumPlayers = async(leagueID) => {
+            const { data: userLeagues, error: userError } = await supabase
+                .from("user_leagues")
+                .select("league_id", )
+                .eq("user_id", userId);
+            if (userError) {
+                console.error("error in getting leagues");
+                return;
+            }
+        }
+
+    });*/
+
+    
 
     // Get the current user and leagues on component mount
     useEffect(() => {
@@ -24,13 +44,13 @@ function League() {
             setUser(user);
             setSession(user !== null);
             if (user) {
-                await leagues(user.id);
+                await getLeagues(user.id);
             }
         };
         getUserAndLeagues();
     }, []);
 
-    const leagues = async (userId) => {
+    const getLeagues = async (userId) => {
         try {
             const { data: userLeagues, error: userError } = await supabase
                 .from("user_leagues")
@@ -154,7 +174,10 @@ function League() {
                 {leaguess.map((league, index) => (
                         <div className="leagueBlocks" key={index} onClick={() => navigateToDraftPage(league.league_name)}> 
                             <h1 className="leagueName">{league.league_name}</h1>
-                            <h2 className="numPlayers">1/10 players</h2>
+                            <h2 className="numPlayers">{usersData[league.leagueid] !== undefined
+                                                    ? `${usersData[league.leagueid]}/10 players`
+                                                    : 'Loading...'}
+                            </h2>
                         </div>
                 ))}
             </div>
@@ -166,6 +189,49 @@ function League() {
                 </div>)}
         
     };
+
+    useEffect(() => {
+        const fetchLeagues = async () => {
+          try {
+            const { data: leagues, error } = await supabase.from("leagues").select("*");
+            if (error) throw error;
+            setLeaguess(leagues); // Store leagues in state
+          } catch (err) {
+            setError('Error fetching leagues');
+            console.error(err);
+          }
+        };
+    
+        fetchLeagues(); // Fetch leagues once on mount
+      }, []);
+    
+    const fetchUsersForLeague = async (leagueId) => {
+        try {
+          const { data, error } = await supabase
+            .from("user_leagues")
+            .select("team_name")
+            .eq("league_id", leagueId); // Assuming 'league_id' matches
+          if (error) throw error;
+    
+          // Update the usersData state with the number of users for this league
+          setUsersData(prevState => ({
+            ...prevState,
+            [leagueId]: data.length // Store the user count for each leagueId
+          }));
+        } catch (err) {
+          setError('Error fetching users');
+          console.error(err);
+        }
+      };
+
+    useEffect(() => {
+    if (leaguess.length > 0) {
+        leaguess.forEach((league) => {
+        fetchUsersForLeague(league.leagueid); // Fetch users for each league by its ID
+        });
+    }
+    }, [leaguess]);
+
 
     return session ? (
         <div className='pageContainer'>
