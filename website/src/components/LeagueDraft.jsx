@@ -14,6 +14,38 @@ const LeagueDraft = () => {
     const [draftStarted, setDraftStarted] = useState(false); // New state to track if draft has started
     const [lengthofdraft, setLengthOfDraft] = useState(false);
     const [indOfPlayer, setIndOfPlayer] = useState(0);
+
+    const [fbPlayerDict, setFbPlayerDict] = useState({});
+
+    
+    const [usersTeams, setUsersTeams] = useState({});
+    useEffect(() => {
+        const fetchPlayers = async () => {
+            try {
+                const { data: playersData, error } = await supabase
+                    .from('players')
+                    .select('*');
+
+                if (error) throw error;
+
+                const playerMap = {};
+                playersData.forEach(player => {
+                    playerMap[player.name] = player;
+                });
+
+                setFbPlayerDict(playerMap);
+            } catch (err) {
+                console.error("Error fetching players:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPlayers();
+    }, []);
+
+
+
     const getTeamName = async () => {
         const { data: { user }, error: authError } = await supabase.auth.getUser();
         if (authError) {
@@ -69,6 +101,11 @@ const LeagueDraft = () => {
     
     const startDraft = () => {
         setDraftStarted(true);
+        let tempUsersTeams = {}
+        users.forEach(user => {
+            tempUsersTeams[user] = {"QB":[], "RB":[], "WR":[], "TE":[], "K":[], "D/ST":[]};
+        });
+        setUsersTeams(tempUsersTeams);
     
         // Make a copy of the users array to shuffle
         const shuffledUsers = [...users];
@@ -83,6 +120,8 @@ const LeagueDraft = () => {
         setUsers(shuffledUsers);
         setLengthOfDraft(shuffledUsers.length);
     };
+
+    
     
     const setCountInPage = (val) => {
         if(indOfPlayer === users.length-1){
@@ -100,7 +139,7 @@ const LeagueDraft = () => {
                 <div className="draftFunction"><MockDraft onChangesInCount = {setCountInPage}/></div>
                 <div className="draftOrder">
                     <h2>Draft Order</h2>
-                    {draftStarted ? "Draft going on" : <button onClick={startDraft}>Start Draft</button>} {/* Button to start the draft */}
+                    {draftStarted ? "Draft ongoing" : <button onClick={startDraft}>Start Draft</button>} {/* Button to start the draft */}
                     {draftStarted && (
                         <div>
                             <h3>your team: {teamName}</h3> {/* Show the current team name at the top */}

@@ -5,7 +5,7 @@ import Confetti from 'react-confetti';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 
-function draftPlayer(playerDict, player, team, position){
+export function draftPlayer(playerDict, player, team, position){
     if (!playerDict[player]) {
         return "No player found";
     }
@@ -27,15 +27,6 @@ function draftPlayer(playerDict, player, team, position){
     return player + " picked";
 }
 
-function testPrintPlayers(team){
-    let retarr = [];
-    Object.keys(team).forEach(pos => {
-        team[pos].forEach(player => {
-            retarr.push(player.position + ": " + player.name + " ");
-        })
-    })
-    return retarr;
-}
 let count = 0;
 const userTeam = { "QB": [], "RB": [], "WR": [], "TE": [], "D/ST": [] };
 

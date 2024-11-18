@@ -82,7 +82,7 @@ const Home = () => {
                                     Play in our public leagues to get experience and have fun!
                                 </li>                                
                             </ul>
-                            <ButtonLink to="/League_Page">Join League</ButtonLink>
+                            <ButtonLink to="/League_Page" className='league-buttons'>Join League</ButtonLink>
                         </div>
                     </li>
                     <li className = "dbox">
@@ -98,7 +98,7 @@ const Home = () => {
                                     Be a commissioner, set the rules you like and invite friends to play!
                                 </li>                                
                             </ul>
-                            <ButtonLink to="/League_Page">Create League</ButtonLink>
+                            <ButtonLink to="/League_Page" className='league-buttons'>Create League</ButtonLink>
                         </div>
                     </li>
                 </ul>
