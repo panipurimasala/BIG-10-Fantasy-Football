@@ -40,7 +40,8 @@ const LeagueDraftFunctionality = (props) => {
     const [loading, setLoading] = useState(true);
     const [teamtogo, setTeamGoing] = useState(0);
     const [users, setUsers] = useState(null);
-
+    const [draftStarted,setDraftStarted] = useState(null);
+    const [lengthofdraft, setLengthOfDraft] = useState(false);
     const [fbPlayerDict, setFbPlayerDict] = useState({});
     const [usersTeams, setUsersTeams] = useState({});
     const startDraft = () => {

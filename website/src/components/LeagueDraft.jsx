@@ -4,7 +4,7 @@ import './MockDraft.css';
 import supabase from "../supabaseClient";
 import './LeagueDraft.css';
 import MockDraft from "./MockDraft";
-
+import LeagueDraftFunctionality from "./LeagueDraftFunctionality";
 const LeagueDraft = () => {
     const { name } = useParams();
     const [teamName, setTeamName] = useState(null); 
@@ -134,13 +134,13 @@ const LeagueDraft = () => {
                 <p className="team-title">Your team: {teamName}</p>
             </div>
             <div className="draftContainer">
-                <div className="draftFunction"><MockDraft onChangesInCount = {setCountInPage}/></div>
+                <div className="draftFunction"><LeagueDraftFunctionality onChangesInCount = {setCountInPage}/></div>
                 <div className="draftOrder">
                     <h2>Draft Order</h2>
                     {draftStarted ? "Draft ongoing" : <button onClick={startDraft}>Start Draft</button>} {/* Button to start the draft */}
                     {draftStarted && (
                         <div>
-                            <h3>your team: {teamName}</h3> {/* Show the current team name at the top */}
+                            <h3>Current team drafting: {users[indOfPlayer].team_name}</h3> {/* Show the current team name at the top */}
                             {users && users.length > 0 ? (
                                 <ul>
                                     {users.map((user, index) => (
