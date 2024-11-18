@@ -16,8 +16,6 @@ const LeagueDraft = () => {
     const [indOfPlayer, setIndOfPlayer] = useState(0);
 
     const [fbPlayerDict, setFbPlayerDict] = useState({});
-
-    
     const [usersTeams, setUsersTeams] = useState({});
     useEffect(() => {
         const fetchPlayers = async () => {

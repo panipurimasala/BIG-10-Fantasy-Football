@@ -30,8 +30,7 @@ function draftPlayer(playerDict, player, team, position){
 let count = 0;
 const userTeam = { "QB": [], "RB": [], "WR": [], "TE": [], "D/ST": [] };
 
-const MockDraft = (props) => {
-    const [playerDict, setPlayerDict] = useState({});
+const LeagueDraftFunctionality = (props) => {
     const [inputText, setInputText] = useState('');
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [selectedPosition, setSelectedPosition] = useState("QB");
@@ -40,6 +39,32 @@ const MockDraft = (props) => {
     const [pickedPlayers, setPickedPlayers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [teamtogo, setTeamGoing] = useState(0);
+    const [users, setUsers] = useState(null);
+
+    const [fbPlayerDict, setFbPlayerDict] = useState({});
+    const [usersTeams, setUsersTeams] = useState({});
+    const startDraft = () => {
+        setDraftStarted(true);
+        let tempUsersTeams = {}
+        users.forEach(user => {
+            tempUsersTeams[user] = {"QB":[], "RB":[], "WR":[], "TE":[], "K":[], "D/ST":[]};
+        });
+        setUsersTeams(tempUsersTeams);
+    
+        // Make a copy of the users array to shuffle
+        const shuffledUsers = [...users];
+        
+        // Fisher-Yates shuffle
+        for (let i = shuffledUsers.length - 1; i > 0; i--) {
+            const randInd = Math.floor(Math.random() * (i + 1));
+            [shuffledUsers[i], shuffledUsers[randInd]] = [shuffledUsers[randInd], shuffledUsers[i]];
+        }
+    
+        // Set the shuffled array back to users state to re-render with the draft order
+        setUsers(shuffledUsers);
+        setLengthOfDraft(shuffledUsers.length);
+    };
+    
     useEffect(() => {
         const fetchPlayers = async () => {
             try {
@@ -54,7 +79,7 @@ const MockDraft = (props) => {
                     playerMap[player.name] = player;
                 });
 
-                setPlayerDict(playerMap);
+                setFbPlayerDict(playerMap);
             } catch (err) {
                 console.error("Error fetching players:", err);
             } finally {
@@ -68,9 +93,9 @@ const MockDraft = (props) => {
     const handleInputChange = (e) => { // filter a list of 6 players based on selected position and names
         const text = e.target.value;
         setInputText(text);
-        const match =  Object.keys(playerDict).some(player => player.toLowerCase() === text.toLowerCase());// hide the dropdown if whole name is typed in
+        const match =  Object.keys(fbPlayerDict).some(player => player.toLowerCase() === text.toLowerCase());// hide the dropdown if whole name is typed in
         if (!match && text !== '') {
-        const filtered = Object.keys(playerDict).filter(player => playerDict[player].position === selectedPosition && 
+        const filtered = Object.keys(fbPlayerDict).filter(player => fbPlayerDict[player].position === selectedPosition && 
             player.toLowerCase().includes(text.toLowerCase())).slice(0, 6);
         setFilteredPlayers(filtered); 
     } else {
@@ -86,7 +111,7 @@ const MockDraft = (props) => {
         e.preventDefault(); // Prevent the default form submission
         if (count < 4) {
             // Try to draft the player
-            let ret = draftPlayer(playerDict, inputText, userTeam, selectedPosition);
+            let ret = draftPlayer(fbPlayerDict, inputText, userTeam, selectedPosition);
             setDisplayText(ret);
             // Check if the player was successfully added
             if (ret === `${inputText} picked`) {
@@ -183,4 +208,4 @@ const MockDraft = (props) => {
 </div>
 )
 }
-export default MockDraft;
+export default LeagueDraftFunctionality;
