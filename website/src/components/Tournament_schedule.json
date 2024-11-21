@@ -1,0 +1,153 @@
+[
+    {
+      "date": "11/15",
+      "teams": ["UCLA", "Washington"],
+      "time": "8:00 PM CST",
+      "location": "Seattle, WA"
+    },
+    {
+      "date": "11/16",
+      "teams": ["Ohio State", "Northwestern"],
+      "time": "11:00 AM CST",
+      "location": "Chicago, IL"
+    },
+    {
+      "date": "11/16",
+      "teams": ["Michigan State", "Illinois"],
+      "time": "1:30 PM CST",
+      "location": "Urbana, IL"
+    },
+    {
+      "date": "11/16",
+      "teams": ["Penn State", "Purdue"],
+      "time": "2:30 PM CST",
+      "location": "West Lafayette, IN"
+    },
+    {
+      "date": "11/16",
+      "teams": ["Nebraska", "USC"],
+      "time": "3:00 PM CST",
+      "location": "Los Angeles, CA"
+    },
+    {
+      "date": "11/16",
+      "teams": ["Rutgers", "Maryland"],
+      "time": "5:00 PM CST",
+      "location": "College Park, MD"
+    },
+    {
+      "date": "11/16",
+      "teams": ["Oregon", "Wisconsin"],
+      "time": "6:30 PM CST",
+      "location": "Madison, WI"
+    },
+    {
+      "date": "11/22",
+      "teams": ["Purdue", "Michigan State"],
+      "time": "7:00 PM CST",
+      "location": "East Lansing, MI"
+    },
+    {
+      "date": "11/23",
+      "teams": ["Illinois", "Rutgers"],
+      "time": "11:00 AM CST",
+      "location": "Piscataway, NJ"
+    },
+    {
+      "date": "11/23",
+      "teams": ["Indiana", "Ohio State"],
+      "time": "11:00 AM CST",
+      "location": "Columbus, OH"
+    },
+    {
+      "date": "11/23",
+      "teams": ["Iowa", "Maryland"],
+      "time": "11:00 AM CST",
+      "location": "College Park, MD"
+    },
+    {
+      "date": "11/23",
+      "teams": ["Wisconsin", "Nebraska"],
+      "time": "2:30 PM CST",
+      "location": "Lincoln, NE"
+    },
+    {
+      "date": "11/23",
+      "teams": ["Penn State", "Minnesota"],
+      "time": "2:30 PM CST",
+      "location": "Minneapolis, MN"
+    },
+    {
+      "date": "11/23",
+      "teams": ["Northwestern", "Michigan"],
+      "time": "2:30 PM CST",
+      "location": "Ann Arbor, MI"
+    },
+    {
+      "date": "11/23",
+      "teams": ["USC", "UCLA"],
+      "time": "9:30 PM CST",
+      "location": "Pasadena, CA"
+    },
+    {
+      "date": "11/29",
+      "teams": ["Minnesota", "Wisconsin"],
+      "time": "10:00 AM CST",
+      "location": "Madison, WI"
+    },
+    {
+      "date": "11/29",
+      "teams": ["Nebraska", "Iowa"],
+      "time": "5:30 PM CST",
+      "location": "Iowa City, IA"
+    },
+    {
+      "date": "11/30",
+      "teams": ["Washington", "Oregon"],
+      "time": "TBA",
+      "location": "Eugene, OR"
+    },
+    {
+      "date": "11/30",
+      "teams": ["Maryland", "Penn State"],
+      "time": "TBA",
+      "location": "State College, PA"
+    },
+    {
+      "date": "11/30",
+      "teams": ["Michigan", "Ohio State"],
+      "time": "11:00 AM CST",
+      "location": "Columbus, OH"
+    },
+    {
+      "date": "11/30",
+      "teams": ["Purdue", "Indiana"],
+      "time": "TBA",
+      "location": "Bloomington, IN"
+    },
+    {
+      "date": "11/30",
+      "teams": ["Rutgers", "Michigan State"],
+      "time": "TBA",
+      "location": "East Lansing, MI"
+    },
+    {
+      "date": "11/30",
+      "teams": ["Illinois", "Northwestern"],
+      "time": "TBA",
+      "location": "Chicago, IL"
+    },
+    {
+      "date": "11/30",
+      "teams": ["Fresno State", "UCLA"],
+      "time": "TBA",
+      "location": "Pasadena, CA"
+    },
+    {
+      "date": "11/30",
+      "teams": ["Notre Dame", "USC"],
+      "time": "TBA",
+      "location": "Los Angeles, CA"
+    }
+  ]
+  
