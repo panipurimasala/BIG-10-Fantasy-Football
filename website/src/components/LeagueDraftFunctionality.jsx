@@ -44,7 +44,7 @@ const LeagueDraftFunctionality = (props) => {
     const [lengthofdraft, setLengthOfDraft] = useState(false);
     const [fbPlayerDict, setFbPlayerDict] = useState({});
     const [usersTeams, setUsersTeams] = useState({});
-    const startDraft = () => {
+    /*const startDraft = () => {
         setDraftStarted(true);
         let tempUsersTeams = {}
         users.forEach(user => {
@@ -64,7 +64,7 @@ const LeagueDraftFunctionality = (props) => {
         // Set the shuffled array back to users state to re-render with the draft order
         setUsers(shuffledUsers);
         setLengthOfDraft(shuffledUsers.length);
-    };
+    };*/
     
     useEffect(() => {
         const fetchPlayers = async () => {
