@@ -4,9 +4,12 @@ import './MockDraft.css';
 import supabase from "../supabaseClient";
 import './LeagueDraft.css';
 import MockDraft from "./MockDraft";
+import LeagueDraftFunctionality from "./LeagueDraftFunctionality";
+import { useNavigate } from 'react-router-dom';
 
 const LeagueDraft = () => {
-    const { name } = useParams();
+    const { leagueName } = useParams();
+    console.log("League Name from URL:", leagueName);
     const [teamName, setTeamName] = useState(null); 
     const [loading, setLoading] = useState(true);  
     const [error, setError] = useState(null);      
@@ -17,6 +20,7 @@ const LeagueDraft = () => {
 
     const [fbPlayerDict, setFbPlayerDict] = useState({});
     const [usersTeams, setUsersTeams] = useState({});
+    const navigate = useNavigate();
     useEffect(() => {
         const fetchPlayers = async () => {
             try {
@@ -41,6 +45,11 @@ const LeagueDraft = () => {
 
         fetchPlayers();
     }, []);
+    
+    const navigateToLeagueFreeAgency = (name) => {
+        console.log("Navigating to league free agency with name:", name);
+        navigate(`/free_agency_${name}`);
+    }
 
 
 
@@ -83,10 +92,11 @@ const LeagueDraft = () => {
         
         const getUsers = async () => {
             try {
-                const leagueId = await supabase.from("leagues").select("leagueid").eq("league_name", name);
+                const leagueId = await supabase.from("leagues").select("leagueid").eq("league_name", leagueName);
                 const leagueIdValue = leagueId.data[0]["leagueid"];
                 const userTeams = await supabase.from("user_leagues").select("team_name").eq("league_id", leagueIdValue);
                 setUsers(userTeams.data);
+                console.log(users);
             } catch (err) {
                 setError('Error fetching team name');
                 console.error(err);
@@ -95,7 +105,7 @@ const LeagueDraft = () => {
         
         getUsers();
         fetchTeamName();
-    }, [name]); 
+    }, [leagueName]); 
     
     const startDraft = () => {
         setDraftStarted(true);
@@ -130,11 +140,11 @@ const LeagueDraft = () => {
     return (
         <div>
             <div className="leagueDraftTitleContainer">
-                <h1 className="leagueDraftTitle">{name} Draft Page</h1>
+                <h1 className="leagueDraftTitle">{leagueName} Draft Page</h1>
                 <p className="team-title">Your team: {teamName}</p>
             </div>
             <div className="draftContainer">
-                <div className="draftFunction"><MockDraft onChangesInCount = {setCountInPage}/></div>
+                <div className="draftFunction"><LeagueDraftFunctionality name = {leagueName} onChangesInCount = {setCountInPage}/></div>
                 <div className="draftOrder">
                     <h2>Draft Order</h2>
                     {draftStarted ? "Draft ongoing" : <button onClick={startDraft}>Start Draft</button>} {/* Button to start the draft */}
@@ -170,6 +180,7 @@ const LeagueDraft = () => {
                     <p>No teams found in this league.</p>
                 )}
             </div>
+            <div><button onClick={() =>navigateToLeagueFreeAgency(leagueName)}>Free Agency Page</button></div>
         </div>
     );
 }

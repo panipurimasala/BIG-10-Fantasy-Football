@@ -11,11 +11,9 @@ import PlayerSummaryPage from './components/PlayerSummaryPage';
 import LoginPage from './components/LoginPage';
 import Profile from "./components/Profile";
 import LeagueDraft from './components/LeagueDraft';
+import LeagueFreeAgency from './components/LeagueFreeAgency';
 import { AuthProvider } from './components/AuthContext';
 function App() {
-
-
-
   return (
     <AuthProvider>
       <Auth0Provider
@@ -37,7 +35,8 @@ function App() {
               <Route path="/free_agency/player/:playerId" element={<PlayerSummaryPage />} />
               <Route path="/LoginPage" element={<LoginPage />}></Route>
               <Route path="/Profile" element={<Profile />}></Route>
-              <Route path="/draft_page/:name" element={<LeagueDraft />} />
+              <Route path="/draft_page/:leagueName" element={<LeagueDraft />} />
+              <Route path="/free_agency/:name" element={<LeagueFreeAgency />} />
             </Routes>
           </BrowserRouter>
         </div>
