@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
-
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import FreeAgencyPage from './FreeAgencyPage';
 
 const LeagueFreeAgency = () => {
+    const leagueName = useParams();
+    console.log(leagueName);
     return (
-        <div><h1>hello</h1></div>
+        <div>
+            <div style={{'display':'flex','justify-content':'center'}}><h1>{leagueName.name} Free Agency</h1></div>
+            <FreeAgencyPage league={leagueName.name.toLowerCase() + '_free_agency'}/>
+        </div>
     );
 };
-
 export default LeagueFreeAgency;
 

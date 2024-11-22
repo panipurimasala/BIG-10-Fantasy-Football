@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import './FreeAgencyPage.css';
 import supabase from '../supabaseClient';
 
-const FreeAgencyPage = () => {
+
+const FreeAgencyPage = ({league = 'players'}) => {
     const [inputText, setInputText] = useState('');
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [allPlayers, setAllPlayers] = useState([]);
@@ -17,7 +18,7 @@ const FreeAgencyPage = () => {
             try {
                 // Fetch players
                 let { data: playersData, error: playersError } = await supabase
-                    .from('players')
+                    .from(league)
                     .select('*');
 
                 if (playersError) throw playersError;

@@ -48,7 +48,7 @@ const LeagueDraft = () => {
     
     const navigateToLeagueFreeAgency = (name) => {
         console.log("Navigating to league free agency with name:", name);
-        navigate(`/free_agency_${name}`);
+        navigate(`/free_agency/${name}`);
     }
 
 
