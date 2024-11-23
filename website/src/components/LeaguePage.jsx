@@ -136,6 +136,7 @@ function League() {
             return;
         }
 
+
         if (utilizer) {
 
             const { error: userError } = await supabase
@@ -146,9 +147,24 @@ function League() {
                 alert("Unable to add you to the league.");
                 return;
             }
+                const createTableSQL = `CREATE TABLE IF NOT EXISTS ${"fillthisup"} (LIKE ${'players'} INCLUDING ALL);`; // idk how to inject the tournament name in here like "NathansLeague_players"
+                const { error: createError } = await supabase.rpc('execute_sql', { query_statement: createTableSQL });
+                if (createError) {
+                    alert("Please retry creating a League.");
+                }
+                else {
+                const insertDataSQL = `INSERT INTO ${"fillthisup"} SELECT * FROM ${'players'};`;
+                const { error: insertError } = await supabase.rpc('execute_sql', { query_statement: insertDataSQL });
+    
+                if (insertError) {
+                    alert("Please retry creating a league.")
+                }
+    
+                // Success: Show success message and refresh leagues list
+                alert("Successfully created and joined the league!");
+                leagues(utilizer.id); // Refresh leagues list after creating
+            }
 
-            alert("Successfully created and joined the league!");
-            leagues(utilizer.id); // Refresh leagues list after creating
         }
 
         setCreateTourneyName('');
