@@ -5,19 +5,17 @@ key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indr
 
 supabase = create_client(url, key)
 
-def create_table(table_name):
+def create_table(new_table_name, existing_table_name):
     sql = f"""
-    CREATE TABLE IF NOT EXISTS {table_name} (
-        id SERIAL PRIMARY KEY,
-        name TEXT NOT NULL,
-        created_at TIMESTAMP DEFAULT NOW()
-    );
+    CREATE TABLE IF NOT EXISTS {new_table_name} (LIKE {existing_table_name} INCLUDING ALL);
     """
+    supabase.rpc("execute_sql", {"query_statement": sql}).execute()
+    sql_insert = f"""
+        INSERT INTO {new_table_name} SELECT * FROM {existing_table_name};
+        """
     try:
-        response = supabase.rpc("execute_sql", {"query_statement": sql}).execute()
-        print(f"Table '{table_name}' created successfully!")
+        supabase.rpc("execute_sql", {"query_statement": sql_insert}).execute()
     except Exception as e:
         print(f"Error creating table: {e}")
 
-# Example usage
-create_table("testing_table")
+create_table("testing_table", "players")
