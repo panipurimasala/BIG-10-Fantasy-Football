@@ -147,13 +147,13 @@ function League() {
                 alert("Unable to add you to the league.");
                 return;
             }
-                const createTableSQL = `CREATE TABLE IF NOT EXISTS ${"fillthisup"} (LIKE ${'players'} INCLUDING ALL);`; // idk how to inject the tournament name in here like "NathansLeague_players"
+                const createTableSQL = `CREATE TABLE IF NOT EXISTS "${createtourneyName}" (LIKE ${'players'} INCLUDING ALL);`;
                 const { error: createError } = await supabase.rpc('execute_sql', { query_statement: createTableSQL });
                 if (createError) {
                     alert("Please retry creating a League.");
                 }
                 else {
-                const insertDataSQL = `INSERT INTO ${"fillthisup"} SELECT * FROM ${'players'};`;
+                const insertDataSQL = `INSERT INTO "${createtourneyName}" SELECT * FROM ${'players'};`;
                 const { error: insertError } = await supabase.rpc('execute_sql', { query_statement: insertDataSQL });
     
                 if (insertError) {
