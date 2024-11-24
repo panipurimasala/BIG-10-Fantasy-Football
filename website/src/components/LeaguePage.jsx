@@ -20,6 +20,14 @@ function League() {
     const [error, setError] = useState('');
     const [usersData, setUsersData] = useState({});
     const [leaguess, setLeaguess] = useState([]);
+    const teamPlayers = {
+        K: [],
+        QB: [],
+        RB: [],
+        TE: [],
+        WR: [],
+        "D/ST": []
+      };
 
     /*useEffect(() => {
         const getNumPlayers = async(leagueID) => {
@@ -100,6 +108,14 @@ function League() {
 
             const leagueId = data[0].leagueid;
             const userId = utilizer.id;
+            const tableName = `${tourneyName}_user_teams`;
+            const { insertTeamError } = await supabase
+                    .from(tableName)
+                    .insert({
+                      user_id: utilizer.id,
+                      team_name: "fillin",
+                      team_players: teamPlayers
+                    });
             
 
             const { error: joinError } = await supabase
@@ -147,18 +163,37 @@ function League() {
                 alert("Unable to add you to the league.");
                 return;
             }
-                const createTableSQL = `CREATE TABLE IF NOT EXISTS "${createtourneyName}" (LIKE ${'players'} INCLUDING ALL);`;
+                const createTableSQL = `CREATE TABLE IF NOT EXISTS "${createtourneyName}_players" (LIKE ${'players'} INCLUDING ALL);`;
                 const { error: createError } = await supabase.rpc('execute_sql', { query_statement: createTableSQL });
                 if (createError) {
                     alert("Please retry creating a League.");
                 }
                 else {
-                const insertDataSQL = `INSERT INTO "${createtourneyName}" SELECT * FROM ${'players'};`;
+                const insertDataSQL = `INSERT INTO "${createtourneyName}_players" SELECT * FROM ${'players'};`;
                 const { error: insertError } = await supabase.rpc('execute_sql', { query_statement: insertDataSQL });
     
                 if (insertError) {
                     alert("Please retry creating a league.")
                 }
+                const createTableSQL = `CREATE TABLE IF NOT EXISTS "${createtourneyName}_user_teams" (LIKE ${'newleague_teams'} INCLUDING ALL);`; 
+                const { error: createError } = await supabase.rpc('execute_sql', { query_statement: createTableSQL });
+                if (createError) {
+                    alert("Please retry creating a League.");
+                }
+                const tableName = `${createtourneyName}_user_teams`;
+                
+                  
+                  const { insertTeamError } = await supabase
+                    .from(tableName)
+                    .insert({
+                      user_id: utilizer.id,
+                      team_name: "fillin",
+                      team_players: teamPlayers
+                    });
+                    if (insertTeamError) {
+                        console.error("Supabase Error:", error.message);
+                        console.error("Details:", error);}
+
     
                 // Success: Show success message and refresh leagues list
                 alert("Successfully created and joined the league!");
