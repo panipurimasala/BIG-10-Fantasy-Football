@@ -20,6 +20,7 @@ function League() {
     const [error, setError] = useState('');
     const [usersData, setUsersData] = useState({});
     const [leaguess, setLeaguess] = useState([]);
+    const [numUsers, setNumUsers] = useState(null);
     const teamPlayers = {
         K: [],
         QB: [],
@@ -50,6 +51,7 @@ function League() {
         const getUserAndLeagues = async () => {
             const { data: { user } } = await supabase.auth.getUser();
             setUser(user);
+            //console.log(user);
             setSession(user !== null);
             if (user) {
                 await getLeagues(user.id);
@@ -57,6 +59,21 @@ function League() {
         };
         getUserAndLeagues();
     }, []);
+
+    useEffect(() => {
+        if (leagues) {
+            const getNumUsers = async () =>{
+                for (const league of leagues){
+                    const {data} = await supabase.from(league.league_name + "_user_teams").select('*');
+                    const numUsers = data.length;
+                    league["numUsers"] = numUsers;
+                }
+            }
+            getNumUsers();
+        }
+    }, [leagues]);
+
+
 
     const getLeagues = async (userId) => {
         try {
@@ -220,13 +237,13 @@ function League() {
     }
 
     const leagueBlock = () => {
-        if(leaguess.length > 0) { return (
+        if(leagues.length > 0) { return (
             <div className="currentLeaguesDisplay">
-                {leaguess.map((league, index) => (
+                {leagues.map((league, index) => (
                         <div className="leagueBlocks" key={index} onClick={() => navigateToDraftPage(league.league_name)}> 
                             <h1 className="leagueName">{league.league_name}</h1>
-                            <h2 className="numPlayers">{usersData[league.leagueid] !== undefined
-                                                    ? `${usersData[league.leagueid]}/10 players`
+                            <h2 className="numPlayers">{league["numUsers"] !== undefined
+                                                    ? `${league["numUsers"]}/10 players`
                                                     : 'Loading...'}
                             </h2>
                         </div>
@@ -244,7 +261,8 @@ function League() {
     useEffect(() => {
         const fetchLeagues = async () => {
           try {
-            const { data: leagues, error } = await supabase.from("leagues").select("*");
+            const { data: leagues, error } = await supabase.from("user_leagues").select("league_id").eq("user_id", utilizer.id);
+            //console.log(leagues);
             if (error) throw error;
             setLeaguess(leagues); // Store leagues in state
           } catch (err) {
