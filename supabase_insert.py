@@ -6,35 +6,15 @@ from datetime import datetime, timedelta
 import pytz
 import threading
 import time
-from supabase import create_client, Client
-from dotenv import load_dotenv  # Ensure you have python-dotenv installed
-
-# Load environment variables from .env file (if present)
-load_dotenv()
+from supabase import create_client
 
 # Set up logging
-LOG_FILE = 'supabase_insert_debug.log'
-logging.basicConfig(
-    level=logging.DEBUG,  # Set to DEBUG to capture all levels of logs
-    format='%(asctime)s [%(levelname)s] %(message)s',
-    handlers=[
-        logging.FileHandler(LOG_FILE),
-        logging.StreamHandler()  # Also output logs to the console
-    ]
-)
-
-# Validate environment variables
-required_env_vars = ['SUPABASE_URL', 'SUPABASE_KEY', 'RSC_TOKEN']
-missing_vars = [var for var in required_env_vars if not os.getenv(var)]
-if missing_vars:
-    logging.error(f"Missing required environment variables: {', '.join(missing_vars)}")
-    exit(1)
+logging.basicConfig(level=logging.INFO)
 
 # Supabase connection parameters
 url = os.getenv('SUPABASE_URL')
 key = os.getenv('SUPABASE_KEY')
-supabase: Client = create_client(url, key)
-logging.info("Supabase client initialized.")
+supabase = create_client(url, key)
 
 # Your API token
 RSC_token = os.getenv('RSC_TOKEN')
@@ -95,61 +75,35 @@ active_game_windows = []
 # Lock for threading
 lock = threading.Lock()
 
-def log_function_entry_exit(func):
-    """Decorator to log function entry and exit."""
-    def wrapper(*args, **kwargs):
-        logging.debug(f"Entering function: {func.__name__}")
-        result = func(*args, **kwargs)
-        logging.debug(f"Exiting function: {func.__name__}")
-        return result
-    return wrapper
-
-@log_function_entry_exit
 def fetch_team_schedule(team_id):
     params = {
         'RSC_token': RSC_token,
         'team_id': team_id
     }
-    logging.debug(f"Fetching schedule for team_id {team_id} with params {params}")
-    try:
-        response = requests.get(schedule_api_url, params=params, timeout=10)
-        response.raise_for_status()
-        logging.debug(f"Schedule fetched successfully for team_id {team_id}")
+    response = requests.get(schedule_api_url, params=params)
+    if response.status_code == 200:
         return response.json()
-    except requests.exceptions.RequestException as e:
-        logging.error(f"Error fetching schedule for team_id {team_id}: {e}")
+    else:
+        logging.error(f"Failed to fetch schedule for team_id {team_id}")
         return None
 
-@log_function_entry_exit
 def get_weekly_schedules(team_ids):
     schedules = {}
     for team_id in team_ids:
-        logging.debug(f"Fetching schedule for team_id {team_id}")
         schedule_data = fetch_team_schedule(team_id)
         if schedule_data:
             schedules[team_id] = schedule_data
-            logging.debug(f"Schedule added for team_id {team_id}")
-        else:
-            logging.warning(f"No schedule data for team_id {team_id}")
-    logging.info(f"Total schedules fetched: {len(schedules)}")
     return schedules
 
-@log_function_entry_exit
 def extract_game_times(schedules):
     game_times = []
-    now_utc = datetime.now(pytz.utc)
-    current_week = now_utc.isocalendar()[1] - 34  # Adjust for the start of the season MIGHT HAVE TO CHANGE EVERY YEAR
-    logging.debug(f"Current UTC time: {now_utc}")
-    logging.debug(f"Current ISO Week Number: {current_week}")
-    
     for team_id, schedule_data in schedules.items():
         games = schedule_data.get('data', {}).get('NCAAFB', [])
-        logging.debug(f"Processing {len(games)} games for team_id {team_id}")
         for game in games:
+            # Filter games for the upcoming week
             game_week = game.get('week')
-            logging.debug(f"Game week: {game_week}, Current week: {current_week}")
+            current_week = datetime.now().isocalendar()[1] - 34 # MIGHT HAVE TO CHANGE THIS EVERY YEAR
             if game_week != current_week:
-                logging.debug("Skipping game not in the current week.")
                 continue  # Skip games not in the current week
 
             game_time_str = game.get('game_time')
@@ -157,31 +111,25 @@ def extract_game_times(schedules):
                 try:
                     # Example format: 'Sat, 28 Sep 2019 19:30:00 GMT'
                     game_time = datetime.strptime(game_time_str, '%a, %d %b %Y %H:%M:%S %Z')
-                    game_time = game_time.replace(tzinfo=pytz.utc)  # Ensure UTC
                     game_times.append(game_time)
-                    logging.debug(f"Parsed game time: {game_time}")
                 except ValueError:
                     logging.warning(f"Invalid date format for game_time: {game_time_str}")
             else:
                 logging.warning(f"Game time TBD for game: {game.get('game_ID')}")
-                # Handle TBD times by assigning a default time (e.g., 1 PM UTC)
+                # Handle TBD times by assigning a default time (e.g., 1 PM local time)
                 game_date_str = game.get('game_date')
                 if game_date_str:
                     try:
                         # Example date format: 'Sat, 28 Sep 2019'
                         game_date = datetime.strptime(game_date_str, '%a, %d %b %Y')
-                        default_time = datetime.combine(game_date, datetime.min.time()) + timedelta(hours=13)  # 1 PM UTC
-                        default_time = default_time.replace(tzinfo=pytz.utc)
+                        default_time = datetime.combine(game_date, datetime.min.time()) + timedelta(hours=13)  # 1 PM
                         game_times.append(default_time)
-                        logging.debug(f"Assigned default game time: {default_time}")
                     except ValueError:
                         logging.error(f"Invalid date format for game_date: {game_date_str}")
                 else:
                     logging.error(f"No game_date for game: {game.get('game_ID')}")
-    logging.info(f"Total game times extracted: {len(game_times)}")
     return game_times
 
-@log_function_entry_exit
 def get_active_game_time_windows(game_times):
     game_duration = timedelta(hours=4)
     active_windows = []
@@ -189,40 +137,28 @@ def get_active_game_time_windows(game_times):
         start_time = game_time - timedelta(minutes=15)  # Start 15 minutes before game time
         end_time = game_time + game_duration
         active_windows.append((start_time, end_time))
-        logging.debug(f"Added active window: {start_time} to {end_time}")
-    logging.info(f"Total active windows before merging: {len(active_windows)}")
     return active_windows
 
-@log_function_entry_exit
 def merge_time_windows(windows):
-    if not windows:
-        logging.warning("No windows to merge.")
-        return []
     windows.sort(key=lambda x: x[0])
     merged_windows = []
     for window in windows:
         if not merged_windows:
             merged_windows.append(window)
-            logging.debug(f"Initialized merged window with: {window}")
         else:
             last_window = merged_windows[-1]
             if window[0] <= last_window[1]:
-                merged = (last_window[0], max(last_window[1], window[1]))
-                merged_windows[-1] = merged
-                logging.debug(f"Merged window: {merged}")
+                merged_windows[-1] = (last_window[0], max(last_window[1], window[1]))
             else:
                 merged_windows.append(window)
-                logging.debug(f"Added new merged window: {window}")
-    logging.info(f"Total merged active windows: {len(merged_windows)}")
     return merged_windows
 
-@log_function_entry_exit
 def update_active_game_windows():
     global active_game_windows
     while True:
+        # Fetch weekly schedules once a week (Sunday at midnight)
         now = datetime.now(pytz.utc)
-        logging.debug(f"Checking if it's time to fetch schedules. Current UTC time: {now}")
-        if now.weekday() == 6 and now.hour == 0 or not active_game_windows:
+        if now.weekday() == 6 and now.hour == 0 == 0 or not active_game_windows:
             logging.info("Fetching weekly schedules...")
             schedules = get_weekly_schedules(team_ids)
             game_times = extract_game_times(schedules)
@@ -231,44 +167,32 @@ def update_active_game_windows():
             merged_windows = merge_time_windows(active_windows)
             with lock:
                 active_game_windows = merged_windows
-                logging.info(f"Active game windows updated: {active_game_windows}")
+            logging.info("Active game windows updated.")
             # Sleep for 1 hour to avoid multiple fetches within the same hour
-            logging.debug("Sleeping for 1 hour after fetching schedules.")
             time.sleep(3600)
         else:
             # Sleep for a while before checking again
-            logging.debug("Not time to fetch schedules yet. Sleeping for 5 minutes.")
             time.sleep(300)  # Check every 5 minutes
 
-@log_function_entry_exit
 def is_in_active_window():
     now = datetime.now(pytz.utc)
-    logging.debug(f"Checking active windows against current UTC time: {now}")
-    print(active_game_windows)
     with lock:
         for start_time, end_time in active_game_windows:
-            logging.debug(f"Comparing with window: {start_time} to {end_time}")
             if start_time <= now <= end_time:
-                logging.info(f"Current time {now} is within window {start_time} to {end_time}")
                 return True
-    logging.info("No active game windows found for current time.")
     return False
 
-@log_function_entry_exit
 def fetch_live_data():
     date_str = datetime.now().strftime('%Y-%m-%d')
     url = live_data_api_url.format(date=date_str)
     params = {
         'RSC_token': RSC_token
     }
-    logging.debug(f"Fetching live data from {url} with params {params}")
-    try:
-        response = requests.get(url, params=params, timeout=10)
-        response.raise_for_status()
-        logging.debug("Live data fetched successfully.")
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
         return response.json()
-    except requests.exceptions.RequestException as e:
-        logging.error(f"Failed to fetch live data from {url}: {e}")
+    else:
+        logging.error(f"Failed to fetch live data from {url}")
         return None
 
 def calculate_offensive_fantasy_points(player_stats, position):
@@ -358,32 +282,25 @@ def calculate_defense_fantasy_points(team_stats, points_allowed):
 def get_team_defense_player_id(team_id):
     return 100000 + team_id  # Arbitrary large number to avoid collision with player IDs
 
-@log_function_entry_exit
 def insert_data(data):
     for game in data.get('data', {}).get('NCAAFB', []):
         for team_key in ['home_team', 'away_team']:
             team = game['full_box'][team_key]
             if team['team_id'] in team_ids:
-                logging.debug(f"Processing team_id {team['team_id']} for game_id {game['game_ID']}")
                 # Upsert team
-                try:
-                    supabase.table('teams').upsert({
-                        'team_id': team['team_id'],
-                        'name': team_info[team['team_id']][0],
-                        'abbreviation': team['abbrv'],
-                        'mascot': team_info[team['team_id']][1],
-                        'division': team.get('division_name', '')
-                    }).execute()
-                    logging.debug(f"Upserted team_id {team['team_id']} into 'teams' table.")
-                except Exception as e:
-                    logging.error(f"Error upserting team_id {team['team_id']}: {e}")
+                supabase.table('teams').upsert({
+                    'team_id': team['team_id'],
+                    'name': team_info[team['team_id']][0],
+                    'abbreviation': team['abbrv'],
+                    'mascot': team_info[team['team_id']][1],
+                    'division': team.get('division_name', '')
+                }).execute()
 
                 # Insert or update players and stats
                 for player_id, player in game.get('player_box', {}).get(team_key, {}).items():
                     position_raw = player.get('position', '')
                     position = position_mapping.get(position_raw)
                     if position is None:
-                        logging.debug(f"Skipping player_id {player_id} with position {position_raw}")
                         continue  # Skip positions we're not interested in
 
                     status = player.get('status', '')
@@ -392,33 +309,25 @@ def insert_data(data):
 
                     # Prepare and insert stats
                     stats_json = json.dumps(player_stats)
-                    try:
-                        supabase.table('weekly_stats').upsert({
-                            'player_id': player_id,
-                            'game_id': game['game_ID'],
-                            'week': game['week'],
-                            'season': game['season'],
-                            'player_stats': stats_json,
-                            'game_date': game['game_time'],
-                            'fantasy_points': fantasy_points
-                        }).execute()
-                        logging.debug(f"Upserted stats for player_id {player_id} into 'weekly_stats' table.")
-                    except Exception as e:
-                        logging.error(f"Error upserting stats for player_id {player_id}: {e}")
+                    supabase.table('weekly_stats').upsert({
+                        'player_id': player_id,
+                        'game_id': game['game_ID'],
+                        'week': game['week'],
+                        'season': game['season'],
+                        'player_stats': stats_json,
+                        'game_date': game['game_time'],
+                        'fantasy_points': fantasy_points
+                    }).execute()
 
                     # Upsert into players table
-                    try:
-                        supabase.table('players').upsert({
-                            'player_id': player_id,
-                            'team_id': team['team_id'],
-                            'name': player['player'],
-                            'position': position,
-                            'status': status,
-                            'fantasy_points': fantasy_points
-                        }).execute()
-                        logging.debug(f"Upserted player_id {player_id} into 'players' table.")
-                    except Exception as e:
-                        logging.error(f"Error upserting player_id {player_id}: {e}")
+                    supabase.table('players').upsert({
+                        'player_id': player_id,
+                        'team_id': team['team_id'],
+                        'name': player['player'],
+                        'position': position,
+                        'status': status,
+                        'fantasy_points': fantasy_points
+                    }).execute()
 
                 # Process team defense
                 team_defense_player_id = get_team_defense_player_id(team['team_id'])
@@ -439,41 +348,31 @@ def insert_data(data):
 
                 # Prepare and insert stats for team defense
                 stats_json = json.dumps(team_stats)
-                try:
-                    supabase.table('weekly_stats').upsert({
-                        'player_id': team_defense_player_id,
-                        'game_id': game['game_ID'],
-                        'week': game['week'],
-                        'season': game['season'],
-                        'player_stats': stats_json,
-                        'game_date': game['game_time'],
-                        'fantasy_points': fantasy_points
-                    }).execute()
-                    logging.debug(f"Upserted defense stats for team_id {team['team_id']} into 'weekly_stats' table.")
-                except Exception as e:
-                    logging.error(f"Error upserting defense stats for team_id {team['team_id']}: {e}")
+                supabase.table('weekly_stats').upsert({
+                    'player_id': team_defense_player_id,
+                    'game_id': game['game_ID'],
+                    'week': game['week'],
+                    'season': game['season'],
+                    'player_stats': stats_json,
+                    'game_date': game['game_time'],
+                    'fantasy_points': fantasy_points
+                }).execute()
 
                 # Upsert into players table
-                try:
-                    supabase.table('players').upsert({
-                        'player_id': team_defense_player_id,
-                        'team_id': team['team_id'],
-                        'name': team_defense_name,
-                        'position': team_position,
-                        'status': team_status,
-                        'fantasy_points': fantasy_points
-                    }).execute()
-                    logging.debug(f"Upserted defense player_id {team_defense_player_id} into 'players' table.")
-                except Exception as e:
-                    logging.error(f"Error upserting defense player_id {team_defense_player_id}: {e}")
+                supabase.table('players').upsert({
+                    'player_id': team_defense_player_id,
+                    'team_id': team['team_id'],
+                    'name': team_defense_name,
+                    'position': team_position,
+                    'status': team_status,
+                    'fantasy_points': fantasy_points
+                }).execute()
 
-@log_function_entry_exit
 def main():
     # Start a thread to update active game windows weekly
     schedule_thread = threading.Thread(target=update_active_game_windows)
     schedule_thread.daemon = True
     schedule_thread.start()
-    logging.info("Started schedule update thread.")
 
     # Main loop to check for active game times and fetch live data
     while True:
@@ -486,16 +385,11 @@ def main():
             else:
                 logging.error("Failed to fetch live data.")
             # Wait for a minute before next fetch
-            logging.debug("Sleeping for 1 minute before next fetch.")
             time.sleep(60)
         else:
             logging.info("No active games at this time.")
             # Sleep for 5 minutes before checking again
-            logging.debug("Sleeping for 5 minutes before next check.")
             time.sleep(300)
 
 if __name__ == '__main__':
-    try:
-        main()
-    except Exception as e:
-        logging.critical(f"Unhandled exception: {e}", exc_info=True)
+    main()
