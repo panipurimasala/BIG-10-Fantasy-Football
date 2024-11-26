@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 import logging
@@ -5,8 +6,7 @@ from datetime import datetime, timedelta
 import pytz
 import threading
 import time
-from supabase import create_client, Client
-import os
+from supabase import create_client
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 # Supabase connection parameters
 url = os.getenv('SUPABASE_URL')
 key = os.getenv('SUPABASE_KEY')
-supabase: Client = create_client(url, key)
+supabase = create_client(url, key)
 
 # Your API token
 RSC_token = os.getenv('RSC_TOKEN')
@@ -102,7 +102,7 @@ def extract_game_times(schedules):
         for game in games:
             # Filter games for the upcoming week
             game_week = game.get('week')
-            current_week = datetime.now().isocalendar()[1]
+            current_week = datetime.now().isocalendar()[1] - 34 # MIGHT HAVE TO CHANGE THIS EVERY YEAR
             if game_week != current_week:
                 continue  # Skip games not in the current week
 
@@ -158,7 +158,7 @@ def update_active_game_windows():
     while True:
         # Fetch weekly schedules once a week (Sunday at midnight)
         now = datetime.now(pytz.utc)
-        if now.weekday() == 6 and now.hour == 0:
+        if now.weekday() == 6 and now.hour == 0 == 0 or not active_game_windows:
             logging.info("Fetching weekly schedules...")
             schedules = get_weekly_schedules(team_ids)
             game_times = extract_game_times(schedules)
