@@ -169,7 +169,7 @@ function League() {
                     alert("Please retry creating a League.");
                 }
                 else {
-                const insertDataSQL = `INSERT INTO "${createtourneyName}_players" SELECT * FROM ${'players'};`;
+                const insertDataSQL = `INSERT INTO "${createtourneyName}_freeagency" SELECT * FROM ${'players'};`;
                 const { error: insertError } = await supabase.rpc('execute_sql', { query_statement: insertDataSQL });
     
                 if (insertError) {
