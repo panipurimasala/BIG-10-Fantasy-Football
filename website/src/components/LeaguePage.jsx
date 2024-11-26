@@ -182,8 +182,10 @@ function League() {
                 }
                 const tableName = `${createtourneyName}_user_teams`;
                 
-                  
-                  const { insertTeamError } = await supabase
+                for (let i = 0; i <1000000000; i++) {
+
+                }
+        const { insertTeamError } = await supabase
                     .from(tableName)
                     .insert({
                       user_id: utilizer.id,
@@ -193,6 +195,7 @@ function League() {
                     if (insertTeamError) {
                         console.error("Supabase Error:", error.message);
                         console.error("Details:", error);}
+                  
 
     
                 // Success: Show success message and refresh leagues list
