@@ -1,0 +1,221 @@
+import React, { useState, useEffect } from "react";
+import './MockDraft.css';
+import supabase from '../supabaseClient';
+import Confetti from 'react-confetti';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { io } from "socket.io-client";
+
+const socket = io("http://localhost:5000"); // Replace with your Flask server address
+
+const LeagueDraftFunctionality = (props) => {
+    const [inputText, setInputText] = useState('');
+    const [filteredPlayers, setFilteredPlayers] = useState([]);
+    const [selectedPosition, setSelectedPosition] = useState("QB");
+    const [displayText, setDisplayText] = useState("Start Drafting!");
+    const [showConfetti, setShowConfetti] = useState(false);
+    const [pickedPlayers, setPickedPlayers] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [teamGoing, setTeamGoing] = useState(0);
+    const [users, setUsers] = useState(null);
+    const [draftStarted, setDraftStarted] = useState(false);
+    const [currentDrafter, setCurrentDrafter] = useState(null);
+    const [fbPlayerDict, setFbPlayerDict] = useState({});
+    const [usersTeams, setUsersTeams] = useState({});
+
+    useEffect(() => {
+        const fetchPlayers = async () => {
+            try {
+                const { data: playersData, error } = await supabase
+                    .from('players')
+                    .select('*');
+
+                if (error) throw error;
+
+                const playerMap = {};
+                playersData.forEach(player => {
+                    playerMap[player.name] = player;
+                });
+
+                setFbPlayerDict(playerMap);
+            } catch (err) {
+                console.error("Error fetching players:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPlayers();
+
+        // Set up Socket.IO listeners
+        socket.on("draft_started", (data) => {
+            setDraftStarted(true);
+            setCurrentDrafter(data.current_user);
+            setUsersTeams(data.users_teams);
+            setDisplayText(`Draft started! ${data.current_user} is drafting.`);
+        });
+
+        socket.on("update_turn", (data) => {
+            setCurrentDrafter(data.current_user);
+            setDisplayText(`${data.current_user} is drafting.`);
+        });
+
+        socket.on("draft_complete", () => {
+            setDisplayText("Draft complete!");
+            setShowConfetti(true);
+            setTimeout(() => setShowConfetti(false), 30000);
+        });
+
+        return () => {
+            socket.off("draft_started");
+            socket.off("update_turn");
+            socket.off("draft_complete");
+        };
+    }, []);
+
+    const startDraft = async () => {
+        try {
+            const response = await fetch("http://localhost:5000/start-drafting", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ order: users }), // Replace `users` with the actual draft order
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                console.log("Draft started:", result);
+            } else {
+                console.error("Error starting draft:", result);
+            }
+        } catch (err) {
+            console.error("Error communicating with server:", err);
+        }
+    };
+
+    const handleMakePick = async () => {
+        try {
+            const response = await fetch("http://localhost:5000/make-pick", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    player: inputText,
+                    user: currentDrafter,
+                }),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                setPickedPlayers([...pickedPlayers, { name: inputText, position: selectedPosition }]);
+                setDisplayText(`${inputText} picked!`);
+                setInputText('');
+                setFilteredPlayers([]);
+            } else {
+                setDisplayText(result.error);
+            }
+        } catch (err) {
+            console.error("Error making pick:", err);
+        }
+    };
+
+    const handleInputChange = (e) => {
+        const text = e.target.value;
+        setInputText(text);
+        const match = Object.keys(fbPlayerDict).some(player => player.toLowerCase() === text.toLowerCase());
+        if (!match && text !== '') {
+            const filtered = Object.keys(fbPlayerDict)
+                .filter(player => fbPlayerDict[player].position === selectedPosition &&
+                    player.toLowerCase().includes(text.toLowerCase()))
+                .slice(0, 6);
+            setFilteredPlayers(filtered);
+        } else {
+            setFilteredPlayers([]);
+        }
+    };
+
+    const handlePositionChange = (e) => {
+        setSelectedPosition(e.target.value);
+        setFilteredPlayers([]);
+    };
+
+    if (loading) {
+        return <p>Loading players...</p>;
+    }
+
+    return (
+        <div className="Draft">
+            <div className="Home">
+                {showConfetti && <Confetti />}
+                <form onSubmit={(e) => e.preventDefault()}>
+                    <input
+                        id="userquery"
+                        name="query"
+                        type="text"
+                        placeholder="Player Name"
+                        value={inputText}
+                        onChange={handleInputChange}
+                    />
+
+                    {filteredPlayers.length > 0 && (
+                        <ul className="filteredlist" style={{ border: '0.5px solid', listStyle: 'Arial', padding: 20 }}>
+                            {filteredPlayers.map((player, index) => (
+                                <li key={index}
+                                    style={{ padding: '1px', cursor: 'grab', fontWeight: 'bold' }}
+                                    onClick={() => {
+                                        setInputText(player);
+                                        setFilteredPlayers([]);
+                                    }}>
+                                    {player}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                    <select name="category" onChange={handlePositionChange}>
+                        <option value="QB">QB</option>
+                        <option value="WR">WR</option>
+                        <option value="TE">TE</option>
+                        <option value="RB">RB</option>
+                        <option value="D/ST">Defense/Special Teams</option>
+                    </select>
+                    {draftStarted ? (
+                        <input type="button" value="Make Pick" onClick={handleMakePick} />
+                    ) : (
+                        <input type="button" value="Start Draft" onClick={startDraft} />
+                    )}
+                </form>
+            </div>
+            <body>
+                <p className="display-text">{displayText}</p>
+                <div className="table-container">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th colSpan="2">Your team</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                            </tr>
+                            <TransitionGroup component={null}>
+                                {pickedPlayers.map((player, index) => (
+                                    <CSSTransition key={index} timeout={500} classNames="fade">
+                                        <tr>
+                                            <td>{player.name}</td>
+                                            <td>{player.position}</td>
+                                        </tr>
+                                    </CSSTransition>
+                                ))}
+                            </TransitionGroup>
+                        </tbody>
+                    </table>
+                </div>
+            </body>
+        </div>
+    );
+};
+
+export default LeagueDraftFunctionality;
