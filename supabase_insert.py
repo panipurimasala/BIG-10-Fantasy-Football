@@ -323,7 +323,8 @@ def insert_data(data):
                     'division': team.get('division_name', '')
                 }).execute()
                 
-                if team_response.status_code not in [200, 201]:
+                # Check if team upsert was successful
+                if team_response.error is not None:
                     logging.error(f"Failed to upsert team_id {team['team_id']}: {team_response.error}")
                     continue  # Skip processing this team if upsert fails
 
@@ -409,14 +410,14 @@ def insert_data(data):
                 # Batch upsert players first
                 if players_to_upsert:
                     players_response = supabase.table('players').upsert(players_to_upsert).execute()
-                    if players_response.status_code not in [200, 201]:
+                    if players_response.error is not None:
                         logging.error(f"Failed to upsert players: {players_response.error}")
                         continue  # Skip weekly_stats insertion if players upsert fails
 
                 # Batch upsert weekly_stats
                 if weekly_stats_to_upsert:
                     weekly_stats_response = supabase.table('weekly_stats').upsert(weekly_stats_to_upsert).execute()
-                    if weekly_stats_response.status_code not in [200, 201]:
+                    if weekly_stats_response.error is not None:
                         logging.error(f"Failed to upsert weekly_stats: {weekly_stats_response.error}")
                         continue
 
