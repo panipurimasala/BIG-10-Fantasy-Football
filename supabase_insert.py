@@ -314,16 +314,24 @@ def insert_data(data):
         for team_key in ['home_team', 'away_team']:
             team = game['full_box'][team_key]
             if team['team_id'] in team_ids:
-                # Upsert team
-                supabase.table('teams').upsert({
+                # Upsert team information
+                team_response = supabase.table('teams').upsert({
                     'team_id': team['team_id'],
                     'name': team_info[team['team_id']][0],
                     'abbreviation': team['abbrv'],
                     'mascot': team_info[team['team_id']][1],
                     'division': team.get('division_name', '')
                 }).execute()
+                
+                if team_response.status_code not in [200, 201]:
+                    logging.error(f"Failed to upsert team_id {team['team_id']}: {team_response.error}")
+                    continue  # Skip processing this team if upsert fails
 
-                # Insert or update players and stats
+                # Prepare lists for batch upserts
+                players_to_upsert = []
+                weekly_stats_to_upsert = []
+                
+                # Process players
                 for player_id, player in game.get('player_box', {}).get(team_key, {}).items():
                     position_raw = player.get('position', '')
                     position = position_mapping.get(position_raw)
@@ -334,9 +342,20 @@ def insert_data(data):
                     player_stats = player
                     fantasy_points = calculate_offensive_fantasy_points(player_stats, position)
 
-                    # Prepare and insert stats
+                    # Prepare player record for upsert
+                    player_record = {
+                        'player_id': player_id,
+                        'team_id': team['team_id'],
+                        'name': player['player'],
+                        'position': position,
+                        'status': status,
+                        'fantasy_points': fantasy_points  # Per-game points
+                    }
+                    players_to_upsert.append(player_record)
+
+                    # Prepare weekly_stats record for upsert
                     stats_json = json.dumps(player_stats)
-                    supabase.table('weekly_stats').upsert({
+                    weekly_stats_record = {
                         'player_id': player_id,
                         'game_id': game['game_ID'],
                         'week': game['week'],
@@ -344,26 +363,16 @@ def insert_data(data):
                         'player_stats': stats_json,
                         'game_date': game['game_time'],
                         'fantasy_points': fantasy_points
-                    }).execute()
-
-                    # Upsert into players table
-                    supabase.table('players').upsert({
-                        'player_id': player_id,
-                        'team_id': team['team_id'],
-                        'name': player['player'],
-                        'position': position,
-                        'status': status,
-                        'fantasy_points': fantasy_points
-                    }).execute()
+                    }
+                    weekly_stats_to_upsert.append(weekly_stats_record)
 
                 # Process team defense
                 team_defense_player_id = get_team_defense_player_id(team['team_id'])
 
                 team_name = team_info[team['team_id']][0]
-                team_defense_name = team_name + ' Defense'
+                team_defense_name = f"{team_name} Defense"
 
                 team_position = 'D/ST'
-
                 team_status = 'ACT'  # Assuming team defense is always active
 
                 team_stats = team['team_stats']
@@ -371,29 +380,47 @@ def insert_data(data):
                 # Points allowed
                 points_allowed = team_stats.get('points_against_defense_special_teams', 0)
 
-                fantasy_points = calculate_defense_fantasy_points(team_stats, points_allowed)
+                fantasy_points_def = calculate_defense_fantasy_points(team_stats, points_allowed)
 
-                # Prepare and insert stats for team defense
-                stats_json = json.dumps(team_stats)
-                supabase.table('weekly_stats').upsert({
-                    'player_id': team_defense_player_id,
-                    'game_id': game['game_ID'],
-                    'week': game['week'],
-                    'season': game['season'],
-                    'player_stats': stats_json,
-                    'game_date': game['game_time'],
-                    'fantasy_points': fantasy_points
-                }).execute()
-
-                # Upsert into players table
-                supabase.table('players').upsert({
+                # Prepare team defense player record
+                team_defense_record = {
                     'player_id': team_defense_player_id,
                     'team_id': team['team_id'],
                     'name': team_defense_name,
                     'position': team_position,
                     'status': team_status,
-                    'fantasy_points': fantasy_points
-                }).execute()
+                    'fantasy_points': fantasy_points_def  # Per-game points
+                }
+                players_to_upsert.append(team_defense_record)
+
+                # Prepare weekly_stats record for team defense
+                stats_json_def = json.dumps(team_stats)
+                team_weekly_stats_record = {
+                    'player_id': team_defense_player_id,
+                    'game_id': game['game_ID'],
+                    'week': game['week'],
+                    'season': game['season'],
+                    'player_stats': stats_json_def,
+                    'game_date': game['game_time'],
+                    'fantasy_points': fantasy_points_def
+                }
+                weekly_stats_to_upsert.append(team_weekly_stats_record)
+
+                # Batch upsert players first
+                if players_to_upsert:
+                    players_response = supabase.table('players').upsert(players_to_upsert).execute()
+                    if players_response.status_code not in [200, 201]:
+                        logging.error(f"Failed to upsert players: {players_response.error}")
+                        continue  # Skip weekly_stats insertion if players upsert fails
+
+                # Batch upsert weekly_stats
+                if weekly_stats_to_upsert:
+                    weekly_stats_response = supabase.table('weekly_stats').upsert(weekly_stats_to_upsert).execute()
+                    if weekly_stats_response.status_code not in [200, 201]:
+                        logging.error(f"Failed to upsert weekly_stats: {weekly_stats_response.error}")
+                        continue
+
+                logging.info(f"Successfully processed game_id {game['game_ID']}")
 
 def main():
     # Start a thread to update active game windows weekly
