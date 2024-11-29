@@ -99,8 +99,7 @@ def extract_game_times(schedules):
     game_times = []
     now_utc = datetime.now(pytz.utc)
     # Adjust current_week calculation to use UTC
-    current_week = ((now_utc - SEASON_START_DATE).days) // 7 + 1
-    current_week = max(current_week, 1)  # Ensure week is at least 1
+    current_week = datetime.now().isocalendar()[1] - 34
     
     for team_id, schedule_data in schedules.items():
         games = schedule_data.get('data', {}).get('NCAAFB', [])
