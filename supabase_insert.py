@@ -97,12 +97,16 @@ def get_weekly_schedules(team_ids):
 
 def extract_game_times(schedules):
     game_times = []
+    now_utc = datetime.now(pytz.utc)
+    # Adjust current_week calculation to use UTC
+    current_week = ((now_utc - SEASON_START_DATE).days) // 7 + 1
+    current_week = max(current_week, 1)  # Ensure week is at least 1
+    
     for team_id, schedule_data in schedules.items():
         games = schedule_data.get('data', {}).get('NCAAFB', [])
         for game in games:
             # Filter games for the upcoming week
             game_week = game.get('week')
-            current_week = datetime.now().isocalendar()[1] - 34 # MIGHT HAVE TO CHANGE THIS EVERY YEAR
             if game_week != current_week:
                 continue  # Skip games not in the current week
 
@@ -110,19 +114,22 @@ def extract_game_times(schedules):
             if game_time_str and 'TBD' not in game_time_str:
                 try:
                     # Example format: 'Sat, 28 Sep 2019 19:30:00 GMT'
+                    # Parse the datetime string and make it timezone-aware (UTC)
                     game_time = datetime.strptime(game_time_str, '%a, %d %b %Y %H:%M:%S %Z')
+                    game_time = game_time.replace(tzinfo=pytz.utc)
                     game_times.append(game_time)
                 except ValueError:
                     logging.warning(f"Invalid date format for game_time: {game_time_str}")
             else:
                 logging.warning(f"Game time TBD for game: {game.get('game_ID')}")
-                # Handle TBD times by assigning a default time (e.g., 1 PM local time)
+                # Handle TBD times by assigning a default time (e.g., 1 PM UTC)
                 game_date_str = game.get('game_date')
                 if game_date_str:
                     try:
                         # Example date format: 'Sat, 28 Sep 2019'
                         game_date = datetime.strptime(game_date_str, '%a, %d %b %Y')
                         default_time = datetime.combine(game_date, datetime.min.time()) + timedelta(hours=13)  # 1 PM
+                        default_time = default_time.replace(tzinfo=pytz.utc)  # Make timezone-aware (UTC)
                         game_times.append(default_time)
                     except ValueError:
                         logging.error(f"Invalid date format for game_date: {game_date_str}")
@@ -134,6 +141,14 @@ def get_active_game_time_windows(game_times):
     game_duration = timedelta(hours=4)
     active_windows = []
     for game_time in game_times:
+        # Ensure game_time is timezone-aware (should be UTC based on extract_game_times)
+        if game_time.tzinfo is None:
+            game_time = game_time.replace(tzinfo=pytz.utc)
+            logging.warning(f"game_time was naive. Converted to UTC: {game_time}")
+        else:
+            # Normalize to UTC to avoid discrepancies
+            game_time = game_time.astimezone(pytz.utc)
+        
         start_time = game_time - timedelta(minutes=15)  # Start 15 minutes before game time
         end_time = game_time + game_duration
         active_windows.append((start_time, end_time))
@@ -178,6 +193,19 @@ def is_in_active_window():
     now = datetime.now(pytz.utc)
     with lock:
         for start_time, end_time in active_game_windows:
+            # Ensure start_time and end_time are timezone-aware
+            if start_time.tzinfo is None:
+                start_time = start_time.replace(tzinfo=pytz.utc)
+                logging.warning(f"start_time was naive. Converted to UTC: {start_time}")
+            else:
+                start_time = start_time.astimezone(pytz.utc)
+            
+            if end_time.tzinfo is None:
+                end_time = end_time.replace(tzinfo=pytz.utc)
+                logging.warning(f"end_time was naive. Converted to UTC: {end_time}")
+            else:
+                end_time = end_time.astimezone(pytz.utc)
+            
             if start_time <= now <= end_time:
                 return True
     return False
