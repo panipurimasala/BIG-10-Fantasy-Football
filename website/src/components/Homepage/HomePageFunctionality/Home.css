@@ -1,0 +1,320 @@
+.btn-5,
+.btn-5 *,
+.btn-5 :after,
+.btn-5 :before,
+.btn-5:after,
+.btn-5:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-5 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.btn-5:disabled {
+  cursor: default;
+}
+
+.btn-5:-moz-focusring {
+  outline: auto;
+}
+
+
+.btn-5 {
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  padding: 0.8rem 3rem;
+  position: relative;
+}
+
+.btn-5 span {
+  mix-blend-mode: difference;
+}
+
+.btn-5:before {
+  --tilt: 1.2rem;
+  background: white;
+  -webkit-clip-path: polygon(0 0,
+      calc(100% - var(--tilt)) 0,
+      100% 50%,
+      calc(100% - var(--tilt)) 100%,
+      0 100%);
+  clip-path: polygon(0 0,
+      calc(100% - var(--tilt)) 0,
+      100% 50%,
+      calc(100% - var(--tilt)) 100%,
+      0 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: calc(-100% - var(--tilt));
+  position: absolute;
+  top: 0;
+  transform: translateX(var(--progress, 0));
+  transition: transform 0.2s ease;
+  width: calc(100% + var(--tilt));
+}
+
+.btn-5:hover:before {
+  --progress: 100%;
+}
+
+.league-buttons:hover {
+  color: black;
+}
+
+
+.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../assets/firefootball.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.175;
+  /* Adjust the transparency */
+  z-index: -1;
+  /* Keeps background behind the content */
+}
+
+.Title {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff0000, #9dff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  /* Aligns items vertically centered */
+  gap: 10px;
+  /* Adds space between How to Play and the logo */
+  margin-bottom: 20px;
+  /* Adds space below the logo container */
+}
+
+.learnff {
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #891e09;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #c1b205;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.learnff:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 27.5px;
+  background: linear-gradient(45deg, #ff6200, #51ff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(0, 145, 255);
+}
+
+.draft_boxes {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  /* Spread the boxes evenly */
+  margin-top: 100px;
+  padding: 0;
+  width: 40%;
+  /* Ensure they take full width */
+}
+
+.draft_boxes .dbox {
+  flex: 0.5;
+  /* Allow the boxes to stretch equally */
+  margin-left: 50px;
+  margin-right: 1rem;
+  border: 1px solid black;
+  padding: 20px;
+  height: 150px;
+  text-align: center;
+  /* Center the content */
+  background-color: #c1b205;
+  /* Add a subtle background color */
+  display: flex;
+  border-radius: 25px;
+}
+
+/* Remove margin from the last box to avoid overflow */
+.draft_boxes .dbox:last-child {
+  margin-right: 0;
+}
+
+.draft_boxes .dbox .right_box_side .rbox {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  text-align: left;
+}
+
+.boxheaders {
+  font-weight: 800;
+  color: #891e09;
+  font-size: 25px;
+}
+
+.draft_boxes .dbox .right_box_side button {
+  margin-top: 20px;
+  /* Add some spacing between the text and the button */
+  padding: 10px 20px;
+  /* Increase button padding for a better look */
+  background-color: #891e09;
+  /* Button background color */
+  color: white;
+  /* Button text color */
+  border: none;
+  /* Remove default border */
+  border-radius: 5px;
+  /* Round corners */
+  cursor: pointer;
+  /* Show pointer on hover */
+}
+
+.draft_boxes .dbox .right_box_side .rbox .draft_descr {
+  padding-top: 10px;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.58);
+}
+
+.playerlist {
+  text-align: center;
+  margin-bottom: 10px;
+
+}
+
+.playernames {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  padding: 3px;
+}
+
+.top_players ul {
+  list-style-type: none;
+  /* Remove bullet points */
+  padding: 0;
+  /* Remove default padding */
+  margin: 0;
+  /* Remove default margin */
+}
+
+.top_players {
+  margin: auto;
+  width: 15%;
+  height: 40%;
+  position: absolute;
+  top: 200px;
+  right: 40px;
+  background-color: #c1b205;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid black;
+  padding-top: 5px;
+}
+
+.top_playersheading {
+  text-align: center;
+  font-weight: 800;
+  color: #891e09;
+  margin-top: 10px;
+}
+
+.logo {
+  margin: 0 auto;
+  width: 200px;
+  height: 150px;
+  padding: 10px;
+  margin-left: 750px;
+  padding-bottom: 1px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.playwithfriends {
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  margin-top: 200px;
+}
+
+.playwithfriends img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Flex container for upper_part and home_right */
+.upper_part_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+/* Adjusting the upper_part to take more space */
+.upper_part {
+  flex: 2;
+}
+
+/* Styling for the home_right to position it on the right */
+.home_right {
+  flex: 1;
+  margin-left: 20px;
+}
+
+/* Next Game styling for better readability */
+.next_game {
+  padding: 15px;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  border: 1px solid #891e09;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

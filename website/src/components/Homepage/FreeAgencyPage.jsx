@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './FreeAgencyPage.css';
-import supabase from '../supabaseClient';
+import supabase from '../../supabaseClient';
 
 
-const FreeAgencyPage = ({league = 'players'}) => {
+const FreeAgencyPage = ({ league = 'players' }) => {
     const [inputText, setInputText] = useState('');
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [allPlayers, setAllPlayers] = useState([]);

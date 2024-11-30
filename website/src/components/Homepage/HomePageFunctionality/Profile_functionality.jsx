@@ -18,7 +18,7 @@
 //     }, []);
 //     const { dat } = supabase.auth.onAuthStateChange((event, session) => {
 //         console.log(event, session)
-      
+
 //         if (event === 'INITIAL_SESSION') {
 //           // handle initial session
 //         } else if (event === 'SIGNED_IN') {
@@ -50,7 +50,7 @@
 import React from 'react';
 import Profile from './Profile';
 import LoginButton from './LoginButton';
-import { useAuth } from './AuthContext';
+import { useAuth } from '../../AuthContext';
 
 function Profile_Functionality() {
   const { authenticated } = useAuth();

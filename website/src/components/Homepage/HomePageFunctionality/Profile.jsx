@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import supabase from "../supabaseClient";
+import supabase from "../../../supabaseClient";
 import { useNavigate } from 'react-router-dom';
 import './Profile.css';
 
@@ -11,12 +11,12 @@ function Profile() {
     const { data: { user } } = await supabase.auth.getUser();
     setUser(user);
   };
-  const logout = async() => {
+  const logout = async () => {
     const { error } = await supabase.auth.signOut();
-    if(error){
+    if (error) {
       alert(error);
     }
-    else{
+    else {
       navigate("/");
     }
   }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import supabase from "../supabaseClient";
+import supabase from "../../../supabaseClient";
 import './LeaguePage.css';
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -16,7 +16,7 @@ function League() {
     const [utilizer, setUser] = useState(null);
     const [leagues, setLeagues] = useState([]);
     const navigate = useNavigate();
-    const [users, setUsers] = useState(null); 
+    const [users, setUsers] = useState(null);
     const [error, setError] = useState('');
     const [usersData, setUsersData] = useState({});
     const [leaguess, setLeaguess] = useState([]);
@@ -28,7 +28,7 @@ function League() {
         TE: [],
         WR: [],
         "D/ST": []
-      };
+    };
 
     /*useEffect(() => {
         const getNumPlayers = async(leagueID) => {
@@ -44,7 +44,7 @@ function League() {
 
     });*/
 
-    
+
 
     // Get the current user and leagues on component mount
     useEffect(() => {
@@ -62,9 +62,9 @@ function League() {
 
     useEffect(() => {
         if (leagues) {
-            const getNumUsers = async () =>{
-                for (const league of leagues){
-                    const {data} = await supabase.from(league.league_name + "_user_teams").select('*');
+            const getNumUsers = async () => {
+                for (const league of leagues) {
+                    const { data } = await supabase.from(league.league_name + "_user_teams").select('*');
                     const numUsers = data.length;
                     league["numUsers"] = numUsers;
                 }
@@ -127,17 +127,17 @@ function League() {
             const userId = utilizer.id;
             const tableName = `${tourneyName}_user_teams`;
             const { insertTeamError } = await supabase
-                    .from(tableName)
-                    .insert({
-                      user_id: utilizer.id,
-                      team_name: "fillin",
-                      team_players: teamPlayers
-                    });
-            
+                .from(tableName)
+                .insert({
+                    user_id: utilizer.id,
+                    team_name: "fillin",
+                    team_players: teamPlayers
+                });
+
 
             const { error: joinError } = await supabase
                 .from("user_leagues")
-                .insert({ user_id: userId, league_id: leagueId, team_name: teamName});
+                .insert({ user_id: userId, league_id: leagueId, team_name: teamName });
 
             if (joinError) {
                 console.error("Error joining league:", joinError);
@@ -174,47 +174,48 @@ function League() {
 
             const { error: userError } = await supabase
                 .from("user_leagues")
-                .insert({ user_id: utilizer.id, league_id: newLeagueId});
+                .insert({ user_id: utilizer.id, league_id: newLeagueId });
 
             if (userError) {
                 alert("Unable to add you to the league.");
                 return;
             }
-                const createTableSQL = `CREATE TABLE IF NOT EXISTS "${createtourneyName}_players" (LIKE ${'players'} INCLUDING ALL);`;
-                const { error: createError } = await supabase.rpc('execute_sql', { query_statement: createTableSQL });
-                if (createError) {
-                    alert("Please retry creating a League.");
-                }
-                else {
+            const createTableSQL = `CREATE TABLE IF NOT EXISTS "${createtourneyName}_players" (LIKE ${'players'} INCLUDING ALL);`;
+            const { error: createError } = await supabase.rpc('execute_sql', { query_statement: createTableSQL });
+            if (createError) {
+                alert("Please retry creating a League.");
+            }
+            else {
                 const insertDataSQL = `INSERT INTO "${createtourneyName}_freeagency" SELECT * FROM ${'players'};`;
                 const { error: insertError } = await supabase.rpc('execute_sql', { query_statement: insertDataSQL });
-    
+
                 if (insertError) {
                     alert("Please retry creating a league.")
                 }
-                const createTableSQL = `CREATE TABLE IF NOT EXISTS "${createtourneyName}_user_teams" (LIKE ${'newleague_teams'} INCLUDING ALL);`; 
+                const createTableSQL = `CREATE TABLE IF NOT EXISTS "${createtourneyName}_user_teams" (LIKE ${'newleague_teams'} INCLUDING ALL);`;
                 const { error: createError } = await supabase.rpc('execute_sql', { query_statement: createTableSQL });
                 if (createError) {
                     alert("Please retry creating a League.");
                 }
                 const tableName = `${createtourneyName}_user_teams`;
-                
-                for (let i = 0; i <1000000000; i++) {
+
+                for (let i = 0; i < 1000000000; i++) {
 
                 }
-        const { insertTeamError } = await supabase
+                const { insertTeamError } = await supabase
                     .from(tableName)
                     .insert({
-                      user_id: utilizer.id,
-                      team_name: "fillin",
-                      team_players: teamPlayers
+                        user_id: utilizer.id,
+                        team_name: "fillin",
+                        team_players: teamPlayers
                     });
-                    if (insertTeamError) {
-                        console.error("Supabase Error:", error.message);
-                        console.error("Details:", error);}
-                  
+                if (insertTeamError) {
+                    console.error("Supabase Error:", error.message);
+                    console.error("Details:", error);
+                }
 
-    
+
+
                 // Success: Show success message and refresh leagues list
                 alert("Successfully created and joined the league!");
                 leagues(utilizer.id); // Refresh leagues list after creating
@@ -234,74 +235,77 @@ function League() {
             <div className="divider-line" />
         </div>
     );
-    
+
     const navigateToDraftPage = (name) => {
         navigate(`/draft_page/${name}`);
     }
 
     const leagueBlock = () => {
-        if(leagues.length > 0) { return (
-            <div className="currentLeaguesDisplay">
-                {leagues.map((league, index) => (
-                        <div className="leagueBlocks" key={index} onClick={() => navigateToDraftPage(league.league_name)}> 
+        if (leagues.length > 0) {
+            return (
+                <div className="currentLeaguesDisplay">
+                    {leagues.map((league, index) => (
+                        <div className="leagueBlocks" key={index} onClick={() => navigateToDraftPage(league.league_name)}>
                             <h1 className="leagueName">{league.league_name}</h1>
                             <h2 className="numPlayers">{league["numUsers"] !== undefined
-                                                    ? `${league["numUsers"]}/10 players`
-                                                    : 'Loading...'}
+                                ? `${league["numUsers"]}/10 players`
+                                : 'Loading...'}
                             </h2>
                         </div>
-                ))}
-            </div>
-        )} else {
-            return(
+                    ))}
+                </div>
+            )
+        } else {
+            return (
                 <div className="currentLeaguesDisplay noLeague">
                     <h1 className="noLeagueHeader">No Leagues Yet</h1>
                     <h1 className="noLeagueHeader2">Join or Create a League to Get Started!</h1>
-                </div>)}
-        
+                </div>)
+        }
+
     };
 
     useEffect(() => {
         const fetchLeagues = async () => {
-          try {
-            const { data: leagues, error } = await supabase.from("user_leagues").select("league_id").eq("user_id", utilizer.id);
-            //console.log(leagues);
-            if (error) throw error;
-            setLeaguess(leagues); // Store leagues in state
-          } catch (err) {
-            setError('Error fetching leagues');
-            console.error(err);
-          }
+            try {
+                const { data: leagues, error } = await supabase.from("user_leagues").select("league_id").eq("user_id", utilizer.id);
+                //console.log(leagues);
+                if (error) throw error;
+                setLeaguess(leagues); // Store leagues in state
+            } catch (err) {
+                setError('Error fetching leagues');
+                console.error(err);
+            }
         };
-    
+
         fetchLeagues(); // Fetch leagues once on mount
-      }, []);
-    
+    }, []);
+
     const fetchUsersForLeague = async (leagueId) => {
         try {
-          const { data, error } = await supabase
-            .from("user_leagues")
-            .select("team_name")
-            .eq("league_id", leagueId); // Assuming 'league_id' matches
-          if (error) throw error;
-    
-          // Update the usersData state with the number of users for this league
-          setUsersData(prevState => ({
-            ...prevState,
-            [leagueId]: data.length // Store the user count for each leagueId
-          }));
+            const { data, error } = await supabase
+                .from("user_leagues")
+                .select("team_name")
+                .eq("league_id", leagueId); // Assuming 'league_id' matches
+            if (error) throw error;
+
+            // Update the usersData state with the number of users for this league
+            setUsersData(prevState => ({
+                ...prevState,
+                [leagueId]: data.length // Store the user count for each leagueId
+            }));
         } catch (err) {
-          setError('Error fetching users');
-          console.error(err);
+            setError('Error fetching users');
+            console.error(err);
         }
-      };
+    };
 
     useEffect(() => {
-    if (leaguess.length > 0) {
-        leaguess.forEach((league) => {
-        fetchUsersForLeague(league.leagueid); // Fetch users for each league by its ID
-        });
-    }
+        if (leaguess.length > 0) {
+            leaguess.forEach((league) => {
+                fetchUsersForLeague(league.leagueid); // Fetch users for each league by its ID
+            });
+        }
     }, [leaguess]);
 
 

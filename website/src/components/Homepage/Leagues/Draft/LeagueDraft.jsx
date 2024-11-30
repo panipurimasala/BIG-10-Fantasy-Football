@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import './MockDraft.css';
-import supabase from "../supabaseClient";
+//import '../MockDraft.css';
+import supabase from "../../../../supabaseClient";
 import './LeagueDraft.css';
-import MockDraft from "./MockDraft";
 import LeagueDraftFunctionality from "./LeagueDraftFunctionality";
 import { useNavigate } from 'react-router-dom';
+
 
 const LeagueDraft = () => {
     const { leagueName } = useParams();
     console.log("League Name from URL:", leagueName);
-    const [teamName, setTeamName] = useState(null); 
-    const [loading, setLoading] = useState(true);  
-    const [error, setError] = useState(null);      
+    const [teamName, setTeamName] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [users, setUsers] = useState(null);
     const [draftStarted, setDraftStarted] = useState(false); // New state to track if draft has started
     const [lengthofdraft, setLengthOfDraft] = useState(false);
@@ -45,7 +45,7 @@ const LeagueDraft = () => {
 
         fetchPlayers();
     }, []);
-    
+
     const navigateToLeagueFreeAgency = (name) => {
         console.log("Navigating to league free agency with name:", name);
         navigate(`/free_agency/${name}`);
@@ -59,29 +59,29 @@ const LeagueDraft = () => {
             console.error('Error fetching user:', authError);
             return 'No user found';
         }
-    
+
         const { data: userLeagues, error: userError } = await supabase
             .from("user_leagues")
             .select("team_name")
             .eq("user_id", user.id);
-    
+
         if (userError) {
             console.error('Error fetching user leagues:', userError);
             return 'Error fetching team name';
         }
-    
+
         if (!userLeagues || userLeagues.length === 0) {
             return 'No team assigned';
         }
-    
+
         return userLeagues[0].team_name;
     };
 
     useEffect(() => {
         const fetchTeamName = async () => {
             try {
-                const teamNameFetched = await getTeamName(); 
-                setTeamName(teamNameFetched); 
+                const teamNameFetched = await getTeamName();
+                setTeamName(teamNameFetched);
             } catch (err) {
                 setError('Error getting team name');
                 console.error(err);
@@ -89,7 +89,7 @@ const LeagueDraft = () => {
                 setLoading(false);
             }
         };
-        
+
         const getUsers = async () => {
             try {
                 const leagueId = await supabase.from("leagues").select("leagueid").eq("league_name", leagueName);
@@ -102,40 +102,40 @@ const LeagueDraft = () => {
                 console.error(err);
             }
         };
-        
+
         getUsers();
         fetchTeamName();
-    }, [leagueName]); 
-    
+    }, [leagueName]);
+
     const startDraft = () => {
         setDraftStarted(true);
         let tempUsersTeams = {}
         users.forEach(user => {
-            tempUsersTeams[user] = {"QB":[], "RB":[], "WR":[], "TE":[], "K":[], "D/ST":[]};
+            tempUsersTeams[user] = { "QB": [], "RB": [], "WR": [], "TE": [], "K": [], "D/ST": [] };
         });
         setUsersTeams(tempUsersTeams);
-    
+
         // Make a copy of the users array to shuffle
         const shuffledUsers = [...users];
-        
+
         // Fisher-Yates shuffle
         for (let i = shuffledUsers.length - 1; i > 0; i--) {
             const randInd = Math.floor(Math.random() * (i + 1));
             [shuffledUsers[i], shuffledUsers[randInd]] = [shuffledUsers[randInd], shuffledUsers[i]];
         }
-    
+
         // Set the shuffled array back to users state to re-render with the draft order
         setUsers(shuffledUsers);
         setLengthOfDraft(shuffledUsers.length);
     };
 
-    
-    
+
+
     const setCountInPage = (val) => {
-        if(indOfPlayer === users.length-1){
+        if (indOfPlayer === users.length - 1) {
             users.reverse();
         }
-        setIndOfPlayer(val%users.length);
+        setIndOfPlayer(val % users.length);
     }
     return (
         <div>
@@ -144,7 +144,7 @@ const LeagueDraft = () => {
                 <p className="team-title">Your team: {teamName}</p>
             </div>
             <div className="draftContainer">
-                <div className="draftFunction"><LeagueDraftFunctionality onChangesInCount = {setCountInPage}/></div>
+                <div className="draftFunction"><LeagueDraftFunctionality onChangesInCount={setCountInPage} /></div>
                 <div className="draftOrder">
                     <h2>Draft Order</h2>
                     {draftStarted ? "Draft ongoing" : <button onClick={startDraft}>Start Draft</button>} {/* Button to start the draft */}
@@ -180,7 +180,7 @@ const LeagueDraft = () => {
                     <p>No teams found in this league.</p>
                 )}
             </div>
-            <div><button onClick={() =>navigateToLeagueFreeAgency(leagueName)}>Free Agency Page</button></div>
+            <div><button onClick={() => navigateToLeagueFreeAgency(leagueName)}>Free Agency Page</button></div>
         </div>
     );
 }

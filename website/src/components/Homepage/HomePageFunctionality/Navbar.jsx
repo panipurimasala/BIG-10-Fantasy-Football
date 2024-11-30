@@ -39,7 +39,7 @@ const Navbar = () => {
         {/* <a href="/LoginButton" className="user-icon">
           <i className="fas fa-user">Profile</i>
         </a> */}
-        <Profile_functionality className='Profile_functionality'/>
+        <Profile_functionality className='Profile_functionality' />
       </div>
     </nav>
   )
