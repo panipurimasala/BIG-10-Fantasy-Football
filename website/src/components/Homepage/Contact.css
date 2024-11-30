@@ -1,0 +1,104 @@
+/* File: src/components/Homepage/Contact.css */
+
+/* Global Styles */
+.contact-container {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.contact-hero {
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.contact-hero p {
+    font-size: 1.5rem;
+}
+
+/* Form Section */
+.contact-form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.contact-form label span {
+    color: #e74c3c;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1a73e8;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submit-button {
+    display: inline-block;
+    background-color: #1a73e8;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #1664c1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-hero p {
+        font-size: 1.2rem;
+    }
+
+    .contact-form-container {
+        padding: 0 15px;
+    }
+}

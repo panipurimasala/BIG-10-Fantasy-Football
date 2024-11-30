@@ -13,6 +13,8 @@ import Profile from './components/Homepage/HomePageFunctionality/Profile';
 import LeagueDraft from './components/Homepage/Leagues/Draft/LeagueDraft';
 import LeagueFreeAgency from './components/Homepage/Leagues/FreeAgency/LeagueFreeAgency';
 import { AuthProvider } from './components/AuthContext';
+import AboutUs from './components/Homepage/AboutUs';
+import Contact from './components/Homepage/Contact';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/mock_draft" element={<MockDraft />} />
               <Route path="/league_page" element={<League />} />
               <Route path="/team_page" element={<TeamPage />} />

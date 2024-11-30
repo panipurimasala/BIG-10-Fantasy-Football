@@ -1,0 +1,80 @@
+/* File: src/components/Homepage/AboutUs.css */
+
+/* Global Styles */
+.about-us-container {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+/* Content Section */
+.content-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    color: #1a73e8;
+    margin-top: 40px;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.contact-list li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-list a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .content-section {
+        padding: 0 15px;
+    }
+}
