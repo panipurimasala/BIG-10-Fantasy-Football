@@ -1,0 +1,32 @@
+/* File: src/components/Homepage/Leagues/LeagueHomePage.css */
+
+.league-home-page {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.league-home-navbar {
+    margin-top: 20px;
+}
+
+.league-home-nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.league-home-nav-links li {
+    margin: 0 15px;
+}
+
+.league-home-nav-links a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.league-home-nav-links a:hover {
+    text-decoration: underline;
+}

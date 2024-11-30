@@ -236,16 +236,16 @@ function League() {
         </div>
     );
 
-    const navigateToDraftPage = (name) => {
-        navigate(`/draft_page/${name}`);
-    }
+    const navigateToLeagueHomePage = (leagueName) => {
+        navigate(`/league_homepage/${leagueName}`);
+    };
 
     const leagueBlock = () => {
         if (leagues.length > 0) {
             return (
                 <div className="currentLeaguesDisplay">
                     {leagues.map((league, index) => (
-                        <div className="leagueBlocks" key={index} onClick={() => navigateToDraftPage(league.league_name)}>
+                        <div className="leagueBlocks" key={index} onClick={() => navigateToLeagueHomePage(league.league_name)}>
                             <h1 className="leagueName">{league.league_name}</h1>
                             <h2 className="numPlayers">{league["numUsers"] !== undefined
                                 ? `${league["numUsers"]}/10 players`
