@@ -8,7 +8,7 @@ const LeagueFreeAgency = () => {
     return (
         <div>
             <div style={{ 'display': 'flex', 'justify-content': 'center' }}><h1>{leagueName.name} Free Agency</h1></div>
-            <FreeAgencyPage league={leagueName.name.toLowerCase() + '_free_agency'} />
+            <FreeAgencyPage league={leagueName.leagueName.toLowerCase() + '_free_agency'} />
         </div>
     );
 };
