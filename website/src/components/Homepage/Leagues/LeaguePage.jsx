@@ -61,17 +61,23 @@ function League() {
     }, []);
 
     useEffect(() => {
-        if (leagues) {
-            const getNumUsers = async () => {
-                for (const league of leagues) {
+        const getNumUsers = async () => {
+            // Use map to create a new array with updated numUsers values, only if not already set
+            const updatedLeagues = await Promise.all(leagues.map(async (league) => {
+                if (league.numUsers === undefined) {  // Only fetch if numUsers is not set
                     const { data } = await supabase.from(league.league_name + "_user_teams").select('*');
                     const numUsers = data.length;
-                    league["numUsers"] = numUsers;
+                    return { ...league, numUsers }; // Add numUsers if not already set
                 }
-            }
+            }));
+            setLeagues(updatedLeagues);
+        };
+    
+        if (leagues.length > 0 && leagues[0].numUsers === undefined) {
             getNumUsers();
         }
-    }, [leagues]);
+    }, [leagues]);  // Dependency array stays as leagues
+    
 
 
 
@@ -240,30 +246,39 @@ function League() {
         navigate(`/league_homepage/${leagueName}`);
     };
 
-    const leagueBlock = () => {
+    
+    const [leagueBlock, setLeagueBlock] = useState(null);
+
+    // UseEffect to handle the leagues display logic
+    useEffect(() => {
         if (leagues.length > 0) {
-            return (
+            setLeagueBlock(
                 <div className="currentLeaguesDisplay">
                     {leagues.map((league, index) => (
-                        <div className="leagueBlocks" key={index} onClick={() => navigateToLeagueHomePage(league.league_name)}>
+                        <div
+                            className="leagueBlocks"
+                            key={index}
+                            onClick={() => navigateToLeagueHomePage(league.league_name)}
+                        >
                             <h1 className="leagueName">{league.league_name}</h1>
-                            <h2 className="numPlayers">{league["numUsers"] !== undefined
-                                ? `${league["numUsers"]}/10 players`
-                                : 'Loading...'}
+                            <h2 className="numPlayers">
+                                {league.numUsers !== undefined
+                                    ? `${league.numUsers}/10 players`
+                                    : `Loading...`}
                             </h2>
                         </div>
                     ))}
                 </div>
-            )
+            );
         } else {
-            return (
+            setLeagueBlock(
                 <div className="currentLeaguesDisplay noLeague">
                     <h1 className="noLeagueHeader">No Leagues Yet</h1>
                     <h1 className="noLeagueHeader2">Join or Create a League to Get Started!</h1>
-                </div>)
+                </div>
+            );
         }
-
-    };
+    }, [leagues]);
 
     useEffect(() => {
         const fetchLeagues = async () => {
@@ -391,7 +406,7 @@ function League() {
                     <h1 className='currentLeaguesText'>Current Leagues</h1>
                 </div>
                 <div className="currentLeaguesDisplay noLeague">
-                    {leagueBlock()}
+                    {leagueBlock}
                 </div>
             </div>
         </div>
