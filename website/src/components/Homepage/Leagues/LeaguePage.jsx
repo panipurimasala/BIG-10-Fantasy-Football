@@ -22,12 +22,14 @@ function League() {
     const [leaguess, setLeaguess] = useState([]);
     const [numUsers, setNumUsers] = useState(null);
     const teamPlayers = {
-        "K": [],
         "QB": [],
         "RB": [],
-        "TE": [],
         "WR": [],
-        "D/ST": []
+        "TE": [],
+        "Flex": [],
+        "D/ST": [],
+        "K": [],
+        "Bench": []
     };
 
     /*useEffect(() => {
@@ -136,7 +138,7 @@ function League() {
                 .from(tableName)
                 .insert({
                     user_id: utilizer.id,
-                    team_name: "fillin",
+                    team_name: teamName,
                     team_players: teamPlayers
                 });
 
@@ -150,7 +152,7 @@ function League() {
                 alert("Error joining league. Please try again.");
             } else {
                 alert("Successfully joined the league!");
-                leagues(userId); // Refresh leagues list after joining
+                getLeagues(userId); // Refresh leagues list after joining
             }
             setTourneyName('');
             setPassword('');
@@ -208,23 +210,23 @@ function League() {
                 for (let i = 0; i < 1000000000; i++) {
 
                 }
-                const { insertTeamError } = await supabase
-                    .from(tableName)
-                    .insert({
-                        user_id: utilizer.id,
-                        team_name: "fillin",
-                        team_players: teamPlayers
-                    });
-                if (insertTeamError) {
-                    console.error("Supabase Error:", error.message);
-                    console.error("Details:", error);
-                }
+                // const { insertTeamError } = await supabase
+                //     .from(tableName)
+                //     .insert({
+                //         user_id: utilizer.id,
+                //         team_name: "fillin",
+                //         team_players: teamPlayers
+                //     });
+                // if (insertTeamError) {
+                //     console.error("Supabase Error:", error.message);
+                //     console.error("Details:", error);
+                // }
 
 
 
                 // Success: Show success message and refresh leagues list
                 alert("Successfully created and joined the league!");
-                //leagues(utilizer.id); // Refresh leagues list after creating
+                getLeagues(utilizer.id); // Refresh leagues list after creating
             }
 
         }
