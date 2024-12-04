@@ -45,8 +45,7 @@ const LeagueDraftFunctionality = (props) => {
         };
 
         fetchPlayers();
-
-        // Set up Socket.IO listeners
+        
         socket.on("draft_started", (data) => {
             setDraftStarted(true);
             setCurrentDrafter(data.current_user);

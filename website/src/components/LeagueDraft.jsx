@@ -40,8 +40,24 @@ const LeagueDraft = () => {
                 console.error("Error fetching players:", err);
             } finally {
                 setLoading(false);
-            }
+          
+          }
         };
+       const changes = supabase.channel('table-db-changes').on(
+    'postgres_changes',
+    {
+      event: '*',
+      schema: 'public',
+      table: `${leagueName}`,
+    },
+    (payload) => {
+      if (payload.eventType === 'UPDATE') {
+        console.log('Index changed from', payload.old.index, 'to', payload.new.index);
+      }
+    }
+  )
+  .subscribe();
+
 
         fetchPlayers();
     }, []);

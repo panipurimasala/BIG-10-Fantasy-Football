@@ -1,0 +1,434 @@
+[
+    {
+        "home": {
+            "kicking": {
+                "field_goals": [
+                    {
+                        "id": "1c81bb67-85ad-423a-a42d-985873bd0fa0",
+                        "name": "Alex Felkins",
+                        "jersey": "91",
+                        "position": "K",
+                        "attempts": 1,
+                        "made": 1,
+                        "blocked": 0,
+                        "yards": 20,
+                        "avg_yards": 20.0,
+                        "longest": 20,
+                        "missed": 0,
+                        "pct": 100.0,
+                        "attempts_19": 0,
+                        "attempts_29": 1,
+                        "attempts_39": 0,
+                        "attempts_49": 0,
+                        "attempts_50": 0,
+                        "made_19": 0,
+                        "made_29": 1,
+                        "made_39": 0,
+                        "made_49": 0,
+                        "made_50": 0
+                    }
+                ],
+                "pat": []
+            },
+            "defense_specteams": {
+                "defense_totals": {
+                    "tackles": 37,
+                    "assists": 24,
+                    "combined": 61,
+                    "sacks": 1.0,
+                    "sack_yards": 10.0,
+                    "interceptions": 0,
+                    "passes_defended": 0,
+                    "forced_fumbles": 1,
+                    "fumble_recoveries": 0,
+                    "qb_hits": 1,
+                    "tloss": 6.0,
+                    "tloss_yards": 20.0,
+                    "safeties": 0,
+                    "sp_tackles": 3,
+                    "sp_assists": 2,
+                    "sp_forced_fumbles": 0,
+                    "sp_fumble_recoveries": 0,
+                    "sp_blocks": 0,
+                    "misc_tackles": 1,
+                    "misc_assists": 0,
+                    "misc_forced_fumbles": 0,
+                    "misc_fumble_recoveries": 0
+                },
+                "touchdowns": 0
+            },
+            "overview": {
+                "id": "eeb3ce19-6ddd-4c91-afab-811c6cc81974",
+                "name": "Nittany Lions",
+                "market": "Penn State",
+                "alias": "PSU",
+                "used_timeouts": 3,
+                "remaining_timeouts": 0,
+                "points": 15,
+                "used_challenges": 0,
+                "remaining_challenges": 1,
+                "record": {
+                    "wins": 10,
+                    "losses": 3,
+                    "ties": 0
+                }
+            },
+            "rushing": [
+                {
+                    "id": "419f44c0-851f-11ec-b344-83aa305ae234",
+                    "name": "Drew Allar",
+                    "jersey": "15",
+                    "position": "QB",
+                    "first_downs": 5,
+                    "avg_yards": 4.9,
+                    "attempts": 10,
+                    "touchdowns": 1,
+                    "yards": 49,
+                    "longest": 11,
+                    "longest_touchdown": 11,
+                    "redzone_attempts": 4,
+                    "tlost": 0,
+                    "tlost_yards": 0
+                },
+                {
+                    "id": "303e7840-8524-11ec-a04c-517659d186b2",
+                    "name": "Nicholas Singleton",
+                    "jersey": "10",
+                    "position": "RB",
+                    "first_downs": 1,
+                    "avg_yards": 3.308,
+                    "attempts": 13,
+                    "touchdowns": 0,
+                    "yards": 43,
+                    "longest": 9,
+                    "redzone_attempts": 2,
+                    "tlost": 0,
+                    "tlost_yards": 0
+                },
+                {
+                    "id": "7a008ea0-851f-11ec-b344-83aa305ae234",
+                    "name": "Kaytron Allen",
+                    "jersey": "13",
+                    "position": "RB",
+                    "first_downs": 2,
+                    "avg_yards": 6.0,
+                    "attempts": 12,
+                    "touchdowns": 0,
+                    "yards": 72,
+                    "longest": 34,
+                    "redzone_attempts": 2,
+                    "tlost": 1,
+                    "tlost_yards": -1
+                }
+            ],
+            "passing": [
+                {
+                    "id": "7a008ea0-851f-11ec-b344-83aa305ae234",
+                    "name": "Kaytron Allen",
+                    "jersey": "13",
+                    "position": "RB",
+                    "first_downs": 1,
+                    "attempts": 1,
+                    "completions": 1,
+                    "cmp_pct": 100.0,
+                    "yards": 4,
+                    "avg_yards": 4.0,
+                    "sacks": 0,
+                    "sack_yards": 0,
+                    "touchdowns": 0,
+                    "longest": 4,
+                    "interceptions": 0,
+                    "rating": 133.6,
+                    "redzone_attempts": 1,
+                    "int_touchdowns": 0
+                },
+                {
+                    "id": "419f44c0-851f-11ec-b344-83aa305ae234",
+                    "name": "Drew Allar",
+                    "jersey": "15",
+                    "position": "QB",
+                    "first_downs": 5,
+                    "attempts": 23,
+                    "completions": 10,
+                    "cmp_pct": 43.478,
+                    "yards": 70,
+                    "avg_yards": 3.043,
+                    "sacks": 1,
+                    "sack_yards": 9,
+                    "touchdowns": 1,
+                    "longest": 19,
+                    "interceptions": 0,
+                    "rating": 83.39,
+                    "longest_touchdown": 8,
+                    "redzone_attempts": 4,
+                    "int_touchdowns": 0
+                }
+            ],
+            "receiving": [
+                {
+                    "id": "7a008ea0-851f-11ec-b344-83aa305ae234",
+                    "name": "Kaytron Allen",
+                    "jersey": "13",
+                    "position": "RB",
+                    "first_downs": 1,
+                    "attempts": 1,
+                    "completions": 1,
+                    "cmp_pct": 100.0,
+                    "yards": 4,
+                    "avg_yards": 4.0,
+                    "sacks": 0,
+                    "sack_yards": 0,
+                    "touchdowns": 0,
+                    "longest": 4,
+                    "interceptions": 0,
+                    "rating": 133.6,
+                    "redzone_attempts": 1,
+                    "int_touchdowns": 0
+                },
+                {
+                    "id": "419f44c0-851f-11ec-b344-83aa305ae234",
+                    "name": "Drew Allar",
+                    "jersey": "15",
+                    "position": "QB",
+                    "first_downs": 5,
+                    "attempts": 23,
+                    "completions": 10,
+                    "cmp_pct": 43.478,
+                    "yards": 70,
+                    "avg_yards": 3.043,
+                    "sacks": 1,
+                    "sack_yards": 9,
+                    "touchdowns": 1,
+                    "longest": 19,
+                    "interceptions": 0,
+                    "rating": 83.39,
+                    "longest_touchdown": 8,
+                    "redzone_attempts": 4,
+                    "int_touchdowns": 0
+                }
+            ],
+            "two_point_conv": [
+                {
+                    "id": "8267feb7-b326-4759-9fce-c9c50e956b63",
+                    "name": "KeAndre Lambert-Smith",
+                    "jersey": "01",
+                    "position": "WR",
+                    "attempts": 1,
+                    "successes": 0,
+                    "category": "receive"
+                },
+                {
+                    "id": "419f44c0-851f-11ec-b344-83aa305ae234",
+                    "name": "Drew Allar",
+                    "jersey": "15",
+                    "position": "QB",
+                    "attempts": 2,
+                    "successes": 0,
+                    "category": "pass"
+                },
+                {
+                    "id": "a3a9cb89-5016-4172-8322-6413513a9888",
+                    "name": "Theo Johnson",
+                    "jersey": "84",
+                    "position": "TE",
+                    "attempts": 1,
+                    "successes": 0,
+                    "category": "receive"
+                }
+            ]
+        },
+        "away": {
+            "kicking": {
+                "field_goals": [
+                    {
+                        "id": "d772c17b-129c-457e-a974-ef57e1a68fe8",
+                        "name": "James Turner",
+                        "jersey": "32",
+                        "position": "K",
+                        "attempts": 1,
+                        "made": 1,
+                        "blocked": 0,
+                        "yards": 22,
+                        "avg_yards": 22.0,
+                        "longest": 22,
+                        "missed": 0,
+                        "pct": 100.0,
+                        "attempts_19": 0,
+                        "attempts_29": 1,
+                        "attempts_39": 0,
+                        "attempts_49": 0,
+                        "attempts_50": 0,
+                        "made_19": 0,
+                        "made_29": 1,
+                        "made_39": 0,
+                        "made_49": 0,
+                        "made_50": 0
+                    }
+                ],
+                "pat": [
+                    {
+                        "id": "d772c17b-129c-457e-a974-ef57e1a68fe8",
+                        "name": "James Turner",
+                        "jersey": "32",
+                        "position": "K",
+                        "attempts": 3,
+                        "blocked": 0,
+                        "made": 3,
+                        "missed": 0,
+                        "pct": 100.0
+                    }
+                ]
+            },
+            "defense_specteams": {
+                "defense_totals": {
+                    "tackles": 35,
+                    "assists": 18,
+                    "combined": 53,
+                    "sacks": 1.0,
+                    "sack_yards": 9.0,
+                    "interceptions": 0,
+                    "passes_defended": 0,
+                    "forced_fumbles": 1,
+                    "fumble_recoveries": 1,
+                    "qb_hits": 1,
+                    "tloss": 3.0,
+                    "tloss_yards": 11.0,
+                    "safeties": 0,
+                    "sp_tackles": 2,
+                    "sp_assists": 0,
+                    "sp_forced_fumbles": 0,
+                    "sp_fumble_recoveries": 0,
+                    "sp_blocks": 0,
+                    "misc_tackles": 0,
+                    "misc_assists": 0,
+                    "misc_forced_fumbles": 0,
+                    "misc_fumble_recoveries": 0
+                },
+                "touchdowns": 0
+            },
+            "overview": {
+                "id": "d3e8c416-e643-4d5e-be9e-c598a150b234",
+                "name": "Wolverines",
+                "market": "Michigan",
+                "alias": "MICH",
+                "used_timeouts": 2,
+                "remaining_timeouts": 1,
+                "points": 24,
+                "used_challenges": 0,
+                "remaining_challenges": 1,
+                "record": {
+                    "wins": 15,
+                    "losses": 0,
+                    "ties": 0
+                }
+            },
+            "rushing": [
+                {
+                    "id": "8d2fc425-6af1-4a61-b0db-53f5c94a6302",
+                    "name": "J.J. McCarthy",
+                    "jersey": "09",
+                    "position": "QB",
+                    "first_downs": 3,
+                    "avg_yards": 4.25,
+                    "attempts": 8,
+                    "touchdowns": 0,
+                    "yards": 34,
+                    "longest": 13,
+                    "redzone_attempts": 1,
+                    "tlost": 1,
+                    "tlost_yards": -2
+                },
+                {
+                    "id": "e9ac3eed-44d3-4bda-bb9a-b1e3436f3f7a",
+                    "name": "Donovan Edwards",
+                    "jersey": "07",
+                    "position": "RB",
+                    "first_downs": 2,
+                    "avg_yards": 5.2,
+                    "attempts": 10,
+                    "touchdowns": 1,
+                    "yards": 52,
+                    "longest": 22,
+                    "longest_touchdown": 22,
+                    "redzone_attempts": 3,
+                    "tlost": 4,
+                    "tlost_yards": -6
+                },
+                {
+                    "id": "team",
+                    "name": "(Team)",
+                    "first_downs": 0,
+                    "avg_yards": -2.0,
+                    "attempts": 2,
+                    "touchdowns": 0,
+                    "yards": -4,
+                    "longest": -2,
+                    "redzone_attempts": 0,
+                    "tlost": 0,
+                    "tlost_yards": 0
+                },
+                {
+                    "id": "22756eee-f0eb-49b8-a0f2-09073c5f61d8",
+                    "name": "Blake Corum",
+                    "jersey": "02",
+                    "position": "RB",
+                    "first_downs": 5,
+                    "avg_yards": 5.577,
+                    "attempts": 26,
+                    "touchdowns": 2,
+                    "yards": 145,
+                    "longest": 44,
+                    "longest_touchdown": 30,
+                    "redzone_attempts": 2,
+                    "tlost": 0,
+                    "tlost_yards": 0
+                }
+            ],
+            "passing": [
+                {
+                    "id": "8d2fc425-6af1-4a61-b0db-53f5c94a6302",
+                    "name": "J.J. McCarthy",
+                    "jersey": "09",
+                    "position": "QB",
+                    "first_downs": 4,
+                    "attempts": 8,
+                    "completions": 7,
+                    "cmp_pct": 87.5,
+                    "yards": 60,
+                    "avg_yards": 7.5,
+                    "sacks": 1,
+                    "sack_yards": 10,
+                    "touchdowns": 0,
+                    "longest": 19,
+                    "interceptions": 0,
+                    "rating": 150.5,
+                    "redzone_attempts": 0,
+                    "int_touchdowns": 0
+                }
+            ],
+            "receiving": [
+                {
+                    "id": "8d2fc425-6af1-4a61-b0db-53f5c94a6302",
+                    "name": "J.J. McCarthy",
+                    "jersey": "09",
+                    "position": "QB",
+                    "first_downs": 4,
+                    "attempts": 8,
+                    "completions": 7,
+                    "cmp_pct": 87.5,
+                    "yards": 60,
+                    "avg_yards": 7.5,
+                    "sacks": 1,
+                    "sack_yards": 10,
+                    "touchdowns": 0,
+                    "longest": 19,
+                    "interceptions": 0,
+                    "rating": 150.5,
+                    "redzone_attempts": 0,
+                    "int_touchdowns": 0
+                }
+            ],
+            "two_point_conv": []
+        }
+    }
+]

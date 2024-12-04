@@ -10,6 +10,10 @@ supabase: Client = create_client(supabase_url, supabase_key)
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
+response = supabase.table('newleague_user_teams').select('*').execute()
+
+
+
 # Sample data structure (to be replaced with database queries)
 draft_state = {
     "league": "league1",
